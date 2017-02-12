@@ -1,0 +1,403 @@
+
+<skin>
+	<screen name="ListTemplate">
+		<widget name="list"
+                position="107,152"
+                size="648,501"
+                foregroundColor="white"
+                backgroundColor="skydarkblue"
+                foregroundColorSelected="skydarkblue"
+                backgroundColorSelected="skygold"
+                foregroundColorEvent="guidecolor"
+                foregroundColorEventSelected="skydarkblue"
+                foregroundColorMarked="white"
+                foregroundColorMarkedSelected="red"
+                backgroundColorMarked="skydarkblue"
+                backgroundColorMarkedSelected="skygold"
+                foregroundColorServiceNotAvail="verydarkgrey"
+                selectionPixmap="myselectbars/bar-36.png"
+                colorServiceRecorded="red"
+                serviceItemHeight="36"
+                serviceNameFont="Regular;21"
+                serviceInfoFont="Regular;21"
+                serviceNumberFont="Regular;21"
+                picServiceEventProgressbar="myprogressbars/progress-50-6.png"
+                progressbarHeight="6"
+                progressbarBorderWidth="1"
+                progressBarWidth="50"
+                colorEventProgressbar="skygold"
+                colorEventProgressbarSelected="skydarkblue"
+                colorEventProgressbarBorder="white"
+                colorEventProgressbarBorderSelected="skydarkblue"
+                fieldMargins="10"
+                nonplayableMargins="10"
+                itemsDistances="10"
+                transparent="1"
+                zPosition="4"
+                scrollbarMode="showOnDemand" />
+	</screen>
+	
+	<screen name="RadioListTemplate">
+		<widget name="list"
+                position="107,152"
+                size="648,501"
+                foregroundColor="white"
+                backgroundColor="black"
+                foregroundColorSelected="black"
+                backgroundColorSelected="white"
+                foregroundColorEvent="skyblue"
+                foregroundColorEventSelected="black"
+                foregroundColorMarked="white"
+                foregroundColorMarkedSelected="black"
+                backgroundColorMarked="black"
+                backgroundColorMarkedSelected="skygold"
+                foregroundColorServiceNotAvail="verydarkgrey"
+                colorServiceRecorded="red"
+                serviceItemHeight="36"
+                serviceNameFont="Regular;21"
+                serviceInfoFont="Regular;21"
+                serviceNumberFont="Regular;21"
+                picServiceEventProgressbar="myprogressbars/progress-50-6.png"
+                progressbarHeight="6"
+                progressbarBorderWidth="1"
+                progressBarWidth="50"
+                colorEventProgressbar="skygold"
+                colorEventProgressbarSelected="black"
+                colorEventProgressbarBorder="white"
+                colorEventProgressbarBorderSelected="black"
+                foregroundColorService="white"
+                backgroundColorService="black"
+                foregroundColorServiceSelected="black"
+                fieldMargins="10"
+                itemsDistances="10"
+                nonplayableMargins="10"
+                transparent="0"
+                zPosition="4"
+                scrollbarMode="showOnDemand" />
+	</screen>
+	
+	<!-- templates -->
+	<screen name="NowName">
+		<widget source="ServiceEvent" render="Label" position="811,408" size="358,24" font="Regular;18" foregroundColor="guidecolor" backgroundColor="skydarkblue" valign="center" halign="left" noWrap="1" transparent="1" zPosition="4">
+			<convert type="EventName">NowName</convert>
+		</widget>
+	</screen>
+	<screen name="NowStartTime">
+		<widget source="ServiceEvent" render="Label" position="800,364" size="70,38" font="Regular;18" foregroundColor="white" backgroundColor="skydarkblue" valign="center" halign="right" noWrap="1" transparent="1" zPosition="4">
+			<convert type="EventTime">StartTime</convert>
+			<convert type="ClockToText">Format:%H.%M</convert>
+		</widget>
+	</screen>
+	<screen name="NowEndTime">
+		<widget source="ServiceEvent" render="Label" position="1110,364" size="70,38" font="Regular;18" foregroundColor="white" backgroundColor="skydarkblue" valign="center" halign="left" noWrap="1" transparent="1" zPosition="4">
+			<convert type="EventTime">EndTime</convert>
+			<convert type="ClockToText">Format:%H.%M</convert>
+		</widget>
+	</screen>
+	<screen name="NowDescription">
+		<widget source="ServiceEvent" render="RunningText" options="movetype=running,startpoint=0,direction=top,steptime=100,repeat=0,always=0,oneshot=0,startdelay=7000,wrap"
+                position="811,432" size="358,165" font="Regular;16" foregroundColor="white" backgroundColor="skydarkblue" valign="top" transparent="1" zPosition="4">
+			<convert type="EventName">FullDescription</convert>
+		</widget>
+	</screen>
+	<screen name="NextName">
+		<widget source="ServiceEvent" render="Label" position="811,607" size="255,21" font="Regular;16" foregroundColor="guidecolor" backgroundColor="skydarkblue" valign="top" halign="left" noWrap="1" transparent="1" zPosition="4">
+			<convert type="EventName">NextName</convert>
+		</widget>
+	</screen>
+	<screen name="NextStartTime">
+		<widget source="ServiceEvent" render="Label" position="1057,607" size="60,21" font="Regular;16" foregroundColor="skyblue" backgroundColor="skydarkblue" valign="top" halign="right" noWrap="1" transparent="1" zPosition="4">
+			<convert type="EventTime">NextStartTime</convert>
+			<convert type="ClockToText">Format:%H.%M</convert>
+		</widget>
+	</screen>
+	<screen name="NextEndTime">
+		<widget source="ServiceEvent" render="Label" position="1120,607" size="60,21" font="Regular;16" foregroundColor="skyblue" backgroundColor="skydarkblue" valign="top" halign="left" noWrap="1" transparent="1" zPosition="4">
+			<convert type="EventTime">NextEndTime</convert>
+			<convert type="ClockToText">Format:- %H.%M</convert>
+		</widget>
+	</screen>
+	<screen name="LaterName">
+		<widget source="ServiceEvent" render="Label" position="811,632" size="255,21" font="Regular;16" foregroundColor="guidecolor" backgroundColor="skydarkblue" valign="top" halign="left" noWrap="1" transparent="1" zPosition="4">
+			<convert type="EventName">ThirdName</convert>
+		</widget>
+	</screen>
+	<screen name="LaterStartTime">
+		<widget source="ServiceEvent" render="Label" position="1057,632" size="60,21" font="Regular;16" foregroundColor="skyblue" backgroundColor="skydarkblue" valign="top" halign="right" noWrap="1" transparent="1" zPosition="4">
+			<convert type="EventTime">ThirdStartTime</convert>
+			<convert type="ClockToText">Format:%H.%M</convert>
+		</widget>
+	</screen>
+	<screen name="LaterEndTime">
+		<widget source="ServiceEvent" render="Label" position="1120,632" size="60,21" font="Regular;16" foregroundColor="skyblue" backgroundColor="skydarkblue" valign="top" halign="left" noWrap="1" transparent="1" zPosition="4">
+			<convert type="EventTime">ThirdEndTime</convert>
+			<convert type="ClockToText">Format:- %H.%M</convert>
+		</widget>
+	</screen>
+	<!-- layout 2 -->
+	<screen name="NowDescription2">
+		<widget source="ServiceEvent" render="RunningText" options="movetype=running,startpoint=0,direction=top,steptime=100,repeat=0,always=0,oneshot=0,startdelay=7000,wrap"
+                position="811,432" size="358,93" font="Regular;16" foregroundColor="white" backgroundColor="skydarkblue" valign="top" transparent="1" zPosition="4">
+			<convert type="EventName">FullDescription</convert>
+		</widget>
+	</screen>
+	<screen name="NextName2">
+		<widget source="ServiceEvent" render="Label" position="811,535" size="255,21" font="Regular;16" foregroundColor="guidecolor" backgroundColor="skydarkblue" valign="top" halign="left" noWrap="1" transparent="1" zPosition="4">
+			<convert type="EventName">NextName</convert>
+		</widget>
+	</screen>
+	<screen name="NextStartTime2">
+		<widget source="ServiceEvent" render="Label" position="1057,535" size="60,21" font="Regular;16" foregroundColor="skyblue" backgroundColor="skydarkblue" valign="top" halign="right" noWrap="1" transparent="1" zPosition="4">
+			<convert type="EventTime">NextStartTime</convert>
+			<convert type="ClockToText">Format:%H.%M</convert>
+		</widget>
+	</screen>
+	<screen name="NextEndTime2">
+		<widget source="ServiceEvent" render="Label" position="1120,535" size="60,21" font="Regular;16" foregroundColor="skyblue" backgroundColor="skydarkblue" valign="top" halign="left" noWrap="1" transparent="1" zPosition="4">
+			<convert type="EventTime">NextEndTime</convert>
+			<convert type="ClockToText">Format:- %H.%M</convert>
+		</widget>
+	</screen>
+	<screen name="NextDescription2">
+		<widget source="ServiceEvent" render="Label" position="811,554" size="354,93" font="Regular;16" foregroundColor="white" backgroundColor="skydarkblue" valign="top" transparent="1" zPosition="4">
+			<convert type="EventName">NextDescription</convert>
+		</widget>
+	</screen>
+	<screen name="GuideProgressBar">
+		<widget source="ServiceEvent" render="Progress" pixmap="myprogressbars/progress-214-6.png" position="882,381" size="214,6" backgroundColor="#0008142a" borderWidth="0" transparent="0" zPosition="5">
+			<convert type="EventTime">Progress</convert>
+		</widget>
+	</screen>
+	<!-- main screens - defined in extras.xml -->
+	<screen name="ChannelSelection1">
+		<panel name="template2" />
+		<panel name="v5-tv-guide" />
+		<panel name="t2-bottom-right-bg" />
+		<panel name="ListTemplate" />
+		<panel name="NowName" />
+		<panel name="NowStartTime" />
+		<panel name="NowEndTime" />
+		<panel name="NowDescription" />
+		<panel name="NextName" />
+		<panel name="NextStartTime" />
+		<panel name="NextEndTime" />
+		<ePixmap pixmap="div-h.png" position="811,603" size="358,2" alphatest="blend" transparent="1" />
+		<panel name="LaterName" />
+		<panel name="LaterStartTime" />
+		<panel name="LaterEndTime" />
+		<panel name="GuideProgressBar" />
+		<panel name="t2-4RGYB" />
+		<panel name="t2-MenuButton" />
+		<panel name="t2-InfoButton-pos2" />
+	</screen>
+	<screen name="ChannelSelection2">
+		<panel name="template2" />
+		<panel name="v5-tv-guide" />
+		<panel name="t2-bottom-right-bg" />
+		<panel name="ListTemplate" />
+		<panel name="NowName" />
+		<panel name="NowStartTime" />
+		<panel name="NowEndTime" />
+		<panel name="NowDescription2" />
+		<panel name="NextName2" />
+		<panel name="NextStartTime2" />
+		<panel name="NextEndTime2" />
+		<panel name="NextDescription2" />
+		<ePixmap pixmap="div-h.png" position="811,531" size="358,2" alphatest="blend" transparent="1" />
+		<panel name="GuideProgressBar" />
+		<panel name="t2-4RGYB" />
+		<panel name="t2-MenuButton" />
+		<panel name="t2-InfoButton-pos2" />
+	</screen>
+	<!-- new spacious layout -->
+	<screen name="ChannelSelection3">
+		<panel name="template3" />
+		<panel name="v5-tv-guide" />
+		<!-- tv -->
+		<widget source="session.VideoPicture" render="Pig" position="793,140" size="210,122" backgroundColor="transparent" transparent="1" />
+		<eLabel position="798,145" size="200,112" backgroundColor="transparent" zPosition="4" />
+		<widget source="session.CurrentService" render="Label" position="798,235" size="199,14" font="Bold;11" foregroundColor="white" backgroundColor="transparent" borderWidth="1" borderColor="black" valign="center" halign="center" noWrap="1" transparent="1" zPosition="6">
+			<convert type="ServiceName">Name</convert>
+		</widget>
+		<!-- progress bar -->
+		<widget source="ServiceEvent" render="Progress" pixmap="myprogressbars/progress-200-6.png" position="798,251" size="200,6" backgroundColor="#0009142d" borderWidth="0"  transparent="0" zPosition="5">
+			<convert type="EventTime">Progress</convert>
+		</widget>
+		<!-- program time -->
+		<eLabel text="Time:" position="1018,145" size="80,18" font="Regular;16" foregroundColor="white" backgroundColor="backgroundtop" valign="top" halign="left" noWrap="1" transparent="1" zPosition="3" />
+		<widget source="ServiceEvent" render="Label" position="1078,145" size="50,22" font="Regular;16" foregroundColor="white" backgroundColor="skydarkblue" valign="top" halign="right" noWrap="1" transparent="1" zPosition="3">
+			<convert type="EventTime">StartTime</convert>
+			<convert type="ClockToText">Format:%H.%M</convert>
+		</widget>
+		<widget source="ServiceEvent" render="Label" position="1094,145" size="90,22" font="Regular;16" foregroundColor="white" backgroundColor="skydarkblue" valign="top" halign="right" noWrap="1" transparent="1" zPosition="3">
+			<convert type="EventTime">EndTime</convert>
+			<convert type="ClockToText">Format:- %H.%M</convert>
+		</widget>
+		<!-- program duration -->
+		<eLabel text="Duration:" position="1018,168" size="80,18" font="Regular;16" foregroundColor="white" backgroundColor="backgroundtop" valign="top" halign="left" noWrap="0" transparent="1" zPosition="3" />
+		<widget source="ServiceEvent" render="Label" position="1094,168" size="90,18" font="Regular;16" foregroundColor="white" backgroundColor="backgroundtop" valign="top" halign="right" noWrap="1" transparent="1" zPosition="3">
+			<convert type="EventTime">Duration</convert>
+			<convert type="SlykClockToText">SlykAsLength</convert>
+		</widget>
+		<!-- picon -->
+		<ePixmap pixmap="mybackgrounds/tv-picon-bg-25.png" position="1018,197" size="100,60" alphatest="blend" transparent="1" zPosition="1" />
+		<widget source="Service" render="Picon" position="1018,197" size="100,60" alphatest="blend" transparent="1" zPosition="2">
+			<convert type="ServiceName">Reference</convert>
+		</widget>
+		<ePixmap pixmap="div-h.png" position="798,267" size="386,2" alphatest="blend" transparent="1" />
+		<!-- now name -->
+		<widget source="ServiceEvent" render="Label" position="798,274" size="386,24" font="Regular;18" foregroundColor="guidecolor" backgroundColor="skydarkblue" valign="top" halign="left" noWrap="1" transparent="1" zPosition="4">
+			<convert type="EventName">NowName</convert>
+		</widget>
+		<!-- now description -->
+		<widget source="ServiceEvent" render="RunningText" options="movetype=running,startpoint=0,direction=top,steptime=100,repeat=0,always=0,oneshot=0,startdelay=7000,wrap"
+                position="798,298" size="386,180" font="Regular;16" foregroundColor="white" backgroundColor="skydarkblue" valign="top" transparent="1" zPosition="4">
+			<convert type="EventName">FullDescription</convert>
+		</widget>
+		<ePixmap pixmap="div-h.png" position="798,488" size="386,2" alphatest="blend" transparent="1" />
+		<!-- next name -->
+		<widget source="ServiceEvent" render="Label" position="798,493" size="280,21" font="Regular;16" foregroundColor="guidecolor" backgroundColor="skydarkblue" valign="top" halign="left" transparent="1" zPosition="4">
+			<convert type="EventName">NextName</convert>
+		</widget>
+		<widget source="ServiceEvent" render="Label" position="1080,493" size="50,21" font="Regular;16" foregroundColor="skyblue" backgroundColor="skydarkblue" valign="top" halign="right" noWrap="1" transparent="1" zPosition="4">
+			<convert type="EventTime">NextStartTime</convert>
+			<convert type="ClockToText">Format:%H.%M</convert>
+		</widget>
+		<widget source="ServiceEvent" render="Label" position="1134,493" size="50,22" font="Regular;16" foregroundColor="skyblue" backgroundColor="skydarkblue" valign="top" halign="left" noWrap="1" transparent="1" zPosition="4">
+			<convert type="EventTime">NextEndTime</convert>
+			<convert type="ClockToText">Format:- %H.%M</convert>
+		</widget>
+		<!-- next decription -->
+		<widget source="ServiceEvent" render="Label" position="798,516" size="386,147" font="Regular;16" foregroundColor="white" backgroundColor="skydarkblue" valign="top" transparent="1" zPosition="4">
+			<convert type="EventName">NextDescription</convert>
+		</widget>
+		<panel name="ListTemplate" />
+		<panel name="t2-4RGYB" />
+		<panel name="t2-MenuButton" />
+		<panel name="t2-InfoButton-pos2" />
+	</screen>
+	<!-- epgselection > menu > import from EPG -->
+	<screen name="SimpleChannelSelection" position="0,0" size="1280,720" backgroundColor="backgroundmid" transparent="0" flags="wfNoBorder">
+		<panel name="ChannelSelection" />
+	</screen>
+	<!--  alternative channel list service mode - available via context menu -->
+	<!-- not used in this skin - clone channelselect instead -->
+	<screen name="SlimChannelSelection" position="0,0" size="1280,720" backgroundColor="backgroundmid" transparent="0" flags="wfNoBorder">
+		<panel name="ChannelSelection" />
+	</screen>
+	<screen name="ChannelSelectionRadio" position="0,0" size="1280,720" backgroundColor="transparent" transparent="0" flags="wfNoBorder">
+		<ePixmap pixmap="mybackgrounds/radio-list-bg.png" position="center,46" size="700,290" alphatest="blend" zPosition="-1" />
+		<widget name="list"
+                position="center,54"
+                size="640,280"
+                foregroundColor="white"
+                backgroundColor="#0c081a3d"
+                foregroundColorSelected="#081a3d"
+                backgroundColorSelected="white"
+                foregroundColorEvent="skylightblue"
+                foregroundColorEventSelected="#081a3d"
+                foregroundColorMarked="red"
+                foregroundColorMarkedSelected="red"
+                backgroundColorMarked="#081a3d"
+                backgroundColorMarkedSelected="#081a3d"
+                foregroundColorServiceNotAvail="verydarkgrey"
+                colorServiceRecorded="red"
+                serviceItemHeight="36"
+                serviceNameFont="Regular;16"
+                serviceInfoFont="Regular;16"
+                serviceNumberFont="Regular;16"
+                picServiceEventProgressbar="myprogressbars/progress-50-6.png"
+                progressbarHeight="6"
+                progressbarBorderWidth="1"
+                progressBarWidth="50"
+                colorEventProgressbar="skyblue"
+                colorEventProgressbarSelected="black"
+                colorEventProgressbarBorder="white"
+                colorEventProgressbarBorderSelected="black"
+                foregroundColorService="white"
+                backgroundColorService="#081a3d"
+                foregroundColorServiceSelected="white"
+                fieldMargins="10"
+                itemsDistances="10"
+                nonplayableMargins="10"
+                transparent="1"
+                zPosition="4"
+                scrollbarMode="showNever" />
+                
+		<ePixmap pixmap="mybackgrounds/radioinfobar.png" position="108,367" size="1064,307" alphatest="blend" zPosition="-1" />
+		<widget source="ServiceEvent" render="Label" position="123,377" size="120,36" font="Bold;28" foregroundColor="white" backgroundColor="skydarkblue" valign="top" noWrap="1" transparent="1" zPosition="3" >
+			<convert type="EventTime">StartTime</convert>
+			<convert type="SlykClockToText">SlykHDTime</convert>
+		</widget>
+		<widget source="ServiceEvent" render="Label" position="233,377" size="794,36" font="Bold;28" foregroundColor="white" backgroundColor="skydarkblue" valign="top" noWrap="1" transparent="1" zPosition="3" >
+			<convert type="EventName">Name</convert>
+		</widget>
+		<widget source="ServiceEvent" render="RunningText" options="movetype=running,startpoint=0,direction=top,steptime=100,repeat=0,always=0,oneshot=0,startdelay=7000,wrap"
+                position="123,413" size="1023,105" font="Regular;25" foregroundColor="white" backgroundColor="skydarkblue" valign="top" transparent="1" zPosition="3">
+			<convert type="EventName">FullDescription</convert>
+		</widget>
+		<widget source="Service" render="Label" position="123,523" size="794,36" font="Bold;28" foregroundColor="white" backgroundColor="skydarkblue" valign="center" halign="left" noWrap="1" transparent="1" >
+			<convert type="ServiceName">Name</convert>
+		</widget>
+		<ePixmap pixmap="myicons/radio.png" position="619,527" size="20,29" alphatest="blend" zPosition="-1" />
+		<widget source="global.CurrentTime" render="Label" position="917,523" size="240,36" font="Regular;24" foregroundColor="skylightblue" backgroundColor="skydarkblue" valign="center" halign="right" transparent="1" zPosition="2">
+			<convert type="SlykClockToText">SlykHDDate</convert>
+		</widget>
+		<eLabel text="Now" render="Label" position="142,562" size="280,36" font="Regular;26" foregroundColor="white" backgroundColor="#003f7abc" valign="center" halign="left" transparent="1" />
+		<widget source="ServiceEvent" render="Label" position="142,598" size="477,36" font="Regular;26" foregroundColor="white" backgroundColor="skydarkblue" valign="center" noWrap="1" transparent="1" >
+			<convert type="EventName">Name</convert>
+		</widget>
+		<widget source="ServiceEvent" render="Label" position="642,562" size="120,36" font="Regular;26" foregroundColor="white" backgroundColor="#003f7abc" valign="center" noWrap="1" transparent="1" >
+			<convert type="EventTime">NextStartTime</convert>
+			<convert type="SlykClockToText">SlykHDTime</convert>
+		</widget>
+		<!-- next event -->
+		<widget source="ServiceEvent" render="Label" position="642,598" size="496,36" font="Regular;26" foregroundColor="white" backgroundColor="skydarkblue" valign="center" noWrap="1" transparent="1" >
+			<convert type="EventName">NextNameOnly</convert>
+		</widget>
+		<!-- record icon-->
+		<widget render="Pixmap" source="session.RecordState" pixmap="icons/icon_rec_sm.png" position="1127,573" size="20,20" alphatest="blend" zPosition="5">
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<ePixmap pixmap="myicons/up-down-white.png" position="133,646" size="36,20" backgroundColor="transparent" alphatest="blend" transparent="1" zPosition="4" />
+		<eLabel text="Channels" position="175,636" size="114,38" font="Regular;26" foregroundColor="white" backgroundColor="#003f7abc" valign="center" halign="left" transparent="1" />
+		<ePixmap pixmap="buttons/key_blue.png" position="850,643" size="24,24" backgroundColor="transparent" alphatest="blend" transparent="1" zPosition="4" />
+		<eLabel text="Last/Fav" position="880,636" size="114,38" font="Regular;26" foregroundColor="white" backgroundColor="#003f7abc" valign="center" halign="left" transparent="1" />
+	</screen>
+	<!-- channel select menu -->
+	<screen name="ChannelContextMenu" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder">
+		<panel name="template2" />
+		<panel name="v5-tv-guide" />
+		<widget name="menu" position="107,152" size="648,501" selectionPixmap="myselectbars/bar-30.png" itemHeight="30" scrollbarMode="showOnDemand" transparent="1" zPosition="4" />
+	</screen>
+	<!-- prev / next button -->
+	<screen name="HistoryZapSelector" position="0,47" size="432,626" backgroundColor="transparent" flags="wfNoBorder" >
+		<ePixmap pixmap="mybackgrounds/history-zap-bg.png" position="0,0" size="432,626" zPosition="-1" />
+		<widget source="Title" render="Label" position="15,5" size="402,38" font="Bold;26" foregroundColor="white" backgroundColor="skydarkblue" valign="center" halign="left" transparent="1" zPosition="1" />
+		<widget source="menu" render="Listbox" position="5,48" size="422,490" foregroundColor="white" backgroundColor="skydarkblue" foregroundColorSelected="skydarkblue" backgroundColorSelected="skygold" selectionPixmap="myselectbars/bar-90.png" scrollbarMode="showNever" transparent="1">
+			<convert type="TemplatedMultiContent">{"template": [
+						MultiContentEntryText(pos = (20, 6), size = (20, 60), font = 1, flags = RT_HALIGN_LEFT | RT_VALIGN_CENTER, text = 1, color = 0x005ea1e4), # Current Service
+						MultiContentEntryText(pos = (40, 4), size = (260, 30), font = 1, flags = RT_HALIGN_LEFT | RT_VALIGN_TOP, text = 2, color = 0x005ea1e4, color_sel = 0x0016356e), # Servicename
+						MultiContentEntryText(pos = (40, 27), size = (260, 26), font = 2, flags = RT_HALIGN_LEFT | RT_VALIGN_TOP, text = 3, color = 0x00ffffff, color_sel = 0x00000000), # Eventname
+						MultiContentEntryText(pos = (40, 47), size = (260, 20), font = 3, flags = RT_HALIGN_LEFT | RT_VALIGN_TOP, text = 5, color = 0x00ffffff, color_sel = 0x00000000), # Eventtime
+						MultiContentEntryPixmapAlphaBlend(pos=(310, 5), size=(100, 60), png=6, flags = BT_SCALE) # picon
+					],
+				 "fonts": [gFont("Regular",22), gFont("Regular",20), gFont("Regular",17), gFont("Regular",16)],
+				 "itemHeight": 70
+				}</convert>
+		</widget>
+		<ePixmap pixmap="mybuttons/key-exit.png" position="347,595" size="50,24" alphatest="blend" zPosition="1" />
+	</screen>
+	<!-- record button on channel select -->
+	<screen name="RecordTimerQuestion" position="center,center" size="240,70" backgroundColor="transparent" flags="wfNoBorder" zPosition="5">
+		<ePixmap pixmap="mybackgrounds/recordquestion2.png" position="0,0" size="240,70" alphatest="blend" zPosition="-1" />
+		<widget name="text" position="0,0" size="0,0" font="Regular;22" />
+		<widget name="list" position="5,5" size="230,60" font="Regular;18" foregroundColor="white" backgroundColor="skydarkblue" foregroundColorSelected="skydarkblue" backgroundColorSelected="skygold" selectionPixmap="myselectbars/bar-30.png" itemHeight="30" enableWrapAround="1" scrollbarMode="showOnDemand" transparent="1" />
+	</screen>
+	<!-- remove recording on channel select - 2nd popup-->
+	<screen name="RemoveTimerQuestion" position="center,center" size="503,130" zPosition="5">
+		<widget name="text" position="0,0" size="0,0" font="Regular;22" />
+		<widget name="list" position="10,10" size="220,50" backgroundColor="messageboxbg" selectionPixmap="myselectbars/bar-30.png" enableWrapAround="1" transparent="1" />
+		<applet type="onLayoutFinish">self.autoResize()</applet>
+	</screen>
+</skin>

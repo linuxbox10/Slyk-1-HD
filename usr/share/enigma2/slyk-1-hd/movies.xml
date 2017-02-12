@@ -1,0 +1,228 @@
+
+<skin>
+
+
+	<screen name="MovieSelection1">
+                <panel name="main-bg" />
+                <panel name="my-logo" />
+ 	        <panel name="t1-tv" />
+ 	        <panel name="t1-time" />
+		<panel name="planner" />
+		
+                <panel name="t1-split-bg" />
+		<panel name="menu-bars" />
+	        <eLabel text="All" position="90,267" size="500,36" font="Bold;25" foregroundColor="white" backgroundColor="titleshadow" valign="center" noWrap="1" transparent="1" zPosition="1" />
+                <widget name="waitingtext" position="center,335" size="900,288" font="Regular;21" halign="center" valign="center" transparent="0" foregroundColor="white" backgroundColor="skydarkblue" zPosition="4" />
+	        <widget source="Service" render="Label" position="60,88" size="425,30" valign="top" halign="left" font="Regular;25"  zPosition="1" transparent="1" foregroundColor="skyblue" backgroundColor="backgroundtop">
+			<convert type="EventName">ShortDescription</convert>
+		</widget>
+		<widget source="Service" render="Label" position="465,88" size="280,28" valign="top" halign="right" font="Regular;25" noWrap="1" zPosition="1" transparent="1" foregroundColor="skyblue" backgroundColor="backgroundtop">
+			<convert type="MovieInfo">RecordServiceName</convert>
+		</widget>
+		<widget source="Service" render="Label" position="770,88" size="100,28" valign="top" halign="right" font="Regular;25" noWrap="1" zPosition="5" transparent="1" foregroundColor="skyblue" backgroundColor="backgroundtop">
+			<convert type="ServiceTime">Duration</convert>
+			<convert type="SlykClockToText">SlykAsLength</convert>
+		</widget>
+		<widget source="Service" render="RunningText" options="movetype=running,startpoint=0,direction=top,steptime=80,repeat=0,always=0,oneshot=0,startdelay=7000,wrap"
+                 position="60,119" size="800,117" font="Regular;25" foregroundColor="white" backgroundColor="backgroundtop" halign="left" valign="top" transparent="1" zPosition="1">
+			<convert type="SlykMovieInfo">MetaDescription</convert>
+		</widget>
+            	<widget name="movie_sort" position="1128,275" size="35,20" pixmaps="/usr/share/enigma2/slyk-1-hd/icons/az.png,icons/newtop.png,icons/shuffle.png,icons/za.png,icons/oldtop.png,icons/faz.png,icons/fza.png" zPosition="10" transparent="1" alphatest="blend" />
+		<widget name="movie_off" position="1172,275" size="35,20" pixmaps="icons/ask.png,icons/movielist.png,icons/quit.png,icons/pause.png,icons/playlist.png,icons/playlistquit.png,icons/loop.png,icons/rep.png" zPosition="10" transparent="1" alphatest="blend" />
+		<widget name="freeDiskSpace" position="190,300" size="700,36" font="Regular;20" foregroundColor="skyblue" backgroundColor="skydarkblue" valign="center" halign="right" zPosition="5" transparent="1" />
+		<widget name="TrashcanSize" position="910,300" size="180,36" font="Regular;20" foregroundColor="skyblue" backgroundColor="skydarkblue" valign="center" halign="right" zPosition="5" transparent="1" />
+		<widget name="list" position="center,335" size="900,288" scrollbarMode="showOnDemand" font="Regular;22" itemHeight="36" foregroundColor="white" backgroundColor="skydarkblue" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" selectionPixmap="myselectbars/menu-bar-plain.png"  backgroundPixmap="myselectbars/blank.png"  transparent="1" />
+		<panel name="t2-4RGYB" />
+		<panel name="t2-InfoButton-pos2" />
+		<panel name="t2-MenuButton" />
+	</screen>
+
+
+	<screen name="MovieSelection2">
+                <panel name="main-bg" />
+                <panel name="my-logo" />
+ 	        <panel name="t1-tv" />
+ 	        <panel name="t1-time" />
+		<panel name="planner" />
+		
+                <ePixmap pixmap="mybackgrounds/planner-panel.png" position="60,267" size="1159,153" alphatest="blend" zPosition="-1" />
+                <eLabel text="All"       position="60,267"   size="200,36" font="Bold;25"    foregroundColor="white"     backgroundColor="titleshadow" valign="center" halign="center" transparent="1" zPosition="2" />
+                <eLabel text="Continue"  position="260,267"  size="130,36" font="Regular;25" foregroundColor="#00c8c8c8" backgroundColor="titleshadow" valign="center" halign="center" transparent="1" zPosition="2" />
+                <eLabel text="Scheduled" position="392,267"  size="136,36" font="Regular;25" foregroundColor="#00c8c8c8" backgroundColor="titleshadow" valign="center" halign="center" transparent="1" zPosition="2" />
+                <eLabel text="Deleted"   position="530,267"  size="136,36" font="Regular;25" foregroundColor="#00c8c8c8" backgroundColor="titleshadow" valign="center" halign="center" transparent="1" zPosition="2" />
+                <eLabel text="Download"  position="668,267"  size="136,36" font="Regular;25" foregroundColor="#00c8c8c8" backgroundColor="titleshadow" valign="center" halign="center" transparent="1" zPosition="2" />
+                <eLabel text="Purchased" position="806,267"  size="136,36" font="Regular;25" foregroundColor="#00c8c8c8" backgroundColor="titleshadow" valign="center" halign="center" transparent="1" zPosition="2" />
+                <eLabel text="Kids"      position="944,267"  size="136,36" font="Regular;25" foregroundColor="#00c8c8c8" backgroundColor="titleshadow" valign="center" halign="center" transparent="1" zPosition="2" />
+                <eLabel text="Entertain" position="1082,267" size="136,36" font="Regular;25" foregroundColor="#00c8c8c8" backgroundColor="titleshadow" valign="center" halign="center" transparent="1" zPosition="2" />
+
+                <ePixmap position="101,335" size="1076,288" pixmap="mybackgrounds/planner-bg.png" alphatest="blend" transparent="1" zPosition="-1"  />
+	
+                <widget name="waitingtext" position="101,335" size="1076,288" font="Regular;21" foregroundColor="white" backgroundColor="skydarkblue" valign="center" halign="center" transparent="0" zPosition="4" />
+	
+                <widget source="Service" render="Label" position="60,88" size="425,30" font="Regular;25" foregroundColor="skyblue" backgroundColor="backgroundtop" valign="top" halign="left" transparent="1" zPosition="1" >
+			<convert type="EventName">ShortDescription</convert>
+		</widget>
+		
+		<widget source="Service" render="Label" position="770,88" size="100,30" font="Regular;25" foregroundColor="skyblue" backgroundColor="backgroundtop" valign="top" halign="right" noWrap="1" transparent="1" zPosition="5" >
+			<convert type="ServiceTime">Duration</convert>
+			<convert type="SlykClockToText">SlykAsLength</convert>
+		</widget>
+		
+		<widget source="Service" render="Label" position="60,119" size="800,86" font="Regular;25" foregroundColor="white" backgroundColor="backgroundtop" valign="top" halign="left" transparent="1" zPosition="1">
+			<convert type="SlykMovieInfo">MetaDescription</convert>
+		</widget>
+		
+ 	        <ePixmap pixmap="myicons/biginfo.png" position="679,213" size="191,28" alphatest="blend" zPosition="-1" />
+
+		
+            	<widget name="movie_sort" position="1107,632" size="35,20" pixmaps="/usr/share/enigma2/slyk-1-hd/icons/az.png,icons/newtop.png,icons/shuffle.png,icons/za.png,icons/oldtop.png,icons/faz.png,icons/fza.png" zPosition="10" transparent="1" alphatest="blend" />
+		<widget name="movie_off" position="1151,632" size=" 35,20" pixmaps="icons/ask.png,icons/movielist.png,icons/quit.png,icons/pause.png,icons/playlist.png,icons/playlistquit.png,icons/loop.png,icons/rep.png" zPosition="10" transparent="1" alphatest="blend" />
+		<widget name="freeDiskSpace" position="563,303" size="350,34 " font="Regular;20" foregroundColor="skyblue" backgroundColor="skydarkblue" valign="center" halign="left" zPosition="5" transparent="1" />
+		<widget name="TrashcanSize" position="997,303" size="180,34" font="Regular;20" foregroundColor="skyblue" backgroundColor="skydarkblue" valign="center" halign="right" zPosition="5" transparent="1" />
+		<widget name="list" position="102,335" size="1075,288" scrollbarMode="showNever" font="Regular;26" itemHeight="36" foregroundColor="white" backgroundColor="skydarkblue" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" selectionPixmap="myselectbars/planner-bar.png"  backgroundPixmap="myselectbars/blank.png"  transparent="1" />
+		<panel name="t1-4RGYB" />
+		<eLabel text="Press SELECT to view" position="101,661" size="288,32" font="Regular;27" foregroundColor="skyblue" backgroundColor="backgroundbot" valign="top" halign="left" transparent="1" zPosition="1" />
+		<panel name="t2-MenuButton" />
+	</screen>
+	
+	<screen name="MovieSelection3">
+                <panel name="main-bg" />
+                <panel name="my-logo" />
+ 	        <panel name="t1-tv" />
+ 	        <panel name="t1-time" />
+		<panel name="planner" />
+               	<panel name="t1-split-bg" />
+
+                <ePixmap position="101,335" size="1076,288" pixmap="mybackgrounds/planner-bg.png" alphatest="blend" transparent="1" zPosition="-1"  />
+	
+                <widget name="waitingtext" position="101,335" size="1076,288" font="Regular;21" foregroundColor="white" backgroundColor="skydarkblue" valign="center" halign="center" transparent="0" zPosition="4" />
+	
+                <widget source="Service" render="Label" position="60,88" size="425,30" font="Regular;25" foregroundColor="skyblue" backgroundColor="backgroundtop" valign="top" halign="left" transparent="1" zPosition="1" >
+			<convert type="EventName">ShortDescription</convert>
+		</widget>
+		
+		<widget source="Service" render="Label" position="770,88" size="100,30" font="Regular;25" foregroundColor="skyblue" backgroundColor="backgroundtop" valign="top" halign="right" noWrap="1" transparent="1" zPosition="5" >
+			<convert type="ServiceTime">Duration</convert>
+			<convert type="SlykClockToText">SlykAsLength</convert>
+		</widget>
+		
+		<widget source="Service" render="Label" position="60,119" size="800,86" font="Regular;25" foregroundColor="white" backgroundColor="backgroundtop" valign="top" halign="left" transparent="1" zPosition="1">
+			<convert type="SlykMovieInfo">MetaDescription</convert>
+		</widget>
+		
+ 	        <ePixmap pixmap="myicons/biginfo.png" position="679,213" size="191,28" alphatest="blend" zPosition="-1" />
+
+		
+            	<widget name="movie_sort" position="1107,632" size="35,20" pixmaps="/usr/share/enigma2/slyk-1-hd/icons/az.png,icons/newtop.png,icons/shuffle.png,icons/za.png,icons/oldtop.png,icons/faz.png,icons/fza.png" zPosition="10" transparent="1" alphatest="blend" />
+		<widget name="movie_off" position="1151,632" size=" 35,20" pixmaps="icons/ask.png,icons/movielist.png,icons/quit.png,icons/pause.png,icons/playlist.png,icons/playlistquit.png,icons/loop.png,icons/rep.png" zPosition="10" transparent="1" alphatest="blend" />
+		<widget name="freeDiskSpace" position="563,303" size="350,34 " font="Regular;20" foregroundColor="skyblue" backgroundColor="skydarkblue" valign="center" halign="left" zPosition="5" transparent="1" />
+		<widget name="TrashcanSize" position="997,303" size="180,34" font="Regular;20" foregroundColor="skyblue" backgroundColor="skydarkblue" valign="center" halign="right" zPosition="5" transparent="1" />
+		<widget name="list" position="102,335" size="1075,288" scrollbarMode="showNever" font="Regular;26" itemHeight="36" foregroundColor="white" backgroundColor="skydarkblue" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" selectionPixmap="myselectbars/planner-bar.png"  backgroundPixmap="myselectbars/blank.png"  transparent="1" />
+		<panel name="t1-4RGYB" />
+		<eLabel text="Press SELECT to view" position="101,661" size="288,32" font="Regular;27" foregroundColor="skyblue" backgroundColor="backgroundbot" valign="top" halign="left" transparent="1" zPosition="1" />
+		<panel name="t2-MenuButton" />
+	</screen>
+	
+
+	
+	
+	<screen name="MovieSelectionSlim" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="backgroundmid" title="Movie Selection" zPosition="-1">
+	        <panel name="MovieSelection" />
+  	</screen>
+	
+	<screen name="MoviePlayer" position="0,0" size="1280,720" backgroundColor="transparent" title="InfoBar" flags="wfNoBorder">
+                <ePixmap position="266,519" size="748,155" pixmap="mybackgrounds/v5-moviebar.png" alphatest="blend" transparent="1" zPosition="-1"  />
+               	<widget name="statusicon" position="108,528" size="140,146" pixmaps="myicons/play_large.png,myicons/pause_large.png,myicons/timeshift-blank.png,myicons/timeshift-blank.png,myicons/timeshift-blank.png,myicons/timeshift-blank.png" alphatest="blend" zPosition="5" />
+		<widget name="speed" position="108,534" size="140,108" font="Regular;36" foregroundColor="skyblue" backgroundColor="skydarkblue" valign="center" halign="center" transparent="1" zPosition="6" />
+                <widget source="session.CurrentService" render="Label" position="108,642" size="140,32" font="Regular;25" valign="center" halign="center" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" zPosition="6">
+			<convert type="SlykServicePosition">Position</convert>
+		</widget>
+		<!--
+		<widget source="Service" render="Label" position="281,524" size="520,88" halign="left" valign="top" foregroundColor="white" backgroundColor="skydarkblue" noWrap="1" font="Regular;25" transparent="1" zPosition="3">
+			<convert type="ServiceName">Name</convert>
+		</widget>
+		-->
+		<eLabel text="Recorded Show" position="286,524" size="214,38" font="Regular;25" foregroundColor="white" backgroundColor="skydarkblue" valign="center" halign="left" transparent="1" zPosition="3"/>
+		<widget source="global.CurrentTime" render="Label" position="766,524" size="234,38" font="Regular;25" foregroundColor="skylightblue" backgroundColor="skydarkblue" valign="center" halign="right" transparent="1" zPosition="3">
+			<convert type="SlykClockToText">SlykHDDate</convert>
+		</widget>
+		<eLabel text="Now Playing" position="301,562" size="170,38" font="Regular;24" foregroundColor="skylightblue" backgroundColor="skydarkblue" valign="center" halign="left" transparent="1" zPosition="3"/>
+		<widget source="session.CurrentService" render="Label" position="301,600" size="326,38" font="Bold;25" foregroundColor="skydarkblue" backgroundColor="skygold" transparent="1" valign="center" halign="left" noWrap="1">
+			<convert type="ServiceName">Name</convert>
+		</widget>
+		<eLabel text="View time remaining" position="653,600" size="326,38" font="Regular;24" foregroundColor="white" backgroundColor="skydarkblue" valign="center" halign="left" transparent="1" zPosition="3"/>
+		 <widget source="session.CurrentService" render="Label" position="875,600" size="100,38" font="Regular;24" valign="center" halign="left" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" zPosition="3">
+			<convert type="SlykServicePosition">MovieRemaining</convert>
+		</widget>
+		<widget alphatest="blend" pixmap="/usr/share/enigma2/slyk-1-hd/icons/icon_rec_sm.png" position="837,569" render="Pixmap" size="24,16" source="session.RecordState" zPosition="5">
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<ePixmap position="453,578" size="375,6" pixmap="myprogressbars/progress-500-10-bg.png" alphatest="blend" transparent="1" zPosition="3" />
+ 	        <widget source="session.CurrentService" render="PositionGauge" position="453,577" size="375,8" transparent="1" zPosition="4"
+                 pointer="myprogressbars/progress-375-6.png:375,0">
+			<convert type="ServicePosition">Gauge</convert>
+		</widget>
+		<ePixmap position="291,646" size="41,20" pixmap="myicons/prev-next.png" alphatest="blend" transparent="1" zPosition="3" />
+		<eLabel text="Hold to Seek" position="336,635" size="150,38" font="Regular;26" foregroundColor="skylightblue" backgroundColor="skydarkblue" valign="center" halign="left" transparent="1" zPosition="3" />
+		<eLabel text="0 to Set Marker" position="501,635" size="300,38" font="Regular;26" foregroundColor="skylightblue" backgroundColor="skydarkblue" valign="center" halign="left" transparent="1" zPosition="3" />
+                <ePixmap pixmap="myicons/info.png" position="918,644" size="24,24" alphatest="blend" transparent="1" zPosition="2" />
+	        <eLabel text="Info" position="918,636" size="71,38" font="Regular;25" halign="right" valign="center" transparent="1" noWrap="1" foregroundColor="skylightblue" backgroundColor="backgroundbot" zPosition="2" />
+                <widget text="S" render="FixedLabel" source="session.CurrentService" position="974,562" size="15,38" font="Regular;25" foregroundColor="skylightblue" backgroundColor="skydarkblue" transparent="1" halign="right" valign="center" noWrap="1" zPosition="3">
+			<convert type="ServiceInfo">SubtitlesAvailable</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget text="W" render="FixedLabel" source="session.CurrentService" position="944,562" size="22,38" font="Regular;25" foregroundColor="skylightblue" backgroundColor="skydarkblue" transparent="1" halign="right" valign="center" noWrap="1" zPosition="3">
+			<convert type="ServiceInfo">IsWidescreen</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+ 	        <widget text="HD" render="FixedLabel" source="session.CurrentService" position="903,562" size="33,38" font="Regular;25" foregroundColor="skylightblue" backgroundColor="skydarkblue" transparent="1" halign="right" valign="center" noWrap="1" zPosition="3">
+			<convert type="ServiceInfo">IsHD</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget text="SD" render="FixedLabel" source="session.CurrentService" position="903,562" size="33,38" font="Regular;25" foregroundColor="skylightblue" backgroundColor="skydarkblue" transparent="1" halign="right" valign="center" noWrap="1" zPosition="3">
+			<convert type="ServiceInfo">IsHD</convert>
+			<convert type="ConditionalShowHide">Invert</convert>
+		</widget>
+		<widget text="DD" render="FixedLabel" source="session.CurrentService" position="861,562" size="34,38" font="Regular;25" foregroundColor="skylightblue" backgroundColor="skydarkblue" transparent="1" halign="right" valign="center" noWrap="1" zPosition="3">
+			<convert type="ServiceInfo">IsMultichannel</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<!--
+		<widget text="DD" render="FixedLabel" source="session.CurrentService" position="861,562" size="34,38" font="Regular;25" foregroundColor="skylightblue" backgroundColor="skydarkblue" transparent="1" halign="right" valign="center" noWrap="1" zPosition="3">
+			<convert type="ServiceInfo">IsStereo</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		-->
+	</screen>
+	
+	<screen name="Seekbar" position="center,47" size="560,75" flags="wfNoBorder" backgroundColor="transparent">
+		<ePixmap pixmap="mybackgrounds/seekbar.png" position="0,0" size="560,75" transparent="1" alphatest="blend" zPosition="-1" />
+		
+		<!-- cursor starts at 145px from the left. and 15 pixels down. Progress bar must be 270 pixels long. Cannot be overwritten. Resize outer box and graphics accordingly. -->
+                <widget name="cursor" position="0,15" size="6,36" pixmap="myicons/position-pointer.png" alphatest="blend" zPosition="7" />
+	
+	 	<widget name="time" position="60,0" size="75,75" font="Regular;24" valign="center" halign="right" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" zPosition="6" />
+ 	
+ 	         <widget source="session.CurrentService" render="Progress" position="145,34" size="270,6" zPosition="2" pixmap="myicons/slider.png" transparent="1">
+			<convert type="ServicePosition">Position</convert>
+		</widget>
+		
+                 <widget source="session.CurrentService" render="PositionGauge" position="145,33" size="270,8" zPosition="7" transparent="1">
+			<convert type="ServicePosition">Gauge</convert>
+		</widget>
+		
+ 	        <widget source="session.CurrentService" render="Label" position="e-135,0" size="75,75" font="Regular;24" valign="center" halign="left" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" zPosition="6">
+			<convert type="ServicePosition">Length</convert>
+		</widget>
+
+	</screen>
+	
+	<screen name="PVRState" position="108,528" size="140,146" backgroundColor="transparent" flags="wfNoBorder">
+		<widget name="statusicon" position="0,0" size="140,146" pixmaps="myicons/play_large.png,myicons/pause_large.png,myicons/timeshift-blank.png,myicons/timeshift-blank.png,myicons/timeshift-blank.png,myicons/timeshift-blank.png" alphatest="blend" zPosition="5" />
+		<widget name="speed" position="0,6" size="140,108" font="Regular;36" foregroundColor="skyblue" backgroundColor="skydarkblue" valign="center" halign="center" transparent="1" zPosition="6" />
+		<widget source="session.CurrentService" render="Label" position="0,114" size="140,32" font="Regular;25" valign="top" halign="center" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" zPosition="6">
+			<convert type="SlykServicePosition">Position</convert>
+		</widget>
+	
+	</screen>
+</skin>

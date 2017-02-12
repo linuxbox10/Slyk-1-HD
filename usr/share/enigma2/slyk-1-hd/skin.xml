@@ -1,0 +1,184 @@
+<skin>
+	<!-- Skin: Slyk1HD(2015) Version 4 by kiddac : techkings.org -->
+	
+	<!-- Very losely based on Blue HD by rossi200 and simonsez which was based on ViX-Night-HD Vs 3.01 (Original) by AndyBlac @ www.world-of-satellite.com  -->
+	
+        <!-- All graphics, icons, buttons, screens are my own hard work-->
+	<!-- If using any elements/graphics from this skin in your own work please reference me correctly -->
+
+        <!-- Thanks to help of techkings.org forum members for testing the betas and the constructive suggestions -->
+	<!-- You can modify and redistribute it as long as you keep this license and the original author for the skin in all of your modifications -->
+	
+        <!-- ****************************************************************************************************** -->
+	<!-- If you would like to buy me a beer for my efforts please use the paypal links on http://slyk1hd.yolasite.com/ -->
+	<!-- ****************************************************************************************************** -->
+        
+	<output id="0">
+		<resolution xres="1280" yres="720" bpp="32" />
+	</output>
+	
+        <!-- includes -->
+	<include filename="/usr/share/enigma2/slyk-1-hd/button-templates.xml" />
+       	<include filename="/usr/share/enigma2/slyk-1-hd/main-templates.xml" />
+	<include filename="/usr/share/enigma2/slyk-1-hd/menu-templates.xml" />
+	<include filename="/usr/share/enigma2/slyk-1-hd/wizards.xml" />
+	<include filename="/usr/share/enigma2/slyk-1-hd/general.xml" />
+	<include filename="/usr/share/enigma2/slyk-1-hd/Oscams.xml" />
+	<include filename="/usr/share/enigma2/slyk-1-hd/CCcamInfo.xml" />
+	<include filename="/usr/share/enigma2/slyk-1-hd/ChannelSelection.xml" />
+	<include filename="/usr/share/enigma2/slyk-1-hd/epg.xml" />
+	<include filename="/usr/share/enigma2/slyk-1-hd/eventview.xml" />
+	<include filename="/usr/share/enigma2/slyk-1-hd/infobar.xml" />
+	<include filename="/usr/share/enigma2/slyk-1-hd/infopanel.xml" />
+	<include filename="/usr/share/enigma2/slyk-1-hd/information.xml" />
+	<include filename="/usr/share/enigma2/slyk-1-hd/motorised-dish.xml" />
+	<include filename="/usr/share/enigma2/slyk-1-hd/movies.xml" />
+	<include filename="/usr/share/enigma2/slyk-1-hd/network.xml" />
+	<include filename="/usr/share/enigma2/slyk-1-hd/plugins.xml" />
+	<include filename="/usr/share/enigma2/slyk-1-hd/timers.xml" />
+        <include filename="/usr/share/enigma2/slyk-1-hd/vix.xml" />
+        <!-- <include filename="/usr/share/enigma2/slyk-1-hd/toppicks.xml" /> -->	
+	<include filename="/usr/share/enigma2/slyk-1-hd/extras.xml" />
+	
+	<!-- fonts -->
+	<fonts>
+		<!-- default skin fonts -->
+		
+                <!--<font name="Fixed" filename="andale.ttf" scale="100" /> -->
+		<!--<font name="Enigma"        filename="/usr/share/fonts/valis_enigma.ttf" scale="100" /> -->
+	        <font name="Subtitlefont"  filename="/usr/share/fonts/nmsbd.ttf" scale="90"/>
+		<font name="LCD"           filename="/usr/share/fonts/lcd.ttf" scale="100"/>
+		<font name="Replacement"   filename="/usr/share/fonts/ae_AlMateen.ttf"  scale="90" replacement="1"/>
+		
+		<!-- slyk1hd fonts -->
+		<font name="Bold"    filename="/usr/share/enigma2/slyk-1-hd/fonts/slyk-bold.ttf"   scale="100" />
+		<font name="Regular" filename="/usr/share/enigma2/slyk-1-hd/fonts/slyk-medium.ttf" scale="100" />
+		<font name="Console" filename="/usr/share/enigma2/slyk-1-hd/fonts/lucon.ttf"       scale="100" />
+	
+	        <!-- alias -->
+		<alias name="Body" font="Regular" size="20" height="25" />
+		<alias name="TextNormal" font="Regular" size="20" height="24" />
+		
+		<!-- context menu -->
+		<alias name="ChoiceList" font="Regular" size="20" height="25" />
+		
+		<!-- plugins -->
+		<alias name="PluginBrowser0" font="Regular" size="21" height="30" />        <!-- plugin name -->
+		<alias name="PluginBrowser1" font="Regular" size="14" height="20" />        <!-- plugin description -->
+		
+                <!-- help menus -->
+		<alias name="HelpMenuList" font="Regular" size="22" height="30" />
+		
+                <!-- virtual keyboard -->
+		<alias name="VirtualKeyboard" font="Regular" size="26" height="45" />
+		
+                <!-- used on tuner config - positioner -->
+		<alias name="SelectionList" font="Regular" size="22" height="30" />
+		
+                <!-- locationbox i.e movie file location  -->
+		<alias name="FileList" font="Regular" size="22" height="30" />
+		<alias name="FileListMulti" font="Regular" size="22" height="30" />	
+	</fonts>
+
+	<!-- default colour list -->
+	<colors>
+		<color name="transparent" value="#ff000000" />
+		<color name="transpBlack" value="#80000000" />
+		<color name="transpWhite" value="#16ffffff"/>
+		<color name="black" value="#00000000" />
+		<color name="red" value="#00ff0011" />
+		<color name="green" value="#307e13" />
+		<color name="yellow" value="#00ffff00"/>
+		<color name="blue" value="#000064c7"/>
+		<color name="white" value="#00e8e8e8" />
+		<color name="zapgreen" value="#00007f0e" />
+		<color name="verydarkgrey" value="#00555555" />
+		<color name="darkgrey" value="#279e9fa4"/>
+		<color name="grey" value="#008c8c93" />
+		<!-- slyk1 Colours -->
+		<color name="transBG" value="#5A090909" />
+		<color name="black50" value="#80000000" />
+		<color name="skyblue" value="#005ea1e3" />
+		<color name="skylightblue" value="#00b5d3ee" />
+		<color name="skylightblue2" value="#0080b3f8" />
+		<color name="skydarkblue" value="#0012336e" />
+		<color name="skygold" value="#00f2d320" />
+		<color name="skygoldbg" value="#00f3c019" />
+		<color name="skylightrow" value="#00204482" />
+		<color name="skydarkrow" value="#0012336e" />
+		<color name="skytitlebackground" value="#0017479c" />
+		<color name="titleshadow" value="#0014407e" />
+		<color name="backgroundtop" value="#001a418e" />
+		<color name="backgroundmid" value="#00122a58" />
+		<color name="backgroundbot" value="#00112350" />
+		<color name="skydarkbluebg" value="#0016356e" />
+		<color name="guidecolor" value="skyblue" /> <!-- value="skygold" -->
+		<color name="messageboxbg" value="#00081a3d" />
+	</colors>
+	
+	<!-- default colours -->
+	<windowstyle type="skinned" id="0">
+		<title offset="15,0" font="Bold;28" />
+		<color name="Background" color="messageboxbg" />
+		<color name="LabelForeground" color="white" />
+		<color name="ListboxBackground" color="#00102751" />
+		<color name="ListboxForeground" color="white" />
+		<color name="ListboxSelectedBackground" color="skygold" />
+		<color name="ListboxSelectedForeground" color="skydarkblue" />
+		<color name="ListboxMarkedBackground" color="black" />
+		<color name="ListboxMarkedForeground" color="red" />
+		<color name="ListboxMarkedAndSelectedBackground" color="skygold" />
+		<color name="ListboxMarkedAndSelectedForeground" color="skydarkblue" />
+		<color name="WindowTitleForeground" color="white" />
+		<color name="WindowTitleBackground" color="skytitlebackground" />
+		<!-- menu border -->
+		<borderset name="bsWindow">
+			<pixmap pos="bpTopLeft" filename="screens/b_tl.png" />
+			<pixmap pos="bpTop" filename="screens/b_t.png" />
+			<pixmap pos="bpTopRight" filename="screens/b_tr.png" />
+			<pixmap pos="bpLeft" filename="screens/b_l.png" />
+			<pixmap pos="bpRight" filename="screens/b_r.png" />
+			<pixmap pos="bpBottomLeft" filename="screens/b_bl.png" />
+			<pixmap pos="bpBottom" filename="screens/b_b.png" />
+			<pixmap pos="bpBottomRight" filename="screens/b_br.png" />
+		</borderset>
+	</windowstyle>
+	
+		<parameters>
+		<!-- <parameter name="ChoicelistDash" value="0,2,650,42"/> -->
+	        <!-- <parameter name="ChoicelistName" value="45,7,520,36"/> -->
+		<!-- <parameter name="ChoicelistIcon" value="10,7,25,25"/> -->
+		<!--	<parameter name="ConfigListSeperator" value="350"/>  -->
+		<parameter name="AutotimerEnabledIcon" value="10,2,25,24" />        <!-- Autotimer tick box -->
+		<parameter name="AutotimerRecordIcon" value="40,5,20,20" />         <!-- Autotimer Record Icon -->
+		<parameter name="VirtualKeyboard" value="45,45" />                  <!-- virtual keyboard keyicon size -->
+		<parameter name="PluginBrowserIcon" value="10,5,100,40" />          <!-- plugins main icon -->
+		<parameter name="PluginBrowserName" value="120,3,30" />             <!-- plugins name -->
+		<parameter name="PluginBrowserDescr" value="120,28,20" />           <!-- plugins description -->
+		<parameter name="PluginBrowserDownloadIcon" value="10,0,60,50" />   <!-- plugins + - boxed icon -->
+		<parameter name="PluginBrowserDownloadName" value="80,3,30" />     <!-- plugins download name - see font alias PluginBrowser0 -->
+		<parameter name="PluginBrowserDownloadDescr" value="80,28,20" />   <!-- plugins download description -see font alias PluginBrowser1 -->
+		<!--
+                 <parameter name="HelpMenuListExtHlp0" value="0,0,795,28"/>
+		<parameter name="HelpMenuListExtHlp1" value="0,27,795,23"/>
+		-->
+		<parameter name="HelpMenuListHlp" value="10,4,700,30" />            <!-- help menu text -->
+		<parameter name="SelectionListDescr" value="50,2,750,30" />
+		
+                <!-- used on tuner config - positioner -->
+		<parameter name="SelectionListLock" value="10,2,25,24" />
+		<parameter name="SelectionListLockOff" value="10,2,25,24" />
+		
+                <!-- example is software management - backup list -->
+		<parameter name="FileListName" value="40,2,750,30" />
+		<parameter name="FileListIcon" value="10,5,20,20" />
+		<parameter name="FileListMultiName" value="75,2,715,30" />
+		<parameter name="FileListMultiIcon" value="45,5,20,20" />
+		<parameter name="FileListMultiLock" value="10,2,25,25" />
+	
+	</parameters>
+
+
+</skin>
+
+

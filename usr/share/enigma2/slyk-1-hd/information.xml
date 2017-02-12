@@ -1,0 +1,89 @@
+<skin>
+	<!-- ##About## -->
+	<!-- https://github.com/openatv/enigma2/blob/master/lib/python/Screens/About.py -->
+	<screen name="AboutOE" title="Image Information" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="backgroundmid">
+		<panel name="template2" />
+		<panel name="v5-services" />
+		<panel name="t2-bottom-right-bg" />
+		<widget source="lab1" render="Label" position="100,152" size="650,26" font="Regular;24" backgroundColor="skydarkblue" foregroundColor="white" transparent="1" valign="center" halign="center" zPosition="1" />
+		<widget source="lab2" render="Label" position="100,178" size="650,21" font="Regular;18" backgroundColor="skydarkblue" foregroundColor="white" transparent="1" valign="center" halign="center" zPosition="1" />
+		<widget source="lab3" render="Label" position="100,199" size="650,21" font="Regular;18" backgroundColor="skydarkblue" foregroundColor="white" transparent="1" valign="center" halign="center" zPosition="1" />
+		<widget name="AboutScrollLabel" position="250,241" size="390,320" transparent="1" zPosition="1" foregroundColor="skyblue" backgroundColor="skydarkblue" font="Regular;18" />
+		<ePixmap pixmap="picon_default.png" position="296,573" size="100,60" alphatest="blend" transparent="1" />
+		<eLabel text="Slyk 1 HD V5.207" foregroundColor="white" backgroundColor="skydarkblue" font="Regular;18" halign="left" position="419,587" size="291,24" transparent="1" zPosition="1" />
+		<eLabel text="by Kidda C (2015/16)" foregroundColor="white" backgroundColor="skydarkblue" font="Regular;14" halign="left" position="419,607" size="291,24" transparent="1" zPosition="1" />
+		<panel name="t2-2RG" />
+		<eLabel text="Close" position="138,669" size="210,30" font="Regular;25" halign="left" valign="center" transparent="1" noWrap="1" foregroundColor="skyblue" backgroundColor="backgroundbot" zPosition="2" />
+		<panel name="t2-InfoButton-pos1" />
+		<eLabel text="There are alternative layouts for some screens and infobars. These can be editted via extras.xml that lives in my skin folder /usr/share/enigma2/slyk-1-hd" font="Regular;16" position="806,408" size="368,75" foregroundColor="white" backgroundColor="skydarkblue" zPosition="2" transparent="1" halign="center" />
+		<eLabel text="For the latest version of Slyk1HD skin please visit http://slyk1hd.yolasite.com/" font="Regular;16" position="806,493" size="368,36" foregroundColor="skylightblue" backgroundColor="skydarkblue" zPosition="2" transparent="1" halign="center" />
+		<eLabel text="If you appreciate all the effort I have put into this skin, you can always treat me with a beer from the URL above. :)" font="Regular;16" position="806,545" size="368,75" foregroundColor="white" backgroundColor="skydarkblue" zPosition="2" transparent="1" halign="center" />
+		<eLabel text="Thank you and enjoy. Kidda C (Techkings)" font="Regular;16" position="806,630" size="368,18" foregroundColor="skylightblue" backgroundColor="skydarkblue" zPosition="2" transparent="1" halign="center" />
+	</screen>
+	
+	<screen name="Devices" title="Device Information" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="backgroundmid">
+	        <panel name="template2" />
+		<panel name="v5-services" />
+		<widget source="TunerHeader" render="Label" position="120,189" size="610,30" font="Regular;24" backgroundColor="skydarkblue" foregroundColor="white" transparent="1" zPosition="1" />
+		<widget source="nims" render="Label" position="120,219" size="610,116" font="Regular;21" backgroundColor="skydarkblue" foregroundColor="skyblue" transparent="1" zPosition="1" />
+		<widget source="HDDHeader" render="Label" position="120,335" size="610,30" font="Regular;24" backgroundColor="skydarkblue" foregroundColor="white" transparent="1" zPosition="1" />
+		<widget source="hdd" render="Label" position="120,365" size="610,116" font="Regular;21" backgroundColor="skydarkblue" foregroundColor="skyblue" transparent="1" zPosition="1" />
+		<widget source="MountsHeader" render="Label" position="120,481" size="610,30" font="Regular;24" backgroundColor="skydarkblue" foregroundColor="white" transparent="1" zPosition="1" />
+		<widget source="mounts" render="Label" position="120,511" size="610,116" font="Regular;21" transparent="1" backgroundColor="skydarkblue" foregroundColor="skyblue" zPosition="1" />
+		<panel name="t2-1R" />
+		<eLabel text="Close" position="138,669" size="210,30" font="Regular;25" halign="left" valign="center" transparent="1" noWrap="1" foregroundColor="skyblue" backgroundColor="backgroundbot" zPosition="2" />
+	</screen>
+	
+	<screen name="SystemMemoryInfo" title="Memory Information" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="backgroundmid">
+		<panel name="template2" />
+		<panel name="v5-services" />
+		<widget source="lab1" render="Label" position="100,189" size="650,26" font="Regular;24" backgroundColor="skydarkblue" foregroundColor="white" transparent="1" valign="center" halign="center" zPosition="1" />
+		<widget source="lab2" render="Label" position="100,215" size="650,21" font="Regular;18" backgroundColor="skydarkblue" foregroundColor="white" transparent="1" valign="center" halign="center" zPosition="1" />
+		<widget name="AboutScrollLabel" position="285,246" size="280,382" transparent="1" zPosition="1" itemHeight="30" font="Regular;21" backgroundColor="skydarkblue" foregroundColor="skyblue" scrollbarMode="showOnDemand" />
+		<panel name="t2-1R" />
+		<eLabel text="Close" position="138,669" size="210,30" font="Regular;25" halign="left" valign="center" transparent="1" noWrap="1" foregroundColor="skyblue" backgroundColor="backgroundbot" zPosition="2" />
+	</screen>
+	
+	<screen name="SystemNetworkInfo" title="Network Information" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="backgroundmid">
+		<panel name="template2" />
+		<panel name="v5-services" />
+		<widget name="AboutScrollLabel" position="120,189" size="610,250" font="Regular;21" foregroundColor="skyblue" backgroundColor="skydarkblue" transparent="1" zPosition="1" />
+			<ePixmap position="120,559" size="610,2" pixmap="div-h.png" alphatest="blend" transparent="1" />
+		<widget source="IFtext" render="Label" position="140,569" size="120,30" valign="center" zPosition="10" font="Regular;21" halign="left" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" />
+		<widget source="IF" render="Label" position="300,569" size="375,30" zPosition="10" valign="center" font="Regular;21" halign="left" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" />
+		<widget source="Statustext" render="Label" position="140,600" size="115,30" valign="center" zPosition="10" font="Regular;21" halign="left" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" />
+		<widget name="statuspic" pixmaps="skin_default/buttons/button_green.png,skin_default/buttons/button_green_off.png" position="300,607" zPosition="10" size="15,16" transparent="1" alphatest="blend" />
+		<panel name="t2-1R" />
+		<eLabel text="Close" position="138,669" size="210,30" font="Regular;25" halign="left" valign="center" transparent="1" noWrap="1" foregroundColor="skyblue" backgroundColor="backgroundbot" zPosition="2" />
+	</screen>
+	
+	<!-- viewgitlog -->
+	<screen name="SoftwareUpdateChanges" title="OE Changes" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="backgroundmid">
+		<panel name="template2" />
+		<panel name="v5-services" />
+		<widget name="text" position="120,189" size="610,440" itemHeight="36" scrollbarMode="showOnDemand" font="Regular;18" transparent="1" zPosition="1" foregroundColor="skyblue" backgroundColor="skydarkblue" />
+		<panel name="t2-4RGYB" />
+	
+	</screen>
+	
+	<screen name="TranslationInfo" title="Translation Information" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="backgroundmid">
+		<panel name="template2" />
+		<panel name="v5-services" />
+		<widget source="TranslationInfo" render="Label" position="120,189" size="610,26" font="Regular;24" backgroundColor="skydarkblue" foregroundColor="white" transparent="1" zPosition="1" />
+		<widget source="TranslatorName" render="Label" position="120,215" size="610,26" font="Regular;24" backgroundColor="skydarkblue" foregroundColor="white" transparent="1" zPosition="1" />
+		<panel name="t2-1R" />
+	</screen>
+	
+	<!-- https://github.com/openatv/enigma2/blob/master/lib/python/Screens/ServiceInfo.py  -->
+	<screen name="ServiceInfo" position="0,0" size="1280,720" title="Service Information" flags="wfNoBorder" backgroundColor="backgroundmid">
+		<panel name="template2" />
+		<panel name="v5-services" />
+		<widget name="infolist" position="120,189" size="610,440" selectionDisabled="1" font="Regular;21" scrollbarMode="showOnDemand" backgroundColor="skydarkblue" foregroundColor="skyblue" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" transparent="1" />
+		<panel name="t2-4RGYB" />
+	</screen>
+	
+	<screen name="ServiceInfoSimple" position="0,0" size="1280,720" title="Service Information" flags="wfNoBorder" backgroundColor="backgroundmid">
+		<panel name="ServiceInfo" />
+	</screen>
+	
+</skin>

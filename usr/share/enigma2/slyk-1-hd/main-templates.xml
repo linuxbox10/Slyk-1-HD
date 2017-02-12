@@ -1,0 +1,218 @@
+
+<skin>
+	<!-- logo/picon -->
+	<screen name="my-picon">
+		<widget source="Service" render="Picon" position="60,30" size="100,60" alphatest="blend" transparent="0" zPosition="10">
+			<convert type="ServiceName">Reference</convert>
+		</widget>
+	</screen>
+	
+	<screen name="my-logo1">
+		<ePixmap pixmap="myicons/slyklogo.png" position="center,29" size="96,52" alphatest="blend" backgroundColor="transparent" transparent="1" zPosition="2" />
+	</screen>
+	
+	<screen name="my-logo2">
+		<ePixmap pixmap="myicons/logo.png" position="center,29" size="88,52" alphatest="blend" backgroundColor="transparent" transparent="1" zPosition="2" />
+	</screen>
+	
+	<screen name="tv-guide">
+		<eLabel text="TV Guide" position="60,82" size="800,28" valign="center" halign="left" font="Regular;25" noWrap="0" transparent="1" foregroundColor="skyblue" backgroundColor="backgroundtop" zPosition="3" />
+	</screen>
+	
+	<!-- icons -->
+	<!-- Picture in Graphics -->
+	<!-- small video screen -->
+	<screen name="t1-tv">
+		<widget source="session.VideoPicture" render="Pig" position="897,76" size="326,188" backgroundColor="transparent" transparent="1" />
+	        <eLabel  position="902,81" size="316,178" backgroundColor="transparent" zPosition="4"/>
+		<widget source="session.CurrentService" render="Label" position="902,230" size="316,24" font="Bold;21" foregroundColor="white" backgroundColor="transparent" borderWidth="1" borderColor="black" transparent="1" valign="center" halign="center" noWrap="1" zPosition="5">
+			<convert type="ServiceName">Name</convert>
+		</widget>
+	</screen>
+	
+	<screen name="t2-tv">
+		<ePixmap pixmap="mybackgrounds/pig-bg.png" position="798,145" size="384,222" alphatest="blend" zPosition="3" />
+		<widget source="session.VideoPicture" render="Pig" position="801,148" size="378,216"  backgroundColor="transparent" transparent="1" />
+		   <eLabel position="806,153" size="368,206" backgroundColor="transparent" zPosition="4"/>
+		<widget source="session.CurrentService" render="Label" position="806,329" size="368,24" font="Bold;21" foregroundColor="white" backgroundColor="transparent" borderWidth="1" borderColor="black" transparent="1" valign="center" halign="center" noWrap="1" zPosition="6">
+			<convert type="ServiceName">Name</convert>
+		</widget>
+	</screen>
+	
+	<!-- time / date -->
+	<screen name="t1-time">
+		<widget source="global.CurrentTime" render="Label" position="1018,40" size="200,31" font="Regular;23" foregroundColor="skylightblue2" backgroundColor="skydarkblue" valign="top" halign="right" transparent="1" zPosition="3">
+			<convert type="SlykClockToText">SlykHDDate</convert>
+		</widget>
+	</screen>
+	
+	<screen name="t2-time">
+		<widget source="global.CurrentTime" render="Label" position="885,38" size="335,32" font="Regular;25" foregroundColor="skylightblue2" backgroundColor="skydarkblue" valign="top" halign="right" transparent="1" zPosition="3">
+			<convert type="SlykClockToText">SlykHDDate</convert>
+		</widget>
+	</screen>
+	
+	<!-- background graphics -->
+	<screen name="main-bg">
+		<ePixmap pixmap="mybackgrounds/main-bg.png" position="0,0" size="1280,720" zPosition="-1" />
+	</screen>
+	
+	<screen name="t1-split-bg">
+		<ePixmap pixmap="mybackgrounds/split-panel.png" position="60,267" size="1160,153" alphatest="blend" zPosition="-1" />
+	</screen>
+	
+	<screen name="t2-bg">
+		<ePixmap pixmap="mybackgrounds/panel-bg-full.png" position="60,110" size="1160,153" alphatest="blend" zPosition="-1" />
+	</screen>
+	
+	<screen name="t2-left-bg">
+		<ePixmap pixmap="mybackgrounds/list-bg.png" position="99,145" size="664,517" alphatest="blend" zPosition="-1" />
+	</screen>
+	
+	<screen name="t2-bottom-right-bg">
+		<ePixmap pixmap="mybackgrounds/text-bg.png" position="798,401" size="384,261" alphatest="blend" zPosition="0" />
+	</screen>
+	
+	<screen name="menu-bars">
+		<ePixmap pixmap="mybackgrounds/menu-bars.png" position="center,335" size="900,288" alphatest="blend" zPosition="-1" />
+	</screen>
+	
+	<screen name="half-menu-bars">
+		<ePixmap pixmap="mybackgrounds/menu-bars.png" position="101,335" size="530,288" alphatest="blend" zPosition="-1" />
+	</screen>
+	
+	<screen name="menu-fat-bars">
+		<ePixmap pixmap="mybackgrounds/menu-bars-48.png" position="center,335" size="900,288" alphatest="blend" zPosition="-1" />
+	</screen>
+	
+	<screen name="menu-setup-bars">
+		<ePixmap pixmap="mybackgrounds/menu-setup-bars.png" position="center,335" size="900,288" alphatest="blend" zPosition="-1" />
+	</screen>
+	
+	<screen name="menu-setup-bars-small-right">
+		<ePixmap pixmap="mybackgrounds/menu-setup-bars-small-right.png" position="center,335" size="900,288" alphatest="blend" zPosition="-1" />
+	</screen>
+	
+	<screen name="menu-setup-bars-center">
+		<ePixmap pixmap="mybackgrounds/menu-setup-bars-center.png" position="center,335" size="900,288" alphatest="blend" zPosition="-1" />
+	</screen>
+	
+	<screen name="menu-setup-bars-small-left">
+		<ePixmap pixmap="mybackgrounds/menu-setup-bars-small-left.png" position="center,335" size="900,288" alphatest="blend" zPosition="-1" />
+	</screen>
+	
+	<screen name="pin-protected">
+		<ePixmap pixmap="mybackgrounds/pin-protected.png" position="center,390" size="1078,232" transparent="1" alphatest="blend" zPosition="-1" />
+	</screen>
+	
+	<screen name="title1">
+		<widget source="Title" render="Label" position="60,88" size="537,28" valign="top" halign="left" font="Regular;25" noWrap="0" zPosition="2" transparent="1" foregroundColor="skyblue" backgroundColor="backgroundtop" />
+	</screen>
+	
+	<screen name="title2">
+		<widget source="Title" render="Label" position="90,267" size="500,35" font="Bold;25" valign="center" transparent="1" noWrap="1" foregroundColor="white" backgroundColor="titleshadow" zPosition="2" />
+	</screen>
+	
+	<screen name="t2-title">
+		<widget source="Title" render="Label" position="90,110" size="500,35" font="Bold;25" valign="center" transparent="1" noWrap="1" foregroundColor="white" backgroundColor="titleshadow" zPosition="2" />
+	</screen>
+	
+	<screen name="template1">
+	        <panel name="main-bg" />
+                <panel name="my-logo" />
+ 	        <panel name="t1-tv" />
+ 	        <panel name="t1-time" />
+		<panel name="title1" />
+		<panel name="title2" />
+	</screen>
+		
+	<screen name="template2">
+		<panel name="main-bg" />
+		<panel name="my-logo" />
+		<panel name="t2-time" />
+		<panel name="t2-bg" />
+		<panel name="t2-title" />
+		<panel name="t2-left-bg" />
+		<panel name="t2-tv" />
+        </screen>
+        
+       	<screen name="template3">
+		<panel name="main-bg" />
+		<panel name="my-logo" />
+		<panel name="t2-time" />
+		<panel name="t2-bg" />
+		<panel name="t2-title" />
+		<panel name="t2-left-bg" />
+	
+        </screen>
+        
+        <!-- titles -->
+       	<screen name="home">
+		<eLabel text="Home" position="60,37" size="537,36" font="Regular;30" foregroundColor="white" backgroundColor="backgroundtop" valign="top" halign="left" transparent="1" zPosition="2" />
+	</screen>
+	<screen name="planner">
+		<eLabel text="Planner" position="60,37" size="537,36" font="Regular;30" foregroundColor="white" backgroundColor="backgroundtop" valign="top" halign="left" transparent="1" zPosition="2" />
+	</screen>
+	<screen name="radio">
+		<eLabel text="Radio" position="60,37" size="537,36" font="Regular;30" foregroundColor="white" backgroundColor="backgroundtop" valign="top" halign="left" transparent="1" zPosition="2" />
+	</screen>
+	<screen name="parental">
+		<eLabel text="Parental" position="60,37" size="537,36" font="Regular;30" foregroundColor="white" backgroundColor="backgroundtop" valign="top" halign="left" transparent="1" zPosition="2" />
+	</screen>
+	<screen name="options">
+		<eLabel text="Options" position="60,37" size="537,36" font="Regular;30" foregroundColor="white" backgroundColor="backgroundtop" valign="top" halign="left" transparent="1" zPosition="2" />
+	</screen>
+        <screen name="settings">
+		<eLabel text="Settings" position="60,37" size="537,36" font="Regular;30" foregroundColor="white" backgroundColor="backgroundtop" valign="top" halign="left" transparent="1" zPosition="2" />
+	</screen>
+	<screen name="v5-tv-guide">
+		<eLabel text="TV Guide" position="60,37" size="537,36" font="Regular;30" foregroundColor="white" backgroundColor="backgroundtop" valign="top" halign="left" transparent="1" zPosition="2" />
+	</screen>
+	<screen name="v5-services">
+		<eLabel text="Services" position="60,37" size="537,36" font="Regular;30" foregroundColor="white" backgroundColor="backgroundtop" valign="top" halign="left" transparent="1" zPosition="2" />
+	</screen>
+	<screen name="v5-help">
+		<eLabel text="Help" position="60,37" size="537,36" font="Regular;30" foregroundColor="white" backgroundColor="backgroundtop" valign="top" halign="left" transparent="1" zPosition="2" />
+	</screen>
+	<screen name="v5-setup">
+		<eLabel text="Setup" position="60,37" size="537,36" font="Regular;30" foregroundColor="white" backgroundColor="backgroundtop" valign="top" halign="left" transparent="1" zPosition="2" />
+	</screen>
+	
+	 <screen name="v5-t1-options">
+	        <eLabel text="Options" position="60,234" size="800,32" valign="center" halign="left" font="Regular;25" noWrap="0" transparent="1" foregroundColor="skyblue" backgroundColor="backgroundtop" zPosition="3" />
+        </screen>
+	
+	<screen name="v5-t2-options">
+	        <eLabel text="Options" position="60,82" size="800,28" valign="center" halign="left" font="Regular;25" noWrap="0" transparent="1" foregroundColor="skyblue" backgroundColor="backgroundtop" zPosition="3" />
+        </screen>
+        
+       	<screen name="v5-t1-settings">
+	        <eLabel text="Settings" position="60,234" size="800,32" valign="center" halign="left" font="Regular;25" noWrap="0" transparent="1" foregroundColor="skyblue" backgroundColor="backgroundtop" zPosition="3" />
+        </screen>
+        
+       	<screen name="v5-t2-details">
+	        <eLabel text="System Details" position="60,82" size="800,28" valign="center" halign="left" font="Regular;25" noWrap="0" transparent="1" foregroundColor="skyblue" backgroundColor="backgroundtop" zPosition="3" />
+        </screen>
+        
+        
+	<!-- used mainly on network screens -->
+	<screen name="active-block">
+		<widget name="lab1" position="186,152" size="100,24" font="Regular;20" valign="center" transparent="1" forgroundColor="white" backgroundColor="skydarkblue" />
+		<widget name="labdisabled" position="286,152" size="100,24" font="Regular;20" valign="center" halign="center" transparent="0" forgroundColor="white" backgroundColor="red" zPosition="2" />
+		<widget name="labactive" position="286,152" size="100,24" font="Regular;20" valign="center" halign="center" transparent="0" forgroundColor="white" backgroundColor="green" zPosition="2" />
+		<widget name="lab2" position="426,152" size="150,24" font="Regular;20" valign="center" transparent="1" forgroundColor="white" backgroundColor="skydarkblue" />
+		<widget name="labstop" position="576,152" size="100,24" font="Regular;20" valign="center" halign="center" backgroundColor="red" zPosition="1" />
+		<widget name="labrun" position="576,152" size="100,24" font="Regular;20" valign="center" halign="center" backgroundColor="green" zPosition="2" />
+	</screen>
+
+	<screen name="active-block2">
+		<widget name="lab1" position="186,152" size="100,24" font="Regular;20" valign="center" transparent="1" forgroundColor="white" backgroundColor="skydarkblue" />
+		<widget name="labactive" position="286,152" size="100,24" font="Regular;20" valign="center" halign="center" transparent="0" forgroundColor="white" backgroundColor="green" zPosition="2" />
+		<widget name="lab2" position="426,152" size="150,24" font="Regular;20" valign="center" transparent="1" forgroundColor="white" backgroundColor="skydarkblue" />
+		<widget name="labstop" position="576,152" size="100,24" font="Regular;20" valign="center" halign="center" backgroundColor="red" zPosition="1" />
+		<widget name="labrun" position="576,152" size="100,24" font="Regular;20" valign="center" halign="center" backgroundColor="green" zPosition="2" />
+	</screen>
+	
+	
+
+</skin>

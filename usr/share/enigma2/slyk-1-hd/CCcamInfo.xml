@@ -1,0 +1,98 @@
+
+<skin>
+	<!-- CCcamInfo -->
+	<!-- https://github.com/openatv/enigma2/blob/master/lib/python/Screens/CCcamInfo.py -->
+	<screen name="CCcamInfoMain" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder">
+		<panel name="template2" />
+		<panel name="v5-services" />
+		<widget name="menu" position="107,152" size="648,501" font="Regular;25" foregroundColor="white" backgroundColor="skydarkblue" foregroundColorSelected="skydarkblue" backgroundColorSelected="skygold" selectionPixmap="myselectbars/bar-30.png" itemHeight="30" enableWrapAround="1" scrollbarMode="showOnDemand" transparent="1" zPosition="1" />
+		<eLabel text="Menu config" position="134,669" size="210,32" font="Regular;25" foregroundColor="skyblue" backgroundColor="backgroundbot" valign="center" halign="left" noWrap="1" transparent="1" zPosition="2" />
+		<eLabel text="Local box" position="384,669" size="210,32" font="Regular;25" foregroundColor="skyblue" backgroundColor="backgroundbot" valign="center" halign="left" noWrap="1" transparent="1" zPosition="2" />
+		<eLabel text="Remote box" position="634,669" size="210,32" font="Regular;25" foregroundColor="skyblue" backgroundColor="backgroundbot" valign="center" halign="left" noWrap="1" transparent="1" zPosition="2" />
+		<eLabel text="Free memory" position="884,669" size="269,32" font="Regular;25" foregroundColor="skyblue" backgroundColor="backgroundbot" valign="center" halign="left" noWrap="1" transparent="1" zPosition="2" />
+		<panel name="t2-4RGYB" />
+		<panel name="t2-OKButton" />
+	</screen>
+	<screen name="CCcamInfoEcmInfoSelection" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="backgroundmid">
+		<panel name="template2" />
+		<panel name="v5-services" />
+		<widget name="list" position="107,152" size="648,501" font="Regular;21" foregroundColor="white" backgroundColor="skydarkblue" foregroundColorSelected="skydarkblue" backgroundColorSelected="skygold" selectionPixmap="myselectbars/bar-30.png" itemHeight="30" enableWrapAround="1" scrollbarMode="showOnDemand" zPosition="1" transparent="1" />
+		<panel name="t2-OKButton" />
+	</screen>
+	<screen name="CCcamInfoInfoScreen" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder">
+		<panel name="template2" />
+		<panel name="v5-services" />
+		<widget name="text" position="107,152" size="648,501" font="Console;16" foregroundColor="white" backgroundColor="skydarkblue" selectionPixmap="myselectbars/bar-30.png" itemHeight="30" transparent="1" zPosition="1" />
+		<panel name="t2-OKButton" />
+	</screen>
+	<screen name="CCcamShareViewMenu" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder">
+		<panel name="template2" />
+		<panel name="v5-services" />
+		<widget name="list" position="107,152" size="648,380" font="Regular;21" foregroundColor="white" backgroundColor="skydarkblue" foregroundColorSelected="skydarkblue" backgroundColorSelected="skygold" selectionPixmap="myselectbars/bar-30.png" itemHeight="30" enableWrapAround="1" scrollbarMode="showOnDemand" transparent="1" zPosition="1" />
+		<ePixmap pixmap="div-h.png" position="107,e-305" size="648,2" alphatest="blend" transparent="1" zPosition="2" />
+		<widget name="title" position="107,e-300" size="610,30" font="Regular;21" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" zPosition="1" />
+		<widget name="uphops" position="107,e-270" size="610,30" font="Regular;18" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" zPosition="1" />
+		<widget name="cards" position="107,e-240" size="610,30" font="Regular;18" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" zPosition="1" />
+		<widget name="providers" position="107,e-210" size="610,30" font="Regular;18" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" zPosition="1" />
+		<widget name="reshare" position="107,e-180" size="610,30" font="Regular;18" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" zPosition="1" />
+		<panel name="t2-OKButton" />
+	</screen>
+	<screen name="CCcamInfoSubMenu" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder">
+		<panel name="template2" />
+		<panel name="v5-services" />
+		<widget name="list" position="107,152" size="648,240" font="Regular;21" foregroundColor="white" backgroundColor="skydarkblue" foregroundColorSelected="skydarkblue" backgroundColorSelected="skygold" selectionPixmap="myselectbars/bar-30.png" itemHeight="30" enableWrapAround="1" scrollbarMode="showOnDemand" transparent="1" zPosition="1" />
+		<ePixmap pixmap="div-h.png" position="107,e-305" size="648,2" alphatest="blend" transparent="1" zPosition="2" />
+		<widget name="info" position="112,e-300" size="638,300" font="Regular;18" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" />
+		<panel name="t2-OKButton" />
+	</screen>
+	<screen name="CCcamInfoServerMenu" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="backgroundmid">
+		<panel name="template2" />
+		<panel name="v5-services" />
+		<widget name="list" position="107,152" size="648,240" font="Regular;21" foregroundColor="white" backgroundColor="skydarkblue" foregroundColorSelected="skydarkblue" backgroundColorSelected="skygold" selectionPixmap="myselectbars/bar-30.png" itemHeight="30" enableWrapAround="1" scrollbarMode="showOnDemand" transparent="1" zPosition="1" />
+		<ePixmap pixmap="div-h.png" position="107,e-305" size="648,2" alphatest="blend" transparent="1" zPosition="2" />
+		<widget name="info" position="112,e-300" size="638,300" font="Regular;18" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" />
+		<panel name="t2-OKButton" />
+	</screen>
+	<screen name="CCcamInfoConfigMenu" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder">
+		<panel name="template2" />
+		<panel name="v5-services" />
+		<widget name="config" position="107,152" size="648,501" font="Regular;21" foregroundColor="white" backgroundColor="skydarkblue" foregroundColorSelected="skydarkblue" backgroundColorSelected="skygold" selectionPixmap="myselectbars/bar-30.png" itemHeight="30" enableWrapAround="1" scrollbarMode="showOnDemand" transparent="1" zPosition="1" />
+		<panel name="t2-OKButton" />
+	</screen>
+	<screen name="CCcamInfoRemoteBoxMenu" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder">
+		<panel name="template2" />
+		<panel name="v5-services" />
+		<widget name="list" position="107,152" size="648,501" font="Regular;21" foregroundColor="white" backgroundColor="skydarkblue" foregroundColorSelected="skydarkblue" backgroundColorSelected="skygold" selectionPixmap="myselectbars/bar-30.png" itemHeight="30" enableWrapAround="1" scrollbarMode="showOnDemand" transparent="1" zPosition="1" />
+		<panel name="t2-4RGYB" />
+		<panel name="t2-OKButton" />
+	</screen>
+	<screen name="CCcamInfoShareInfo" position="center,center" size="580,450">
+		<widget name="list" position="0,0" size="580,360" font="Regular;21" foregroundColor="white" backgroundColor="skydarkblue" foregroundColorSelected="skydarkblue" backgroundColorSelected="skygold" selectionPixmap="myselectbars/bar-72.png" itemHeight="70" enableWrapAround="1" scrollbarMode="showOnDemand" transparent="1" zPosition="1" />
+		
+                <ePixmap pixmap="buttons/key_red.png" position="0,e-27" size="24,24" alphatest="blend" transparent="1" zPosition="2" />
+		<widget source="key_red" render="Label" position="32,e-30" size="140,30" font="Regular;21" foregroundColor="skyblue" backgroundColor="backgroundbot" valign="center" halign="left" noWrap="1" transparent="1" zPosition="2" />
+		
+                <ePixmap pixmap="buttons/key_green.png" position="140,e-27" size="24,24" alphatest="blend" transparent="1" zPosition="2" />
+		<widget source="key_green" render="Label" position="172,e-30" size="140,30" font="Regular;21" foregroundColor="skyblue" backgroundColor="backgroundbot" valign="center" halign="left" noWrap="1" transparent="1" zPosition="2" />
+		
+                <ePixmap pixmap="buttons/key_yellow.png" position="280,e-27" size="24,24" alphatest="blend" transparent="1" zPosition="2" />
+		<widget source="key_yellow" render="Label" position="312,e-30" size="140,30" font="Regular;21" foregroundColor="skyblue" backgroundColor="backgroundbot" valign="center" halign="left" noWrap="1" transparent="1" zPosition="2" />
+		
+                <ePixmap pixmap="buttons/key_blue.png" position="420,e-27" size="24,24" alphatest="blend" transparent="1" zPosition="2" />
+		<widget source="key_blue" render="Label" position="452,e-30" size="140,30" font="Regular;21" foregroundColor="skyblue" backgroundColor="backgroundbot" valign="center" halign="left" noWrap="1" transparent="1" zPosition="2" />
+	</screen>
+	<screen name="CCcamInfoConfigSwitcher" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder">
+		<panel name="template2" />
+		<panel name="v5-services" />
+		<widget name="list" position="107,152" size="648,501" font="Regular;21" foregroundColor="white" backgroundColor="skydarkblue" foregroundColorSelected="skydarkblue" backgroundColorSelected="skygold" selectionPixmap="myselectbars/bar-30.png" itemHeight="30" enableWrapAround="1" scrollbarMode="showOnDemand" transparent="1" zPosition="1" />
+		<panel name="t2-4RGYB" />
+		<panel name="t2-OKButton" />
+	</screen>
+	<screen name="CCcamInfoMenuConfig" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder">
+		<panel name="template2" />
+		<panel name="v5-services" />
+		<widget name="list" position="107,152" size="648,501" font="Regular;21" foregroundColor="white" backgroundColor="skydarkblue" foregroundColorSelected="skydarkblue" backgroundColorSelected="skygold" selectionPixmap="myselectbars/bar-30.png" itemHeight="30" enableWrapAround="1" scrollbarMode="showOnDemand" transparent="1" zPosition="1" />
+		<panel name="t2-3RGY" />
+		<panel name="t2-OKButton" />
+	</screen>
+</skin>

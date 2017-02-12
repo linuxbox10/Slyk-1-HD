@@ -1,0 +1,908 @@
+
+<skin>
+
+	<!-- DefaultServicesScanner -->
+	<!-- exact same screen as servicescan - (manual scan) -->
+	<!-- https://github.com/openatv/enigma2/blob/master/lib/python/Plugins/SystemPlugins/DefaultServicesScanner/plugin.py -->
+	<screen name="DefaultServiceScan" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder">
+		<panel name="ServiceScan" />
+	</screen>
+	
+	<screen name="HdmiCECSetupScreen" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder" zPosition="4">
+		<panel name="template1" />
+		<panel name="v5-services" />
+		<panel name="v5-t1-settings" />
+		<panel name="t1-split-bg" />
+		<panel name="menu-setup-bars" />
+		<widget name="config" position="center,335" size="900,288" selectionPixmap="myselectbars/menu-bar.png" backgroundPixmap="myselectbars/blank.png" itemHeight="36" font="Regular;25" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" enableWrapAround="1" scrollbarMode="showNever" zPosition="4" />
+		<panel name="t1-2RG-Source" />
+	</screen>
+	
+	<screen name="PluginBrowser" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder" zPosition="-1" title="Plugin browser">
+		<panel name="template2" />
+		<panel name="v5-services"  />
+		<widget name="list" position="107,152" size="648,501" itemHeight="50" zPosition="3" backgroundColor="skydarkblue" foregroundColor="white" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1" selectionPixmap="myselectbars/bar-50.png" />
+		<panel name="t2-2RG-Source" />
+		<ePixmap pixmap="mybuttons/key-menu.png" position="1129,669" size="50,24" alphatest="blend" transparent="1" zPosition="2" />
+		<ePixmap pixmap="mybuttons/key-ok.png" position="1069,669" size="50,24" alphatest="blend" transparent="1" zPosition="2" />
+	</screen>
+	
+	<screen name="PluginDownloadBrowser" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder" zPosition="-1" title="Downloadable plugins">
+		<panel name="template2" />
+		<panel name="v5-services" />
+		<panel name="t2-bottom-right-bg" />
+		<widget name="text" position="806,408" size="368,75" transparent="1" foregroundColor="white" backgroundColor="skydarkblue" font="Regular;16" halign="left" valign="top" zPosition="2" />
+		<widget name="list" position="107,152" size="648,501" itemHeight="50" transparent="1" backgroundColor="skydarkblue" scrollbarMode="showOnDemand" valign="center" zPosition="2" enableWrapAround="1" selectionPixmap="myselectbars/bar-50.png" />
+		<panel name="t2-OKButton" />
+	</screen>
+	
+	<!-- Satfinder / signal finder -->
+	<screen name="Satfinder" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder" zPosition="-1" title="Satfinder">
+		<panel name="template1" />
+		<panel name="v5-services" />
+		<panel name="v5-t1-settings" />
+		<panel name="t1-split-bg" />
+		<panel name="menu-setup-bars-center" />
+		<widget source="Frontend" render="Label" position="590,96" zPosition="2" size="100,28" font="Regular;24" halign="left" valign="top" foregroundColor="white" backgroundColor="skydarkblue" transparent="1">
+			<convert type="FrontendInfo">SNRdB</convert>
+		</widget>
+		<eLabel text="SNR:" position="440,120" size="60,22" font="Regular;24" halign="right" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" />
+		<widget source="Frontend" render="Progress" position="507,124" size="260,20" pixmap="bar_snr.png" borderWidth="1" borderColor="white">
+			<convert type="FrontendInfo">SNR</convert>
+		</widget>
+		<widget source="Frontend" render="Label" position="782,120" size="65,22" font="Regular;24" foregroundColor="white" backgroundColor="skydarkblue" transparent="1">
+			<convert type="FrontendInfo">SNR</convert>
+		</widget>
+		<eLabel text="AGC:" position="440,150" size="60,22" font="Regular;24" halign="right" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" />
+		<widget source="Frontend" render="Progress" position="507,154" size="260,20" pixmap="bar_ber.png" borderWidth="1" borderColor="white">
+			<convert type="FrontendInfo">AGC</convert>
+		</widget>
+		<widget source="Frontend" render="Label" position="782,150" size="60,22" font="Regular;24" foregroundColor="white" backgroundColor="skydarkblue" transparent="1">
+			<convert type="FrontendInfo">AGC</convert>
+		</widget>
+		<eLabel text="BER:" position="440,180" size="60,22" font="Regular;24" halign="right" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" />
+		<widget source="Frontend" render="Progress" position="507,184" size="260,20" pixmap="bar_ber.png" borderWidth="1" borderColor="white">
+			<convert type="FrontendInfo">BER</convert>
+		</widget>
+		<widget source="Frontend" render="Label" position="782,180" size="60,22" font="Regular;24" foregroundColor="white" backgroundColor="skydarkblue" transparent="1">
+			<convert type="FrontendInfo">BER</convert>
+		</widget>
+		<eLabel name="lock" text="Lock:" position="590,214" size="60,22" font="Regular;24" halign="left" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" />
+		<widget source="Frontend" render="Pixmap" pixmap="icons/lock_on.png" position="656,214" zPosition="1" size="25,24" alphatest="blend">
+			<convert type="FrontendInfo">LOCK</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="Frontend" render="Pixmap" pixmap="icons/lock_off.png" position="656,214" zPosition="1" size="25,24" alphatest="blend">
+			<convert type="FrontendInfo">LOCK</convert>
+			<convert type="ConditionalShowHide">Invert</convert>
+		</widget>
+		<widget name="config" position="center,335" size="900,288" selectionPixmap="myselectbars/menu-bar-center.png" backgroundPixmap="myselectbars/blank.png" itemHeight="36" font="Regular;25" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" enableWrapAround="1" scrollbarMode="showNever" zPosition="4" />
+		
+                <panel name="t1-2RG-Source" />
+	</screen>
+	
+	<screen name="SkinSelector" position="0,0" size="1280,720" title="Skin Selector" flags="wfNoBorder" backgroundColor="backgroundmid">
+		<panel name="template2" />
+		<panel name="v5-services" />
+		<widget name="SkinList" textOffset="10,4" position="120,189" size="310,400" itemHeight="30" font="Regular;21" scrollbarMode="showOnDemand" backgroundColor="skydarkblue" foregroundColor="white" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" selectionPixmap="myselectbars/bar-30.png" enableWrapAround="1" transparent="1" />
+		<widget name="Preview" position="450,189" size="280,210" alphatest="blend" transparent="1" />
+		<ePixmap position="120,595" size="610,2" pixmap="div-h.png" alphatest="blend" transparent="1" />
+		<panel name="t2-2RG-Source" />
+		<panel name="t2-OKButton" />
+	</screen>
+	
+	<screen name="VideoEnhancementSetup" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder" zPosition="4">
+	        <panel name="Setup-Plain" />
+	        <panel name="t2-4RGYB-Source" />
+	</screen>
+	
+	<screen name="VideoEnhancementPreview" position="center,e-170" size="560,170" title="VideoEnhancementPreview">
+		<ePixmap pixmap="buttons/red.png" position="0,0" size="140,40" alphatest="blend" />
+		<ePixmap pixmap="buttons/green.png" position="140,0" size="140,40" alphatest="blend" />
+		<widget source="key_red" render="Label" position="0,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#9f1313" transparent="1" />
+		<widget source="key_green" render="Label" position="140,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#1f771f" transparent="1" />
+		<widget name="config" position="5,50" size="550,80" scrollbarMode="showOnDemand" />
+		<ePixmap pixmap="skin_default/div-h.png" alphatest="blend" position="0,130" zPosition="1" size="560,2" />
+		<widget source="introduction" render="Label" position="0,140" size="550,25" zPosition="10" font="Regular;21" halign="center" valign="center" backgroundColor="#25062748" transparent="1" />
+	</screen>
+	
+	<!-- #WirelessLan#-->
+	<!-- https://github.com/openatv/enigma2/blob/master/lib/python/Plugins/SystemPlugins/WirelessLan/plugin.py -->
+	<!-- see SystemNetworkInfo - information -->
+	<!--
+        <screen name="WlanStatus" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="template2" />
+		<panel name="home" />
+		<widget source="LabelBSSID" render="Label" position="336,189" size="375,30" valign="center" halign="left" zPosition="10" font="Regular;21" foregroundColor="white" backgroundColor="backgroundmid" transparent="1" />
+		<widget source="LabelESSID" render="Label" position="336,229" size="375,30" valign="center" halign="left" zPosition="10" font="Regular;21" foregroundColor="white" backgroundColor="backgroundmid" transparent="1" />
+		<widget source="LabelQuality" render="Label" position="336,269" size="375,30" valign="center" halign="left" zPosition="10" font="Regular;21" foregroundColor="white" backgroundColor="backgroundmid" transparent="1" />
+		<widget source="LabelSignal" render="Label" position="336,309" size="375,30" valign="center" halign="left" zPosition="10" font="Regular;21" foregroundColor="white" backgroundColor="backgroundmid" transparent="1" />
+		<widget source="LabelBitrate" render="Label" position="336,349" size="375,30" valign="center" halign="left" zPosition="10" font="Regular;21" foregroundColor="white" backgroundColor="backgroundmid" transparent="1" />
+		<widget source="LabelEnc" render="Label" position="336,389" size="375,30" valign="center" halign="left" zPosition="10" font="Regular;21" foregroundColor="white" backgroundColor="backgroundmid" transparent="1" />
+		<widget source="BSSID" render="Label" position="496,189" size="375,30" valign="center" halign="left" zPosition="10" font="Regular;21" foregroundColor="white" backgroundColor="backgroundmid" transparent="1" />
+		<widget source="ESSID" render="Label" position="496,229" size="375,30" valign="center" halign="left" zPosition="10" font="Regular;21" foregroundColor="white" backgroundColor="backgroundmid" transparent="1" />
+		<widget source="quality" render="Label" position="496,269" size="375,30" valign="center" halign="left" zPosition="10" font="Regular;21" foregroundColor="white" backgroundColor="backgroundmid" transparent="1" />
+		<widget source="signal" render="Label" position="496,309" size="375,30" valign="center" halign="left" zPosition="10" font="Regular;21" foregroundColor="white" backgroundColor="backgroundmid" transparent="1" />
+		<widget source="bitrate" render="Label" position="496,349" size="375,30" valign="center" halign="left" zPosition="10" font="Regular;21" foregroundColor="white" backgroundColor="backgroundmid" transparent="1" />
+		<widget source="enc" render="Label" position="496,389" size="375,30" valign="center" halign="left" zPosition="10" font="Regular;21" foregroundColor="white" backgroundColor="backgroundmid" transparent="1" />
+		<ePixmap position="86,559" size="790,2" pixmap="div-h.png" alphatest="blend" transparent="1" />
+		<widget source="IFtext" render="Label" position="336,569" size="120,30" valign="center" halign="left" zPosition="10" font="Regular;21" foregroundColor="white" backgroundColor="backgroundmid" transparent="1" />
+		<widget source="IF" render="Label" position="496,569" size="375,30" valign="center" halign="left" zPosition="10" font="Regular;21" foregroundColor="white" backgroundColor="backgroundmid" transparent="1" />
+		<widget source="Statustext" render="Label" position="336,600" size="115,30" valign="center" halign="left" zPosition="10" font="Regular;21" foregroundColor="white" backgroundColor="backgroundmid" transparent="1" />
+		<widget name="statuspic" pixmaps="buttons/button_green.png,buttons/button_green_off.png" position="496,607" zPosition="10" size="15,16" transparent="1" alphatest="blend" />
+		<panel name="t2-1R-Source" />
+	</screen>
+	-->
+	<!-- not checked -->
+	<!--
+	<screen name="WlanScan" position="0,0" size="1280,720" backgroundColor="transparent" flags="wfNoBorder" title="Select a wireless network">
+		<panel name="v-t2-pig" />
+		<widget source="list" render="Listbox" position="0,143" size="876,504" scrollbarMode="showOnDemand" backgroundColor="backgroundmid" foregroundColor="white" backgroundColorSelected="skygoldbg" foregroundColorSelected="black" selectionPixmap="v-selectbars/selectbar-849-r.png" backgroundPixmap="v-selectbars/selectbar-bg.png" transparent="1" zPosition="5">
+			<convert type="TemplatedMultiContent">{"template": [
+ 							MultiContentEntryText(pos = (86, 0), size = (600, 30), font=0, flags = RT_HALIGN_LEFT, text = 0, color = 0x00ffffff, color_sel = 0x00000000), # index 0 is the essid
+			                                MultiContentEntryText(pos = (486, 0), size = (390, 20), font=1, flags = RT_HALIGN_RIGHT, text = 2, color = 0x00939393, color_sel = 0x00000000), # index 0 is the signal
+
+ 							MultiContentEntryText(pos = (86, 30), size = (250, 20), font=1, flags = RT_HALIGN_LEFT, text = 5, color = 0x00939393, color_sel = 0x00000000), # index 5 is the interface
+						
+							MultiContentEntryText(pos = (86, 30), size = (790, 20), font=1, flags = RT_HALIGN_CENTER, text = 4, color = 0x00939393, color_sel = 0x00000000), # index 0 is the encryption
+ 							MultiContentEntryText(pos = (486, 30), size = (250, 20), font=1, flags = RT_HALIGN_RIGHT, text = 3, color = 0x00939393, color_sel = 0x00000000), # index 0 is the maxrate
+						
+ 						],
+ 					"fonts": [gFont("Regular", 22),gFont("Regular", 14)],
+ 					"itemHeight": 56
+ 					}</convert>
+		</widget>
+		<widget source="info" render="Label" position="922,285" size="278,435" font="Regular;24" foregroundColor="white" backgroundColor="backgroundmid" transparent="1" />
+		<panel name="t2-3RGY-Source" />
+	</screen>
+	-->
+	
+	<!-- https://github.com/openatv/enigma2/blob/master/lib/python/Plugins/SystemPlugins/SoftwareManager/plugin.py-->
+	<!-- Software Manager Screens- show default backup files -->
+	<!-- BackupRestore -->
+	<screen name="BackupSelection" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="backgroundmid">
+		<panel name="template2" />
+		<panel name="v5-services" />
+		<widget name="checkList" position="107,152" size="648,480" itemHeight="30" font="Regular;21" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColor="skydarkblue" foregroundColor="white" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" selectionPixmap="myselectbars/bar-30.png" transparent="1" />
+		<widget source="summary_description" render="Label" position="107,632" size="795,30" foregroundColor="white" backgroundColor="skydarkblue" font="Regular; 24" halign="left" transparent="1" />
+		<panel name="t2-3RGY-Source" />
+	</screen>
+	
+	<!-- software management - advanced - advancedrestore -->
+	<screen name="RestoreMenu" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="backgroundmid">
+		<panel name="template2" />
+		<panel name="v5-services" />
+		<widget name="filelist" textOffset="10,4" font="Regular;21" position="107,152" size="648,501" itemHeight="30" scrollbarMode="showOnDemand" backgroundColor="skydarkblue" foregroundColor="white" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" selectionPixmap="myselectbars/bar-30.png" transparent="1" />
+		<panel name="t2-3RGY-Source" />
+	</screen>
+	
+	<!-- Backup Image-->
+	<screen name="ImageBackup" position="0,0" size="1280,720" title="Image Backup" flags="wfNoBorder" backgroundColor="backgroundmidt">
+		<panel name="template2" />
+		<panel name="v5-services" />
+		<widget name="info-hdd" position="107,152" zPosition="1" size="648,250" font="Regular;21" halign="left" valign="top" backgroundColor="skydarkblue" foregroundColor="white" transparent="1" />
+		<widget name="info-usb" position="107,402" zPosition="1" size="648,250" font="Regular;21" halign="left" valign="top" backgroundColor="skydarkblue" foregroundColor="white" transparent="1" />
+		<panel name="t2-4RGYB-Source" />
+	</screen>
+	
+	<!-- software management -->
+	<screen name="UpdatePluginMenu" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder" zPosition="4">
+		<panel name="template1" />
+		<panel name="v5-services" />
+		<panel name="t1-split-bg" />
+		<panel name="menu-bars" />
+		<widget source="menu" render="Listbox" position="center,335" size="900,288" selectionPixmap="myselectbars/menu-bar-plain.png"  backgroundPixmap="myselectbars/blank.png"  itemHeight="36" font="Regular;25" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" enableWrapAround="1" scrollbarMode="showOnDemand" zPosition="4">
+			<convert type="TemplatedMultiContent">{"template": [	
+                                MultiContentEntryText(pos = (20,0), size = (880,36), flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1	) ],
+				"fonts": [gFont("Regular",25)],
+				"itemHeight": 36
+				}</convert>
+		</widget>
+		<widget source="menu" render="Listbox" position="60,116" size="800,117" foregroundColor="white" backgroundColor="backgroundtop" font="Regular;25" halign="left" valign="top" transparent="1" zPosition="4" scrollbarMode="showNever" selectionDisabled="1">
+			<convert type="TemplatedMultiContent">{"template": [
+				MultiContentEntryText(pos = (0,0),size = (800,117),flags = RT_HALIGN_LEFT|RT_VALIGN_TOP,text = 2),# index 0 is the MenuText,
+				],
+				"fonts": [gFont("Regular",25)],
+				"itemHeight": 117
+				}</convert>
+		</widget>
+		<panel name="t1-1R-Source" />
+	</screen>
+	
+	<!-- software manager - menu button -->
+	<screen name="SoftwareManagerSetup" position="0,0" size="1280,720" backgroundColor="backgroundmid" title="SoftwareManager setup">
+		<panel name="template1" />
+		<panel name="v5-services" />
+		<panel name="t1-split-bg" />
+		<panel name="menu-setup-bars" />
+		<widget name="config" position="center,335" size="900,288" selectionPixmap="myselectbars/menu-bar.png" backgroundPixmap="myselectbars/blank.png"  itemHeight="36" font="Regular;25" transparent="1" enableWrapAround="1" scrollbarMode="showNever" zPosition="4" />
+		<widget source="introduction" render="Label" position="60,116" size="800,117" font="Regular;25" foregroundColor="white" backgroundColor="backgroundtop" halign="left" valign="top" transparent="1" zPosition="1" />
+		<panel name="t1-4RGYB-Source" />
+	</screen>
+	
+	<!-- software manager - system-backup - info button -->
+	<screen name="SoftwareManagerInfo" position="0,0" size="1280,720" backgroundColor="backgroundmid" title="SoftwareManager information">
+		<panel name="template2" />
+			<panel name="v5-services" />
+		<widget source="list" render="Listbox" position="107,152" size="648,480" scrollbarMode="showOnDemand" backgroundColor="skydarkblue" foregroundColor="white" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" selectionPixmap="myselectbars/bar-30.png" transparent="1" zPosition="5">
+			<convert type="TemplatedMultiContent">{"template": [
+ 							MultiContentEntryText(pos = (10, 0), size = (620, 30), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 0, color = 0x00ffffff, color_sel = 0x00000000), # index 0 is the name
+						],
+					"fonts": [gFont("Regular", 24),gFont("Regular", 22)],
+ 					"itemHeight": 30
+ 					}</convert>
+		</widget>
+		<widget source="introduction" render="Label" position="60,116" size="800,117" font="Regular;25" foregroundColor="white" backgroundColor="backgroundtop" halign="left" valign="top" transparent="1" zPosition="1" />
+		<panel name="t2-4RGYB-Source" />
+	</screen>
+	
+	<!-- manage extensions -->
+	<screen name="PluginManager" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder" zPosition="4">
+		<panel name="template2" />
+		<panel name="v5-services" />
+		<widget source="list" render="Listbox" position="107,152" size="648,448" scrollbarMode="showOnDemand" backgroundColor="skydarkblue" foregroundColor="white" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" selectionPixmap="myselectbars/bar-60.png" transparent="1">
+			<convert type="TemplatedMultiContent">{"templates":
+				{"default": (56,[
+				MultiContentEntryText(pos = (5,1), size = (575,28), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is the name
+				MultiContentEntryText(pos = (5,28), size = (575,18), font=1, flags = RT_HALIGN_LEFT, text = 2), # index 2 is the description
+				MultiContentEntryPixmapAlphaBlend(pos = (595,0), size = (48,48), png = 5), # index 5 is the status pixmap
+			
+				]),
+				"category": (56,[
+				MultiContentEntryText(pos = (5,1), size = (575,28), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is the name
+				MultiContentEntryText(pos = (5,28), size = (575,18), font=2, flags = RT_HALIGN_LEFT, text = 1), # index 1 is the description
+			
+				])
+				},
+				"fonts": [gFont("Regular",22),gFont("Regular",14),gFont("Regular",14)],
+				"itemHeight": 56
+				}</convert>
+		</widget>
+		<widget source="status" render="Label" position="107,622" size="648,30" font="Regular;21" halign="left" foregroundColor="skyblue" backgroundColor="skydarkblue" valign="center" transparent="1" />
+		<panel name="t2-4RGYB-Source" />
+	</screen>
+	
+	<!-- software management - install extensions end screen -->
+	<screen name="PluginManagerInfo" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder" zPosition="4">
+		<panel name="template2" />
+		<panel name="v5-services" />
+		<widget source="list" render="Listbox" position="107,152" size="648,450" scrollbarMode="showOnDemand" backgroundColor="skydarkblue" foregroundColor="white" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" selectionPixmap="myselectbars/bar-60.png" transparent="1">
+			<convert type="TemplatedMultiContent">{"template": [
+				MultiContentEntryText(pos = (60,1), size = (588,28), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 0), # index 0 is the name
+				MultiContentEntryText(pos = (60,28), size = (588,18), font=1, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1), # index 1 is the state
+				MultiContentEntryPixmapAlphaBlend(pos = (10,2), size = (48,48), png = 2), # index 2 is the status pixmap
+				],
+				"fonts": [gFont("Regular",22),gFont("Regular",14)],
+				"itemHeight": 56
+				}</convert>
+		</widget>
+		<widget source="status" render="Label" position="107,622" size="648,30" font="Regular;21" halign="left" foregroundColor="skyblue" backgroundColor="skydarkblue" valign="center" transparent="1" />
+		<panel name="t2-2RG-Source" />
+	</screen>
+	
+	<!-- software management - install extensions - help button -->
+	<screen name="PluginManagerHelp" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder" zPosition="4">
+		<panel name="template2" />
+		<panel name="v5-services" />
+		<widget source="list" render="Listbox" position="107,152" size="648,450" scrollbarMode="showOnDemand" backgroundColor="skydarkblue" foregroundColor="white" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" selectionPixmap="myselectbars/bar-60.png" transparent="1">
+			<convert type="TemplatedMultiContent">{"template": [
+				MultiContentEntryText(pos = (60,1), size = (588,28), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 0), # index 0 is the name
+				MultiContentEntryText(pos = (60,28), size = (588,18), font=1, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1), # index 1 is the state
+				MultiContentEntryPixmapAlphaBlend(pos = (0,0), size = (48,48), png = 2), # index 2 is the status pixmap
+			
+				],
+				"fonts": [gFont("Regular",22),gFont("Regular",14)],
+				"itemHeight": 56
+				}</convert>
+		</widget>
+		<widget source="status" render="Label" position="107,622" size="648,30" font="Regular;21" halign="left" foregroundColor="skyblue" backgroundColor="skydarkblue" valign="center" transparent="1" />
+		<panel name="t2-1R-Source" />
+	</screen>
+	
+	<!-- software management - install extensions - view details -->
+	<screen name="PluginDetails" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder" zPosition="4">
+		<panel name="template2" />
+		<panel name="v5-services" />
+		<widget name="statuspic" position="107,152" size="48,48" alphatest="blend" zPosition="0" transparent="1" />
+		<widget source="author" render="Label" position="165,162" size="477,30" zPosition="10" font="Regular;25" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" />
+		<widget name="detailtext" position="107,212" size="648,440" transparent="1" font="Regular;20" foregroundColor="white" backgroundColor="skydarkblue" />
+		<widget name="screenshot" position="850,420" size="280,210" alphatest="blend" zPosition="5" />
+		<panel name="t2-2RG-Source" />
+	</screen>
+	
+	<!-- infopanel - software manager - software update - progress -->
+	<screen name="UpdatePlugin" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder" zPosition="-1">
+		<panel name="template2" />
+		<panel name="v5-services" />
+		<widget source="package" render="Label" position="107,152" size="648,38" font="Regular;21" halign="center" valign="center" backgroundColor="skydarkblue" transparent="1" />
+		<widget name="activityslider" position="107,200" size="648,5" />
+		<widget name="slider" position="107,200" size="648,30" />
+		<widget source="status" render="Label" position="107,152" size="648,501" font="Regular;21" halign="center" valign="center" backgroundColor="skydarkblue" transparent="1" />
+	</screen>
+	
+	<!-- software management - advanced options - select upgrade source -->
+	<screen name="IPKGMenu" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder" zPosition="4">
+		<panel name="template2" />
+		<panel name="v5-services" />
+		<widget name="filelist" textOffset="10,4" position="107,152" size="648,501" itemHeight="30" selectionPixmap="myselectbars/bar-30.png" scrollbarMode="showOnDemand" font="Regular;21" zPosition="1" enableWrapAround="1" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" />
+		<panel name="t2-2RG-Source" />
+	</screen>
+	
+	<!-- software management - advanced options - select upgrade source  - edit -->
+	<screen name="IPKGSource" position="center,center" size="1080,100">
+		<widget name="text" position="10,10" size="1060,30" font="Regular;25" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" />
+		<ePixmap pixmap="buttons/key_red.png" position="10,72" size="24,24" alphatest="blend" transparent="1" zPosition="2" />
+		<widget source="key_red" render="Label" position="42,69" size="210,31" font="Regular;25" halign="left" valign="center" transparent="1" noWrap="1" foregroundColor="skyblue" backgroundColor="backgroundbot" zPosition="2" />
+		<ePixmap pixmap="buttons/key_green.png" position="152,72" size="24,24" alphatest="blend" transparent="1" zPosition="2" />
+		<widget source="key_green" render="Label" position="184,69" size="210,31" font="Regular;25" halign="left" valign="center" transparent="1" noWrap="1" foregroundColor="skyblue" backgroundColor="backgroundbot" zPosition="2" />
+	</screen>
+	
+	<!-- software management - advanced options -packet management -->
+	<screen name="PacketManager" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder" >
+		<panel name="template2" />
+		<panel name="v5-services" />
+		<widget source="list" render="Listbox" position="107,152" size="648,450" scrollbarMode="showOnDemand" backgroundColor="skydarkblue" foregroundColor="white" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" selectionPixmap="myselectbars/bar-60.png" transparent="1">
+			<convert type="TemplatedMultiContent">{"template": [
+				MultiContentEntryText(pos = (5,1), size = (575,28), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is the name
+				MultiContentEntryText(pos = (5,28), size = (575,18), font=1, flags = RT_HALIGN_LEFT, text = 2), # index 2 is the description
+				MultiContentEntryPixmapAlphaBlend(pos = (585,0), size = (48,48), png = 4), # index 4 is the status pixmap
+				MultiContentEntryPixmapAlphaBlend(pos = (0,52), size = (648,2), png = 5), # index 5 is the div pixmap
+				],
+				"fonts": [gFont("Regular",22),gFont("Regular",14)],
+				"itemHeight": 56
+				}</convert>
+		</widget>
+		<widget source="status" render="Label" position="107,622" size="648,30" font="Regular;21" halign="left" foregroundColor="skyblue" backgroundColor="skydarkblue" valign="center" transparent="1" />
+		<panel name="t2-2RG-Source" />
+	</screen>
+	
+	<!-- software management - install local extension -->
+	<screen name="IpkgInstaller" position="0,0" size="1280,720" title="Install extensions" flags="wfNoBorder" backgroundColor="backgroundmid">
+		<panel name="template2" />
+		<panel name="v5-services" />
+		<widget name="list" position="107,152" size="648,450" enableWrapAround="1" itemHeight="30" font="Regular;21" scrollbarMode="showOnDemand" backgroundColor="skydarkblue" foregroundColor="white" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" selectionPixmap="myselectbars/bar-30.png" zPosition="1" transparent="1" />
+		<ePixmap position="107,617" size="648,2" pixmap="div-h.png" alphatest="blend" transparent="1" />
+		<widget source="introduction" render="Label" position="107,621" size="648,30" font="Regular;21" halign="left" foregroundColor="skyblue" backgroundColor="skydarkblue" valign="center" transparent="1" />
+		<panel name="t2-4RGYB-Source" />
+	</screen>
+	
+	<screen name="ShowUpdatePackages" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder" title="New Packages">
+		<panel name="template2" />
+		<panel name="v5-services" />
+		<widget source="list" render="Listbox" position="107,152" size="648,448" scrollbarMode="showOnDemand" backgroundColor="skydarkblue" foregroundColor="white" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" selectionPixmap="myselectbars/bar-60.png" transparent="1">
+			<convert type="TemplatedMultiContent">{"template": [
+				MultiContentEntryText(pos = (5,1), size = (575,28), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is the name
+				MultiContentEntryText(pos = (5,28), size = (575,18), font=1, flags = RT_HALIGN_LEFT, text = 2), # index 2 is the description
+				MultiContentEntryPixmapAlphaBlend(pos = (585,0), size = (48,48), png = 4), # index 4 is the status pixmap
+				MultiContentEntryPixmapAlphaBlend(pos = (0,52), size = (648,2), png = 5), # index 5 is the div pixmap
+				],
+				"fonts": [gFont("Regular",22),gFont("Regular",14)],
+				"itemHeight": 56
+				}</convert>
+		</widget>
+		<panel name="t2-2RG-Source" />
+	</screen>
+	
+	<!-- crossepg -->
+	<screen name="CrossEPG-downloader-template">
+		<ePixmap pixmap="mybackgrounds/abm-background.png" position="0,0" size="584,81" zPosition="-1" alphatest="blend" transparent="1" />
+		<widget name="action" position="86,5" size="494,38" font="Bold;24" halign="center" valign="center" backgroundColor="skydarkblue" foregroundColor="white" transparent="1" />
+		<widget name="progress" position="86,43" size="494,5" borderWidth="1" backgroundColor="skydarkblue" foregroundColor="white" />
+		<widget name="status" position="86,50" size="494,26" font="Regular;18" backgroundColor="skydarkblue" foregroundColor="skylightblue" halign="center" valign="center" transparent="1" />
+	</screen>
+	
+	<screen name="CrossEPG_About" position="0,0" size="1280,720" title="Console" flags="wfNoBorder" backgroundColor="backgroundmid">
+		<panel name="template2" />
+		<panel name="v5-services" />
+		<widget name="about" position="107,152" size="648,501" font="Regular;16" foregroundcolor="white" backgroundColor="skydarkblue" transparent="1" />
+		<panel name="t2-1R" />
+	</screen>
+	
+	<screen name="CrossEPG_Converter" position="c-282,e-129" size="584,81" flags="wfNoBorder">
+		<panel name="CrossEPG-downloader-template" />
+	</screen>
+	
+	<screen name="CrossEPG_Defragmenter" position="c-282,e-129" size="584,81" flags="wfNoBorder">
+		<panel name="CrossEPG-downloader-template" />
+	</screen>
+	
+	<screen name="CrossEPG_Downloader" position="c-282,e-129" size="584,81" flags="wfNoBorder">
+		<panel name="CrossEPG-downloader-template" />
+	</screen>
+	
+	<screen name="CrossEPG_Importer" position="c-282,e-129" size="584,81" flags="wfNoBorder">
+		<panel name="CrossEPG-downloader-template" />
+	</screen>
+	
+	<screen name="CrossEPG_Loader" position="c-282,e-129" size="584,81" flags="wfNoBorder">
+		<panel name="CrossEPG-downloader-template" />
+	</screen>
+	
+	<screen name="CrossEPG_Rytec_Update" position="c-282,e-129" size="584,81" flags="wfNoBorder">
+		<panel name="CrossEPG-downloader-template" />
+	</screen>
+	
+	<screen name="CrossEPG_Xepgdb_Update" position="c-282,e-129" size="584,81" flags="wfNoBorder">
+		<panel name="CrossEPG-downloader-template" />
+	</screen>
+	
+	<screen name="downloader" position="c-282,e-129" size="584,81" title="Message" backgroundColor="transparent" flags="wfNoBorder">
+		<panel name="CrossEPG-downloader-template" />
+	</screen>
+
+	
+	<screen name="CrossEPG_Info" position="0,0" size="1280,720" title="Console" flags="wfNoBorder" backgroundColor="backgroundmid">
+		<panel name="template2" />
+		<panel name="v5-services" />
+		<widget name="version" position="107,189" size="648,30" font="Regular;21" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" />
+		<widget name="create" position="107,229" size="648,30" font="Regular;21" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" />
+		<widget name="last_update" position="107,269" size="648,30" font="Regular;21" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" />
+		<widget name="headersdb_size" position="107,309" size="648,30" font="Regular;21" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" />
+		<widget name="descriptorsdb_size" position="107,349" size="648,30" font="Regular;21" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" />
+		<widget name="indexesdb_size" position="107,389" size="648,30" font="Regular;21" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" />
+		<widget name="aliasesdb_size" position="107,429" size="648,30" font="Regular;21" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" />
+		<widget name="total_size" position="107,469" size="648,30" font="Regular;21" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" />
+		<widget name="channels_count" position="107,509" size="648,30" font="Regular;21" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" />
+		<widget name="events_count" position="107,549" size="648,30" font="Regular;21" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" />
+		<widget name="hashes_count" position="107,589" size="648,30" font="Regular;21" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" />
+		<panel name="t2-1R" />
+	</screen>
+	
+	<screen name="CrossEPG_Menu" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder" zPosition="4">
+		<panel name="template1" />
+		<panel name="v5-services" />
+		<panel name="t1-split-bg" />
+		<panel name="menu-bars" />
+		<widget source="list" render="Listbox" position="center,335" size="900,288" selectionPixmap="myselectbars/menu-bar-plain.png"  backgroundPixmap="myselectbars/blank.png"  itemHeight="36" font="Regular;25" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" enableWrapAround="1" scrollbarMode="showOnDemand" zPosition="4">
+			<convert type="TemplatedMultiContent">{"template": [
+				MultiContentEntryText(pos = (20,0), size = (860, 36), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1),
+				],
+				"fonts": [gFont("Regular", 25)],
+				"itemHeight": 36
+				}</convert>
+		</widget>
+	</screen>
+	
+	<screen name="CrossEPG_Providers" position="0,0" size="1280,720" title="Console" flags="wfNoBorder" backgroundColor="backgroundmid">
+		<panel name="template2" />
+		<panel name="v5-services" />
+		<widget source="list" render="Listbox" position="107,152" size="648,501" itemHeight="38" font="Regular;21" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColor="skydarkblue" foregroundColor="white" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" selectionPixmap="myselectbars/bar-36.png" transparent="1">
+			<convert type="TemplatedMultiContent">{"template": [
+				MultiContentEntryText(pos = (50, 1), size = (598, 38), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 0),
+				MultiContentEntryPixmapAlphaBlend(pos = (5, 2), size = (40, 40), png = 1),
+				],
+				"fonts": [gFont("Regular", 21)],
+				"itemHeight": 38
+				}</convert>
+		</widget>
+		<panel name="t2-3RGY" />
+	</screen>
+	
+	<screen name="CrossEPG_Ordering" position="0,0" size="1280,720" title="Console" flags="wfNoBorder" backgroundColor="backgroundmid">
+		<panel name="template2" />
+		<panel name="v5-services" />
+		<widget source="list" render="Listbox" position="107,152" size="648,501" itemHeight="38" font="Regular;21" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColor="skydarkblue" foregroundColor="white" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" selectionPixmap="myselectbars/bar-36.png" transparent="1">
+			<convert type="TemplatedMultiContent">{"template": [
+				MultiContentEntryText(pos = (50, 1), size = (598, 38), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 0),
+				MultiContentEntryPixmapAlphaBlend(pos = (5, 2), size = (40, 40), png = 1),
+				],
+				"fonts": [gFont("Regular", 21)],
+				"itemHeight": 38
+				}</convert>
+		</widget>
+		<panel name="t2-4RGYB" />
+	</screen>
+	
+	<screen name="CrossEPG_Setup" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder" zPosition="4">
+		<panel name="template1" />
+		<panel name="v5-services" />
+		<panel name="v5-t1-settings" />
+		<panel name="t1-split-bg" />
+		<panel name="menu-setup-bars" />
+		<widget name="config" position="center,335" size="900,288" selectionPixmap="myselectbars/menu-bar.png" backgroundPixmap="myselectbars/blank.png" itemHeight="36" font="Regular;25" foregroundColor="white" backgroundColor="skydarkblue" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" transparent="1" enableWrapAround="1" scrollbarMode="showNever" zPosition="4" />
+		<widget name="information" position="60,116" size="800,117" font="Regular;25" foregroundColor="white" backgroundColor="backgroundtop" halign="left" valign="top" transparent="1" zPosition="4" />
+		<panel name="t1-2RG-Source" />
+	</screen>
+	
+	<screen name="CrossEPG_Extra" position="0,0" size="1280,720" title="Console" flags="wfNoBorder" backgroundColor="backgroundmid">
+		<panel name="template1" />
+                <panel name="v5-services" />
+		<panel name="v5-t1-settings" />
+		<panel name="t1-split-bg" />
+		<panel name="menu-bars" />
+		<widget name="menu" position="center,335" size="900,288" selectionPixmap="myselectbars/menu-bar-plain.png"  backgroundPixmap="myselectbars/blank.png"  itemHeight="36" font="Regular;25" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" enableWrapAround="1" scrollbarMode="showNever" zPosition="4" />
+		<panel name="t1-2RG-Source" />
+	</screen>
+	
+	<!-- AutoBouquetsMaker -->
+	<screen name="AutoBouquetsMaker_Menu" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="backgroundmid" zPosition="4" title="AutoBouquetsMaker">
+		<panel name="template1" />
+		<panel name="v5-services" />
+		<panel name="t1-split-bg" />
+		<panel name="menu-bars" />
+		<widget source="list" render="Listbox" position="center,335" size="900,288" selectionPixmap="myselectbars/menu-bar-plain.png"  backgroundPixmap="myselectbars/blank.png"  itemHeight="36" font="Regular;25" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" enableWrapAround="1" scrollbarMode="showNever" zPosition="4">
+			<convert type="TemplatedMultiContent">{"template": [
+				
+					MultiContentEntryText(pos = (20, 0), size = (860, 36), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1),
+					],
+					"fonts": [gFont("Regular", 25)],
+					"itemHeight": 36
+				}</convert>
+		</widget>
+		<panel name="t1-2RG-Source" />
+	</screen>
+	
+	<screen name="AutoBouquetsMaker_Setup" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder" zPosition="4" title="AutoBouquetsMaker Setup">
+		<panel name="template1" />
+		<panel name="v5-services" />
+		<panel name="v5-t1-settings" />
+		<panel name="t1-split-bg" />
+		<panel name="menu-setup-bars" />
+		<widget name="config" position="center,335" size="900,288" selectionPixmap="myselectbars/menu-bar.png" backgroundPixmap="myselectbars/blank.png"  itemHeight="36" font="Regular;25" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" enableWrapAround="1" scrollbarMode="showNever" zPosition="4" />
+		<widget name="description" position="60,116" size="800,117" font="Regular;25" foregroundColor="white" backgroundColor="backgroundtop" halign="left" valign="top" transparent="1" zPosition="4" />
+		<widget name="pleasewait" position="60,116" size="800,117" font="Regular;25" halign="left" valign="top" backgroundColor="backgroundtop" foregroundColor="white" transparent="1" zPosition="2" />
+		<panel name="t1-2RG-Source" />
+	</screen>
+	
+	<screen name="AutoBouquetsMaker_ProvidersSetup" position="0,0" size="1280,720" title="AutoBouquetsMaker Providers" flags="wfNoBorder" backgroundColor="backgroundmid">
+		<panel name="template1" />
+		<panel name="v5-services" />
+		<panel name="v5-t1-settings" />
+		<panel name="t1-split-bg" />
+		<panel name="menu-setup-bars-center" />
+		<widget name="config" position="center,335" size="900,288" selectionPixmap="myselectbars/menu-bar-center.png" backgroundPixmap="myselectbars/blank.png"  itemHeight="36" font="Regular;25" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" enableWrapAround="1" scrollbarMode="showNever" zPosition="4" />
+		<widget name="description" position="60,116" size="800,117" font="Regular;25" foregroundColor="white" backgroundColor="backgroundtop" halign="left" valign="top" transparent="1" zPosition="4" />
+		<widget name="pleasewait" position="60,116" size="800,117" font="Regular;25" halign="left" valign="top" backgroundColor="backgroundtop" foregroundColor="white" transparent="1" zPosition="2" />
+		<panel name="t1-2RG-Source" />
+	</screen>
+	
+	<screen name="AutoBouquetsMaker_Ordering" position="0,0" size="1280,720" title="Bouquets order" flags="wfNoBorder" backgroundColor="backgroundmid">
+		<panel name="template1" />
+		<panel name="v5-services" />
+		<panel name="v5-t1-settings" />
+		<panel name="t1-split-bg" />
+		<panel name="menu-bars" />
+		<widget source="list" render="Listbox" position="center,335" size="900,288" selectionPixmap="myselectbars/menu-bar-plain.png"  backgroundPixmap="myselectbars/blank.png"  itemHeight="36" font="Regular;25" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" enableWrapAround="1" scrollbarMode="showNever" zPosition="4">
+			<convert type="TemplatedMultiContent">{"template": [
+				
+					MultiContentEntryText(pos = (20, 0), size = (860, 36), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1),
+					],
+					"fonts": [gFont("Regular", 25)],
+					"itemHeight": 36
+				}</convert>
+		</widget>
+		<widget name="pleasewait" position="60,116" size="800,117" font="Regular;25" halign="left" valign="top" backgroundColor="skydarkblue" foregroundColor="white" transparent="1" zPosition="2" />
+		<panel name="t1-4RGYB" />
+	</screen>
+	
+	<screen name="AutoBouquetsMaker_HideSections" position="0,0" size="1280,720" title="AutoBouquetsMaker Hide sections" flags="wfNoBorder" backgroundColor="backgroundmid">
+		<panel name="template2" />
+		<panel name="v5-services" />
+		<widget source="list" render="Listbox" position="107,152" size="648,480" itemHeight="30" font="Regular;21" scrollbarMode="showOnDemand" backgroundColor="skydarkblue" foregroundColor="white" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" selectionPixmap="myselectbars/bar-30.png" transparent="1">
+			<convert type="TemplatedMultiContent">{"template": [
+					MultiContentEntryPixmapAlphaBlend(pos = (10, 0), size = (32, 32), png = 0),
+					MultiContentEntryText(pos = (47, 0), size = (400, 30), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 1),
+					MultiContentEntryText(pos = (450, 0), size = (128, 30), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 2),
+					],
+						"fonts": [gFont("Regular", 21)],
+					"itemHeight": 30
+				}</convert>
+		</widget>
+		<panel name="t2-2RG" />
+	</screen>
+	
+	<screen name="AutoBouquetsMaker_KeepBouquets" position="0,0" size="1280,720" title="AutoBouquetsMaker Keep bouquets" flags="wfNoBorder" backgroundColor="backgroundmid">
+		<panel name="template2" />
+		<panel name="v5-services" />
+		<widget source="list" render="Listbox" position="107,152" size="648,480" itemHeight="30" font="Regular;21" scrollbarMode="showOnDemand" backgroundColor="skydarkblue" foregroundColor="white" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" selectionPixmap="myselectbars/bar-30.png" transparent="1">
+			<convert type="TemplatedMultiContent">{"template": [
+					MultiContentEntryPixmapAlphaBlend(pos = (10, 0), size = (32, 32), png = 0),
+					MultiContentEntryText(pos = (47, 0), size = (400, 30), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 1),
+					MultiContentEntryText(pos = (450, 0), size = (128, 30), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 2),
+					],
+						"fonts": [gFont("Regular", 21)],
+					"itemHeight": 30
+				}</convert>
+		</widget>
+		<panel name="t2-2RG" />
+	</screen>
+	
+	<screen name="AutoBouquetsMaker_Log" position="0,0" size="1280,720" title="AutoBouquetsMaker Log" flags="wfNoBorder" backgroundColor="backgroundmid">
+		<panel name="template2" />
+		<panel name="v5-services" />
+		<widget name="list" font="Regular;18" position="107,152" size="648,501" backgroundColor="skydarkblue" foregroundColor="white" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" transparent="1" />
+		<panel name="t2-2RG" />
+	</screen>
+	
+	<screen name="AutoBouquetsMaker_About" position="0,0" size="1280,720" title="AutoBouquetsMaker - About" flags="wfNoBorder" backgroundColor="backgroundmid">
+		<panel name="template2" />
+		<panel name="v5-services" />
+		<widget name="about" font="Regular;18" position="107,152" size="648,501" backgroundColor="skydarkblue" foregroundColor="white" transparent="1" />
+		<panel name="t2-1R" />
+	</screen>
+	
+	<screen name="AutoBouquetsMaker" position="c-282,e-129" size="584,81" flags="wfNoBorder">
+		<ePixmap pixmap="mybackgrounds/abm-background.png" position="0,0" size="584,81" zPosition="-1" alphatest="blend" transparent="1" />
+		<widget name="action" position="86,5" size="494,38" font="Bold;24" halign="center" valign="center" backgroundColor="skydarkblue" foregroundColor="white" transparent="1" />
+		<widget name="progress" position="86,43" size="494,5" borderWidth="1" backgroundColor="skydarkblue" foregroundColor="white" />
+		<widget name="status" position="86,50" size="494,26" font="Regular;18" backgroundColor="skydarkblue" foregroundColor="skyblue" halign="center" valign="center" transparent="1" />
+	</screen>
+	
+	<screen name="AutoBouquetsMaker_UpdateProviders" position="c-282,e-129" size="584,81" flags="wfNoBorder">
+		<ePixmap pixmap="mybackgrounds/abm-background.png" position="0,0" size="584,81" zPosition="-1" alphatest="blend" transparent="1" />
+		<widget name="action" position="86,5" size="494,38" font="Bold;24" halign="center" valign="center" backgroundColor="skydarkblue" foregroundColor="white" transparent="1" />
+		<widget name="progress" position="86,43" size="494,5" borderWidth="1" backgroundColor="skydarkblue" foregroundColor="white" />
+		<widget name="status" position="86,50" size="494,26" font="Regular;18" backgroundColor="skydarkblue" foregroundColor="skyblue" halign="center" valign="center" transparent="1" />
+	</screen>
+	
+	<!-- cacheflush -->
+	<screen name="CacheFlushSetupMenu" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder" zPosition="4">
+		<panel name="template1" />
+		<panel name="v5-services" />
+		<panel name="v5-t1-settings" />
+		<panel name="t1-split-bg" />
+		<panel name="menu-setup-bars-center" />
+		<widget name="config" position="center,335" size="900,288" selectionPixmap="myselectbars/menu-bar-center.png" backgroundPixmap="myselectbars/blank.png"  itemHeight="36" font="Regular;25" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" enableWrapAround="1" scrollbarMode="showNever" zPosition="4" />
+		<widget name="min_free_kb" position="60,126" size="800,30" font="Regular;25" foregroundColor="white" backgroundColor="skydarkblue" halign="left" valign="top" transparent="1" zPosition="4" />
+		<widget name="memory" position="60,166" size="800,30" font="Regular;25" foregroundColor="white" backgroundColor="skydarkblue" halign="left" valign="top" transparent="1" zPosition="4" />
+		<widget name="slide" position="60,210" zPosition="2" borderWidth="1" size="480,8" backgroundColor="backgroundtop" />
+		<panel name="t1-4RGYB" />
+	</screen>
+	
+	<screen name="CacheFlushAutoScreen" position="937,96" zPosition="10" size="230,30" title="CacheFlush Status" backgroundColor="skydarkblue">
+		<widget name="message_label" font="Regular;25" position="0,0" zPosition="2" valign="center" halign="center" size="240,30" backgroundColor="skydarkblue" transparent="1" />
+	</screen>
+	
+	<screen name="CacheFlushInfoScreen" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder" zPosition="4">
+		<panel name="template2" />
+		<panel name="v5-services" />
+		<widget name="lmemtext" position="107,152" size="140,501" font="Regular;13" zPosition="2" valign="top" halign="left" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" />
+		<widget name="lmemvalue" position="257,152" size="100,501" font="Regular;13" zPosition="2" valign="top" halign="right" foregroundColor="skyblue" backgroundColor="skydarkblue" transparent="1" />
+		<widget name="rmemtext" position="457,152" size="140,501" font="Regular;13" zPosition="2" valign="top" halign="left" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" />
+		<widget name="rmemvalue" position="597,152" size="100,501" font="Regular;13" zPosition="2" valign="top" halign="right" foregroundColor="skyblue" backgroundColor="skydarkblue" transparent="1" />
+		<widget name="pfree" position="367,167" size="70,20" font="Regular;13" zPosition="3" halign="left" foregroundColor="skygold" backgroundColor="skydarkblue" transparent="1" />
+		<ePixmap position="427,152" size="2,501" pixmap="div-v.png" alphatest="blend" transparent="1" />
+		<panel name="t2-1R" />
+		<panel name="t2-1G" />
+		<panel name="t2-1B" />
+	</screen>
+	
+	<!-- imdb -->
+	<screen name="IMDB" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder" zPosition="4">
+		<panel name="template2" />
+		<panel name="v5-services" />
+		<widget name="titellabel" position="107,152" size="648,30" valign="center" halign="left" font="Regular;25" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" />
+		<widget name="detailslabel" position="107,192" size="340,140" font="Regular;18" foregroundColor="skyblue" backgroundColor="skydarkblue" transparent="1" />
+		<widget name="menu" position="107,232" size="648,320" itemHeight="30" font="Regular;21" scrollbarMode="showOnDemand" backgroundColor="skydarkblue" foregroundColor="white" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" selectionPixmap="myselectbars/bar-30.png" transparent="1" zPosition="3" />
+		<widget name="castlabel" position="107,342" size="340,200" font="Regular;18" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" />
+		<widget name="extralabel" position="107,178" size="648,384" font="Regular;16" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" />
+		<widget name="poster" position="470,194" size="260,349" alphatest="blend" transparent="1" />
+		<!-- <widget name="ratinglabel" position="107,152" size="300,24" halign="left" font="Regular;21" foregroundColor="skygold" backgroundColor="skydarkblue" transparent="1" /> -->
+		<widget name="starsbg" position="107,178" size="210,21" pixmap="myicons/starsbar_empty.png" zPosition="0" transparent="1" alphatest="blend" />
+		<widget name="stars" position="107,178" size="210,21" pixmap="myicons/starsbar_filled.png" transparent="1" alphatest="blend" />
+		<ePixmap position="107,569" size="648,2" pixmap="div-h.png" alphatest="blend" transparent="1" />
+		<widget name="statusbar" position="107,570" size="648,60" font="Regular;16" backgroundColor="skydarkblue" foregroundColor="skyblue" halign="left" valign="center" transparent="1" />
+		<panel name="t2-4RGYB" />
+	</screen>
+	
+	<!-- ##permanent clock## -->
+	<screen name="PermanentVfdClockMenu" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder" zPosition="4">
+		<panel name="template1" />
+		<panel name="v5-services" />
+		<panel name="v5-t1-settings" />
+		<panel name="t1-split-bg" />
+		<panel name="menu-setup-bars" />
+		<widget name="config" position="center,335" size="900,288" selectionPixmap="myselectbars/menu-bar.png" backgroundPixmap="myselectbars/blank.png"  itemHeight="36" font="Regular;24" foregroundColor="white" backgroundColor="skydarkblue" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" transparent="1" enableWrapAround="1" scrollbarMode="showNever" zPosition="4" />
+		<panel name="t1-2RG-Source" />
+	</screen>
+	
+	<!-- xmltvimporter old-->
+	<screen name="EPGMainSetup" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder" >
+		<panel name="template1" />
+		<panel name="v5-services" />
+		<panel name="v5-t1-settings" />
+		<panel name="t1-split-bg" />
+		<panel name="menu-setup-bars" />
+		<widget name="config" position="center,335" size="900,288" selectionPixmap="myselectbars/menu-bar.png" backgroundPixmap="myselectbars/blank.png"  itemHeight="36" font="Regular;25" foregroundColor="white" backgroundColor="skydarkblue" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" transparent="1" enableWrapAround="1" scrollbarMode="showNever" zPosition="4" />
+		<widget name="status" position="60,150" size="800,55" font="Regular;25" foregroundColor="white" backgroundColor="skydarkblue" halign="left" valign="top" transparent="1" zPosition="4" />
+		<widget name="statusbar" position="60,200" size="800,30" font="Regular;25" foregroundColor="white" backgroundColor="skydarkblue" halign="left" valign="center" transparent="1" zPosition="4" />
+		<panel name="t1-4RGYB" />
+		<panel name="t2-InfoButton-pos1" />
+		<panel name="t2-MenuButton-pos2" />
+	</screen>
+	
+	<screen name="XMLTVImportConfig" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder">
+		<panel name="EPGMainSetup" />
+	</screen>
+	
+	<screen name="XMLTVImportSources" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="backgroundmid">
+		<panel name="template2" />
+		<panel name="v5-services" />
+		<widget name="list" position="107,152" size="648,501" itemHeight="30" font="Regular;21" iconMargin="10" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColor="skydarkblue" foregroundColor="white" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" selectionPixmap="myselectbars/bar-30.png" transparent="1" />
+		<panel name="t2-Buttons-sm" />
+	</screen>
+	
+	<screen name="XMLTVImportProfile" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder">
+		<panel name="template1" />
+		<panel name="v5-services" />
+		<panel name="v5-t1-settings" />
+		<panel name="t1-split-bg" />
+		<panel name="menu-setup-bars" />
+		<widget name="config" position="center,335" size="900,288" selectionPixmap="myselectbars/menu-bar.png" backgroundPixmap="myselectbars/blank.png"  itemHeight="36" font="Regular;25" foregroundColor="white" backgroundColor="skydarkblue" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" transparent="1" enableWrapAround="1" scrollbarMode="showNever" zPosition="4" />
+		<panel name="t1-2RG-Source" />
+	</screen>
+	
+	<screen name="XMLTVImportLog" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="backgroundmid">
+		<panel name="template2" />
+		<panel name="v5-services" />
+		<eLabel position="107,152" size="648,501" backgroundColor="black" zPosition="-1" />
+		<widget name="list" position="112,157" size="638,491" font="Console;16" zPosition="3" transparent="1" backgroundColor="black" foregroundColor="white" />
+		<panel name="t2-1R" />
+		<panel name="t2-1B" />
+	</screen>
+	
+	<!-- xmltvimporter new EPG Importer-->
+	<!-- https://github.com/OpenPLi/enigma2-plugin-extensions-xmltvimport/blob/master/src/EPGImport/plugin.py -->
+	<screen name="EPGImportConfig" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder">
+		<panel name="EPGMainSetup" />
+	</screen>
+	
+	<screen name="EPGImportSources" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder">
+		<panel name="XMLTVImportSources" />
+	</screen>
+	
+	<screen name="EPGImportProfile" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder">
+		<panel name="XMLTVImportProfile" />
+	</screen>
+	
+	<screen name="EPGImportLog" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder">
+		<panel name="XMLTVImportLog" />
+	</screen>
+	
+	<!-- ##CutListEditor## -->
+	<!-- https://github.com/openatv/enigma2/blob/master/lib/python/Plugins/Extensions/CutListEditor/ui.py -->
+	<screen name="CutListEditor" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="backgroundmid">
+		<panel name="main-bg" />
+		<panel name="my-logo" />
+		<panel name="v5-services" />
+		<panel name="t1-time-nopig" />
+		<eLabel position="70,143" size="724,409" backgroundColor="#505555" />
+		<widget name="Video" position="72,145" zPosition="1" size="720,405" backgroundColor="transparent" />
+		<widget source="session.CurrentService" render="Label" position="70,558" size="720,30" zPosition="3" font="Regular;22" foregroundColor="white" backgroundColor="skydarkblue" halign="center" transparent="1" valign="center">
+			<convert type="ServiceName">Name</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Label" position="70,598" size="720,30" zPosition="3" font="Regular;22" foregroundColor="white" backgroundColor="skydarkblue" halign="left" transparent="1" valign="center">
+			<convert type="ServicePosition">Position,Detailed</convert>
+		</widget>
+		<widget name="SeekState" position="690,598" size="100,30" zPosition="3" font="Regular;22" foregroundColor="white" backgroundColor="skydarkblue" halign="right" transparent="1" valign="center" />
+		<widget name="Timeline" position="70,638" size="720,20" backgroundColor="#505555" pointer="position_arrow.png:3,5" alphatest="blend" foregroundColor="black" />
+		<ePixmap pixmap="icons/mp_buttons.png" position="350,668" size="152,18" alphatest="blend" />
+		<eLabel position="922,143" size="284,409" backgroundColor="#505555" />
+		<eLabel position="924,145" size="280,405" backgroundColor="#000000" />
+		<widget source="cutlist" render="Listbox" position="924,145" zPosition="1" size="280,405" scrollbarMode="showOnDemand" transparent="1">
+			<convert type="TemplatedMultiContent">{"template": [
+ 						MultiContentEntryText(pos=(0,0), size=(140, 30), text = 1, backcolor = MultiContentTemplateColor(3)),
+						MultiContentEntryText(pos=(140,0), size=(140, 30), text = 2, flags = RT_HALIGN_RIGHT, backcolor = MultiContentTemplateColor(3))
+					],
+ 				 "fonts": [gFont("Regular", 18)],
+				 "itemHeight": 30
+				}</convert>
+		</widget>
+	</screen>
+
+	<!-- ##GraphMultiEPG## -->
+	<!-- same as GraphicalEPGPIG -->
+	<screen name="GraphMultiEPG" title="Image Information" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="backgroundmid">
+		<panel name="GraphicalEPGPIG" />
+	</screen>
+	
+	<!-- ##GraphMultiEPGList## -->
+	<!-- same as SimpleChannelSelection-->
+	<screen name="GraphMultiEPGList" title="Image Information" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="backgroundmid">
+		<panel name="SimpleChannelSelection" />
+	</screen>
+	
+	<!-- ## PicturePlayer ## -->
+	<screen name="picshow" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder" zPosition="4">
+		<panel name="template2" />
+		<panel name="v5-services" />
+		<panel name="t2-bottom-right-bg" />
+		<widget name="filelist" font="Regular;18" position="107,152" size="648,480" itemHeight="30" scrollbarMode="showOnDemand" foregroundColor="white" backgroundColor="skydarkblue" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" transparent="1" />
+		<widget name="thn" position="806,408" size="368,213" alphatest="blend" transparent="1" zPosition="5" />
+		<widget source="label" render="Label" position="806,628" size="368,25" font="Regular;18" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" valign="center" halign="center" noWrap="1" zPosition="5" />
+		<panel name="t2-3RGY-Source" />
+		<panel name="t2-MenuButton" />
+	</screen>
+	
+	<screen name="Pic_Exif" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder" zPosition="4">
+		<panel name="template2" />
+		<panel name="v5-services" />
+		<widget source="menu" render="Listbox" position="107,152" size="648,480" foregroundColor="white" backgroundColor="skydarkblue" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" scrollbarMode="showOnDemand" selectionDisabled="1" transparent="1" enableWrapAround="1">
+			<convert type="TemplatedMultiContent">{
+				"template": [	
+                                            MultiContentEntryText(pos = (10,5), size = (300,30), flags = RT_HALIGN_LEFT, text = 0),
+                                            MultiContentEntryText(pos = (320,5), size = (300,30), flags = RT_HALIGN_LEFT, text = 1)],
+				"fonts": [gFont("Regular",20)],
+				"itemHeight": 30
+				}</convert>
+		</widget>
+		<panel name="t2-1R-Source" />
+	</screen>
+	
+	<screen name="Pic_Full_View" position="fill" flags="wfNoBorder">
+		<eLabel position="0,0" zPosition="0" size="1280,720" backgroundColor="black" />
+		<widget name="pic" position="60,80" size="1160,549" zPosition="1" alphatest="blend" transparent="1" />
+		<eLabel position="25,15" size="30,25" zPosition="2" backgroundColor="skydarkblue" transparent="1" />
+		<widget name="point" position="30,19" size="21,21" zPosition="3" pixmap="icons/clock.png" alphatest="blend" />
+		<widget name="play_icon" position="60,20" size="20,20" zPosition="3" pixmap="icons/play.png" alphatest="blend" />
+		<widget source="file" render="Label" position="80,15" size="600,25" zPosition="3" font="Regular;21" halign="left" noWrap="1" transparent="1" foregroundColor="skyblue" backgroundColor="black" />
+		<panel name="t2-4RGYB" />
+		<eLabel text="Previous" position="134,669" size="218,32" font="Regular;25" halign="left" valign="center" transparent="1" noWrap="1" foregroundColor="skyblue" backgroundColor="backgroundbot" zPosition="2" />
+		<eLabel text="Play/Pause" position="384,669" size="218,32" font="Regular;25" halign="left" valign="center" transparent="1" noWrap="1" foregroundColor="skyblue" backgroundColor="backgroundbot" zPosition="2" />
+		<eLabel text="Play/Pause" position="634,669" size="218,32" font="Regular;25" halign="left" valign="center" transparent="1" noWrap="1" foregroundColor="skyblue" backgroundColor="backgroundbot" zPosition="2" />
+		<eLabel text="Next" position="884,669" size="218,32" font="Regular;25" halign="left" valign="center" transparent="1" noWrap="1" foregroundColor="skyblue" backgroundColor="backgroundbot" zPosition="2" />
+	</screen>
+	
+	<screen name="Volume_adjust" position="0,0" size="1280,720" title="Setup" flags="wfNoBorder" backgroundColor="backgroundmid">
+		<panel name="template1" />
+		<panel name="v5-services" />
+		<panel name="v5-t1-settings" />
+		<panel name="t1-split-bg" />
+		<panel name="menu-setup-bars" />
+		<widget source="press_menu" render="Label" position="60,116" size="800,117" font="Regular;25" foregroundColor="white" backgroundColor="backgroundtop" halign="left" valign="top" transparent="1" zPosition="1" />
+		<widget name="ServiceList" position="center,335" size="900,288" selectionPixmap="myselectbars/menu-bar-no-arrows.png" backgroundPixmap="myselectbars/blank.png"  itemHeight="36" font="Regular;25" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" enableWrapAround="1" scrollbarMode="showNever" zPosition="4" />
+		<panel name="t1-4RGYB-Source" />
+		<panel name="t2-MenuButton" />
+	</screen>
+	
+	<screen name="Change_volume" position="0,0" size="1280,720" title="Setup" flags="wfNoBorder" backgroundColor="backgroundmid">
+		<panel name="template1" />
+		<panel name="v5-services" />
+		<panel name="v5-t1-settings" />
+		<panel name="t1-split-bg" />
+		<panel name="menu-setup-bars" />
+		<widget name="config" position="center,335" size="900,288" selectionPixmap="myselectbars/menu-bar-no-arrows.png" backgroundPixmap="myselectbars/blank.png"  itemHeight="36" font="Regular;25" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" enableWrapAround="1" scrollbarMode="showNever" zPosition="4" />
+		<panel name="t1-3RGY-Source" />
+	</screen>
+	
+	<screen name="mySmallChannelSelection" position="0,0" size="1280,720" backgroundColor="backgroundmid" transparent="0" flags="wfNoBorder">
+		<panel name="template2" />
+		<panel name="v5-services" />
+		<panel name="ListTemplate" />
+		<panel name="t2-4RGYB" />
+	</screen>
+	
+	<screen name="Volume_Config" position="0,0" size="1280,720" title="Setup" flags="wfNoBorder" backgroundColor="backgroundmid">
+		<panel name="template1" />
+		<panel name="v5-services" />
+		<panel name="v5-t1-settings" />
+		<panel name="t1-split-bg" />
+		<panel name="menu-setup-bars" />
+		<widget name="config" position="center,335" size="900,288" selectionPixmap="myselectbars/menu-bar.png" backgroundPixmap="myselectbars/blank.png"  itemHeight="36" font="Regular;25" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" enableWrapAround="1" scrollbarMode="showNever" zPosition="4" />
+		<widget source="infotext" render="Label" position="60,116" size="800,117" font="Regular;25" foregroundColor="white" backgroundColor="backgroundtop" halign="left" valign="top" transparent="1" zPosition="1" />
+		<panel name="t1-3RGY-Source" />
+	</screen>
+	
+	<screen name="EPGRefreshServiceEditor" title="Edit Services to refresh" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="backgroundmid">
+		<panel name="template1" />
+		<panel name="v5-services" />
+		<panel name="v5-t1-settings" />
+		<panel name="t1-split-bg" />
+		<panel name="menu-setup-bars" />
+		<widget name="config" position="center,335" size="900,288" selectionPixmap="myselectbars/menu-bar.png" backgroundPixmap="myselectbars/blank.png"  itemHeight="36" font="Regular;25" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" enableWrapAround="1" scrollbarMode="showNever" zPosition="4" />
+		<panel name="t1-4RGYB-Source" />
+	</screen>
+	
+	<screen name="EPGRefreshConfiguration" position="0,0" size="1280,720" title="Setup" flags="wfNoBorder" backgroundColor="backgroundmid">
+		<panel name="template1" />
+		<panel name="v5-services" />
+		<panel name="v5-t1-settings" />
+		<panel name="t1-split-bg" />
+		<panel name="menu-setup-bars" />
+		<widget name="config" position="center,335" size="900,288" selectionPixmap="myselectbars/menu-bar.png" backgroundPixmap="myselectbars/blank.png"  itemHeight="36" font="Regular;25" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" enableWrapAround="1" scrollbarMode="showNever" zPosition="4" />
+		<widget source="help" render="Label" position="60,116" size="800,117" font="Regular;25" foregroundColor="white" backgroundColor="backgroundtop" halign="left" valign="top" transparent="1" zPosition="1" />
+	<ePixmap pixmap="mybuttons/key-help.png" position="1069,669" size="50,24" alphatest="blend" transparent="1" zPosition="2" />
+		<ePixmap pixmap="mybuttons/key-info.png" position="1129,669" size="50,24" alphatest="blend" transparent="1" zPosition="2" />
+		<panel name="t1-4RGYB-Source" />
+	</screen>
+</skin>
