@@ -3,9 +3,10 @@
 	<!--footer text -->
 	<screen name="SelectToViewOrRecord">
 		<eLabel text="Press SELECT to view or" position="101,662" size="288,32" font="Regular;26" foregroundColor="skyblue" backgroundColor="backgroundbot" valign="top" halign="left" transparent="1" zPosition="1" />
-		<ePixmap pixmap="myicons/button-record.png" position="382,663" size="29,29" alphatest="blend" transparent="1" />
+		<ePixmap pixmap="myicons/button-record.png" position="382,663" size="29,29" alphatest="blend" />
 		<eLabel text="to record" position="419,662" size="120,32" font="Regular;26" foregroundColor="skyblue" backgroundColor="backgroundbot" valign="top" halign="left" transparent="1" zPosition="1" />
 	</screen>
+	
 	<!--EPG with video picture in graphic-->
 	<screen name="GraphicalEPGPIGTemplate">
 		<panel name="main-bg" />
@@ -40,36 +41,37 @@
 		<widget name="list"
                 position="101,335"
                 size="1078,288"
+                backgroundColor="backgroundmid"
                 ServiceFontGraphical="Regular;25"
                 EntryFontGraphical="Regular;25"
                 ServiceForegroundColor="white"
                 ServiceForegroundColorNow="skygold"
-                ServiceBackgroundColor="skylightrow"
-                ServiceBackgroundColorNow="skylightrow"
                 EntryForegroundColor="white"
                 EntryForegroundColorSelected="skydarkblue"
+                EntryForegroundColorNow="white"
+                EntryForegroundColorNowSelected="skydarkblue"
+                RecordForegroundColor="white"
+                RecordForegroundColorSelected="skydarkblue"
+                ZapForegroundColor="white"
+                ZapForegroundColorSelected="skydarkblue"
+                ServiceBackgroundColor="skylightrow"
+                ServiceBackgroundColorNow="skylightrow"
                 EntryBackgroundColor="skydarkblue"
                 EntryBackgroundColorSelected="skygold"
                 EntryBackgroundColorNow="skylightrow"
                 EntryBackgroundColorNowSelected="skygold"
-                EntryForegroundColorNow="white"
-                EntryForegroundColorNowSelected="skydarkblue"
+                RecordBackgroundColor="red"
+                RecordBackgroundColorSelected="skygold"
+                ZapBackgroundColor="zapgreen"
+                ZapBackgroundColorSelected="skygold"
                 ServiceBorderColor="backgroundbot"
                 ServiceBorderWidth="2"
                 ServiceNamePadding="8"
                 EntryBorderColor="backgroundbot"
-                EventBorderWidth="2" EventNamePadding="8"
-                RecordForegroundColor="white"
-                RecordForegroundColorSelected="skydarkblue"
-                RecordBackgroundColor="red"
-                RecordBackgroundColorSelected="skygold"
-                ZapForegroundColor="white"
-                ZapBackgroundColor="zapgreen"
-                ZapForegroundColorSelected="skydarkblue"
-                ZapBackgroundColorSelected="skygold"
+                EventBorderWidth="2"
+                EventNamePadding="8"
                 NumberOfRows="8"
                 EntryFontWrap="no"
-                zPosition="1"
                 transparent="1" />
                 
 		<widget name="bouquetlist" position="101,335" size="1078,288" font="Regular;25" foregroundColor="white" backgroundColor="backgroundmid" foregroundColorSelected="skydarkblue" backgroundColorSelected="skygold" itemHeight="36" borderWidth="2" borderColor="backgroundbot" scrollbarMode="showOnDemand" transparent="0" zPosition="4" />
@@ -77,21 +79,25 @@
 		<panel name="SelectToViewOrRecord" />
 		<panel name="t1-InfoButton" />
 		<panel name="t2-MenuButton" />
+		<applet type="onLayoutFinish">self["bouquetlist"].bouquetNamePadding = 10</applet>
 	</screen>
+	
 	<screen name="GraphicalEPGPIG1">
 		<panel name="GraphicalEPGPIGTemplate" />
-		<ePixmap pixmap="mybackgrounds/split-panel.png" position="60,267" size="1160,153" backgroundColor="backgroundmid" alphatest="blend" zPosition="0" />
+		<ePixmap pixmap="mybackgrounds/split-panel.png" position="60,267" size="1160,153" backgroundColor="backgroundmid" alphatest="blend" zPosition="-1" />
 		<ePixmap pixmap="myicons/prev-next.png" position="569,275" size="41,20" backgroundColor="transparent" alphatest="blend" transparent="1" zPosition="1" />
 		<widget source="Title" render="Label" position="90,267" size="500,35" font="Bold;25" foregroundColor="white" backgroundColor="titleshadow" valign="center" noWrap="1" transparent="1" zPosition="1" />
 	</screen>
+	
 	<!-- sky tabs hack -->
 	<screen name="GraphicalEPGPIG2">
 		<panel name="GraphicalEPGPIGTemplate" />
-		<ePixmap pixmap="mybackgrounds/split-panel-tabs.png" position="60,267" size="1160,153" backgroundColor="backgroundmid" alphatest="blend" zPosition="0" />
+		<ePixmap pixmap="mybackgrounds/split-panel-tabs.png" position="60,267" size="1160,153" backgroundColor="backgroundmid" alphatest="blend" zPosition="-1" />
 		<widget source="Title" render="Label" position="90,267" size="250,35" font="Bold;25" foregroundColor="white" backgroundColor="skydarkblue" valign="center" noWrap="1" transparent="1" zPosition="1" />
 		<widget name="guidebouquetlist" position="350,267" size="850,35" font="Regular;25" foregroundColor="white" backgroundColor="skydarkblue" valign="center" halign="left" noWrap="1" transparent="1" zPosition="1" />
 		<ePixmap pixmap="mybackgrounds/tabs-gradient.png" position="1185,267" size="15,36" backgroundColor="transparent" alphatest="blend" zPosition="5" />
 	</screen>
+	
 	<screen name="GraphicalEPGTemplate">
 		<panel name="main-bg" />
 		<panel name="my-logo" />
@@ -118,7 +124,7 @@
 		<widget name="list"
                 position="101,192"
                 size="1078,432"
-                backgroundColor="skylightrow"
+                backgroundColor="backgroundmid"
                 ServiceFontGraphical="Regular;23"
                 EntryFontGraphical="Regular;23"
                 ServiceForegroundColor="white"
@@ -148,31 +154,33 @@
                 ZapForegroundColorSelected="skydarkblue"
                 ZapBackgroundColorSelected="skygold"
                 EntryFontWrap="Yes"
-                zPosition="1"
                 transparent="1" />
-                
 		<widget name="bouquetlist" position="101,192" size="1078,432" font="Regular;25" foregroundColor="white" backgroundColor="skydarkblue" foregroundColorSelected="skydarkblue" backgroundColorSelected="skygold" itemHeight="36" borderWidth="2" borderColor="backgroundbot" scrollbarMode="showOnDemand" transparent="0" zPosition="4" />
 		<panel name="EPG4RGYB" />
 		<panel name="SelectToViewOrRecord" />
 		<panel name="t1-InfoButton" />
 		<panel name="t2-MenuButton" />
+		<applet type="onLayoutFinish">self["bouquetlist"].bouquetNamePadding = 10</applet>
 	</screen>
+	
 	<!--EPG with no video picture in graphic-->
 	<screen name="GraphicalEPG1">
 		<panel name="GraphicalEPGTemplate" />
-		<ePixmap pixmap="mybackgrounds/split-panel.png" position="60,124" size="1160,153" backgroundColor="transparent" alphatest="blend" zPosition="0" />
+		<ePixmap pixmap="mybackgrounds/split-panel.png" position="60,124" size="1160,153" backgroundColor="transparent" alphatest="blend" zPosition="-1" />
 		<ePixmap pixmap="myicons/prev-next.png" position="569,132" size="41,20" backgroundColor="transparent" alphatest="blend" transparent="1" zPosition="1" />
 		<widget source="Title" render="Label" position="90,124" size="500,35" font="Bold;25" foregroundColor="white" backgroundColor="titleshadow" valign="center" noWrap="1" transparent="1" zPosition="1" />
 	</screen>
+	
 	<!-- sky tabs hack -->
 	<screen name="GraphicalEPG2">
 		<panel name="GraphicalEPGTemplate" />
-		<ePixmap pixmap="mybackgrounds/split-panel-tabs.png" position="60,124" size="1160,153" backgroundColor="transparent" alphatest="blend" zPosition="0" />
+		<ePixmap pixmap="mybackgrounds/split-panel-tabs.png" position="60,124" size="1160,153" backgroundColor="transparent" alphatest="blend" zPosition="-1" />
 		<widget source="Title" render="Label" position="90,124" size="250,35" font="Bold;25" foregroundColor="white" backgroundColor="skydarkblue" valign="center" noWrap="1" transparent="1" zPosition="1" />
 		<widget name="guidebouquetlist" position="350,124" size="850,35" font="Regular;25" foregroundColor="white" backgroundColor="skydarkblue" valign="center" halign="left" noWrap="1" transparent="1" zPosition="1" />
 		<ePixmap pixmap="mybackgrounds/tabs-gradient.png" position="1185,124" size="15,36" backgroundColor="transparent" alphatest="blend" zPosition="5" />
 
 	</screen>
+	
 	<!-- graphical infobar - multi epg < > -->
 	<screen name="GraphicalInfoBarEPG" position="0,491" size="1280,720" backgroundColor="transparent" transparent="0" flags="wfNoBorder">
 		<ePixmap pixmap="mybackgrounds/v5-infoepg95.png" position="60,0" size="1160,183" zPosition="-1" />
@@ -188,7 +196,7 @@
 		<widget name="list"
                 position="101,66"
                 size="1078,72"
-                backgroundColor="skylightrow"
+                backgroundColor="backgroundmid"
                 ServiceFontInfobar="Regular;25"
                 EventFontInfobar="Regular;25"
                 ServiceForegroundColor="white"
@@ -219,14 +227,15 @@
                 ZapBackgroundColorSelected="skygold"
                 EntryFontWrap="No"
                 NumberOfRows="2"
-                zPosition="1"
                 transparent="1" />
                 
 		<widget name="bouquetlist" position="101,66" size="1078,72" font="Regular;25" foregroundColor="white" backgroundColor="skydarkblue" foregroundColorSelected="skydarkblue" backgroundColorSelected="skygold" itemHeight="36" borderWidth="2" borderColor="backgroundbot" scrollbarMode="showOnDemand" transparent="0" zPosition="4" />
 		<panel name="InfoEPGButtons" />
-		<ePixmap pixmap="myicons/info.png" position="1096,145" size="24,24" alphatest="blend" transparent="1" zPosition="2" />
-		<ePixmap pixmap="mybuttons/key-menu.png" position="1129,145" size="50,24" alphatest="blend" transparent="1" zPosition="2" />
+		<ePixmap pixmap="myicons/info.png" position="1096,145" size="24,24" alphatest="blend"  zPosition="2" />
+		<ePixmap pixmap="mybuttons/key-menu.png" position="1129,145" size="50,24" alphatest="blend"  zPosition="2" />
+		<applet type="onLayoutFinish">self["bouquetlist"].bouquetNamePadding = 20</applet>
 	</screen>
+	
 	<!-- graphical infobar - multi epg < > info -->
 	<screen name="InfoBarEventView" position="0,340" size="1280,151" backgroundColor="transparent" flags="wfNoBorder" zPosition="1">
 		<ePixmap position="60,0" size="1160,151" pixmap="mybackgrounds/v5-infoepgtop95-2.png" alphatest="blend" zPosition="-1" />
@@ -246,6 +255,7 @@
 			<convert type="SlykClockToText">SlykAsLength</convert>
 		</widget>
 	</screen>
+	
 	<!-- epg - show bouquet on launch -->
 	<screen name="BouquetSelector" title="Select a bouquet" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder" transparent="0">
 		<panel name="template1" />
@@ -285,7 +295,9 @@
 		<panel name="t2-4RGYB" />
 		<panel name="t2-MenuButton" />
 		<panel name="t2-InfoButton-pos2" />
+		
 	</screen>
+	
 	<!-- epg multi -->
 	<screen name="EPGSelectionMulti" position="0,0" size="1280,720" backgroundColor="backgroundmid" transparent="0" flags="wfNoBorder">
 		<panel name="template2" />
@@ -319,6 +331,8 @@
 		<panel name="t2-MenuButton" />
 		<panel name="t2-InfoButton-pos2" />
 	</screen>
+	<applet type="onLayoutFinish">self["bouquetlist"].bouquetNamePadding = 10</applet>
+	
 	<!-- epg tabs hack - red button popup -->
 	<screen name="OptionDialog" position="center,center" size="240,130" backgroundColor="transparent" flags="wfNoBorder"  zPosition="5">
 		<ePixmap pixmap="mybackgrounds/optiondialog.png" position="0,0" size="240,130" alphatest="blend" zPosition="-1" />

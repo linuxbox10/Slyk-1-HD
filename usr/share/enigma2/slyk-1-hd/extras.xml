@@ -1,9 +1,10 @@
 <skin>
 
-
 	<!-- Change the end number of each panel name in that section to personalise your skin. -->
 	<!-- DO NOT edit the screen name - only the panel name number -->
 	<!-- Reboot GUI required.-->
+	
+	
 	<!-- EPGS                                                -->
 	<!-- EPG SKY TABS - amend the panel numbers below        -->
 	<!-- 1 = original no tabs (default)                      -->
@@ -37,7 +38,7 @@
 	#########################################################################################################
 	
         <!-- infobar layout -->
-	<!-- 1 = slyk original with tuner and snr -->
+	<!-- 1 = 2 programme style with tuner and snr -->
 	<!-- 2 = original sly style with 3 programmes, now, next, later -->
 	<!-- see secondinfobar below -->
 	
@@ -47,20 +48,16 @@
 	
 	#########################################################################################################
 	
-        <!-- second info bar - ECM (line details) Info ( ok button twice ) -->
-        
-        <!-- For infobar layout 1 -->
-        
-	<!-- 1 = no ECM (default)-->
-	<!-- 2 = ECM -->
+        <!-- second info bar - Info ( ok button twice ) -->
 	
-        <!-- For infobar layout 2 -->
+        <!-- 1 = infobar layout 1 - ECM/SNR/RES -->
+	<!-- 2 = infobar layout 1 - No ECM/SNR/RES  -->
 	
-	<!-- 3 = no ECM  -->
-	<!-- 4 = ECM -->
+        <!-- 3 = infobar layout 2 - ECM/SNR/RES  -->
+	<!-- 4 = infobar layout 2 - No ECM/SNR/RES  -->
 	
-        <screen name="SecondInfoBar" flags="wfNoBorder" size="1280,720" title="InfoBar" backgroundColor="transparent">
-		<panel name="SecondInfoBar3" />
+        <screen name="SecondInfoBar" flags="wfNoBorder" position="0,0" size="1280,720" title="InfoBar" backgroundColor="transparent">
+		<panel name="SecondInfoBar4" />
 	</screen>
 	
 	#########################################################################################################
@@ -77,7 +74,7 @@
 	<!-- Event View (info button)-->
 	<!-- 1 = coloured buttons (default)-->
 	<!-- 2 = no buttons -->
-	<screen name="EventView" position="0,0" size="1280,720" backgroundColor="transparent" flags="wfNoBorder" zPosition="1">
+	<screen name="EventView" position="0,0" size="1280,720" backgroundColor="transparent" flags="wfNoBorder" >
 		<panel name="EventView1" />
 	</screen>
 	
@@ -96,9 +93,9 @@
 	
         <!-- Movies  -->
 	<!-- 1 = Enigma2 Layout -->
-       	<!-- 2 = Sky Planner Layout -Fake Tabs -->
-       	<!-- 3 = Sky Planner - No Fake tabs -->
-	<screen name="MovieSelection" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="backgroundmid" title="Movie Selection" zPosition="-1">
+       	<!-- 2 = Sky Planner Mod Layout -Fake Tabs -->
+       	<!-- 3 = Sky Planner Mod Layout - No Fake tabs -->
+	<screen name="MovieSelection" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="backgroundmid" title="Movie Selection">
 		<panel name="MovieSelection1" />
 	</screen>
 	

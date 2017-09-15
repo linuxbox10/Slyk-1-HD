@@ -1,11 +1,12 @@
 <skin>
 	<!-- Wizzard's -->
 	<screen name="RemoteControlTemplate">
-		<widget name="rc" pixmap="rc.png" position="950,140" zPosition="10" size="154,500" alphatest="blend" transparent="0" />
-		<widget name="arrowdown" pixmap="arrowdown.png" position="-100,-100" zPosition="11" size="37,70" alphatest="blend" />
-		<widget name="arrowdown2" pixmap="arrowdown.png" position="-100,-100" zPosition="11" size="37,70" alphatest="blend" />
-		<widget name="arrowup" pixmap="arrowup.png" position="-100,-100" zPosition="11" size="37,70" alphatest="blend" />
-		<widget name="arrowup2" pixmap="arrowup.png" position="-100,-100" zPosition="11" size="37,70" alphatest="blend" />
+		<widget name="rc" pixmap="rc.png" position="950,140" zPosition="-1" size="154,500" alphatest="blend" />
+		<widget name="arrowdown" pixmap="arrowdown.png" position="-100,-100" zPosition="2" size="37,70" alphatest="blend" />
+		<widget name="arrowup" pixmap="arrowup.png" position="-100,-100" zPosition="2" size="37,70" alphatest="blend" />
+		<widget name="arrowup2" pixmap="arrowup.png" position="-100,-100" zPosition="2" size="37,70" alphatest="blend" />
+		<widget name="arrowdown2" pixmap="arrowdown.png" position="-100,-100" zPosition="2" size="37,70" alphatest="blend" />
+
 	</screen>
 	
 	<screen name="WizardTemplate">
@@ -14,18 +15,18 @@
 		<panel name="v5-setup" />
 		<panel name="t1-time-nopig" />
 		<widget name="text" position="150,140" size="730,250" font="Regular;22" transparent="1" foregroundColor="white" backgroundColor="skydarkblue" />
-		<widget name="config" position="150,400" size="730,220" selectionPixmap="myselectbars/bar-30.png" transparent="1" backgroundColor="skydarkblue" itemHeight="30" foregroundColor="white" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" font="Regular;25" enableWrapAround="1" scrollbarMode="showOnDemand" zPosition="2" />
+		<widget name="config" textOffset="10,0" position="150,400" size="730,220" font="Regular;25" secondfont="Regular;25" selectionPixmap="myselectbars/bar-30.png" transparent="1" backgroundColor="skydarkblue" itemHeight="30" foregroundColor="white" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" enableWrapAround="1" valign="center" scrollbarMode="showNever"  />
 	
-                <widget source="list" render="Listbox" position="150,400" size="730,220" selectionPixmap="myselectbars/bar-30.png" transparent="1" backgroundColor="skydarkblue" itemHeight="30" foregroundColorSelected="skydarkblue" backgroundColorSelected="skygold" scrollbarMode="showOnDemand" enableWrapAround="1" zPosition="2">
+                <widget source="list" render="Listbox" position="150,400" size="730,220" selectionPixmap="myselectbars/bar-30.png" backgroundColor="skydarkblue" itemHeight="30" foregroundColorSelected="skydarkblue" backgroundColorSelected="skygold" scrollbarMode="showNever" enableWrapAround="1" transparent="1">
 			<convert type="TemplatedMultiContent">{"template": [
                                 MultiContentEntryText(pos = (10, 0), size = (720, 30), flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 0) ],
 				"fonts": [gFont("Regular", 26)],
 				"itemHeight": 30
 				}</convert>
 		</widget>
+		<ePixmap name="red" pixmap="buttons/key_red.png" position="106,672" size="24,24" alphatest="blend" />
+		<widget name="languagetext" position="138,669" size="235,30" font="Regular;26" halign="left" transparent="1" noWrap="1" foregroundColor="skyblue" backgroundColor="skydarkblue" />
 		<panel name="RemoteControlTemplate" />
-		<ePixmap name="red" pixmap="buttons/key_red.png" position="106,672" size="24,24" alphatest="blend" transparent="1" zPosition="2" />
-		<widget name="languagetext" position="138,669" size="235,30" font="Regular;26" halign="left" transparent="1" noWrap="1" foregroundColor="skyblue" backgroundColor="skydarkblue" zPosition="2" />
 	</screen>
 	
 	<!-- HelpMenu -->
@@ -35,9 +36,9 @@
 		<panel name="my-logo" />
 		<panel name="v5-help" />
 		<panel name="t1-time-nopig" />
-		<panel name="RemoteControlTemplate" />
-		<widget name="list" position="60,150" size="700,456" selectionPixmap="myselectbars/bar-30.png" transparent="1" backgroundColor="skydarkblue" itemHeight="30" foregroundColorSelected="skydarkblue" backgroundColorSelected="skygold" scrollbarMode="showOnDemand" />
+		<widget name="list" textOffset="10,2" position="60,150" size="700,456" selectionPixmap="myselectbars/bar-30.png" transparent="1" backgroundColor="skydarkblue" itemHeight="30" foregroundColorSelected="skydarkblue" backgroundColorSelected="skygold" scrollbarMode="showNever" />
 		<widget name="long_key" position="760,600" size="180,40" font="Regular;20" halign="right" foregroundColor="yellow" transparent="1" />
+		<panel name="RemoteControlTemplate" />
 	</screen>
 	
 	<!-- StartWizard -->
@@ -72,22 +73,14 @@
 	<screen name="DreamPackageWizard" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="backgroundmid">
 		<panel name="WizardTemplate" />
 	</screen>
-	
-	<!-- not finished -->
-	<!-- InstallWizard -->
-	<!-- https://github.com/openatv/enigma2/blob/master/lib/python/Screens/InstallWizard.py -->
-	<screen name="InstallWizardIpkgUpdater" position="center,center" size="600,60" >
-		<widget source="statusbar" render="Label" position="10,5" zPosition="10" size="e-10,30" halign="center" valign="center" font="Regular;22" transparent="1" />
-		<eLabel backgroundColor="darkgrey" position="0,430" size="560,2" zPosition="1" />
-	</screen>
-	
-	<screen name="LanguageWizard" position="fill" flags="wfNoBorder" backgroundColor="backgroundmid">
+
+	<screen name="LanguageWizard" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="backgroundmid">
 		<panel name="main-bg" />
 		<panel name="my-logo" />
 		<panel name="v5-setup" />
 		<panel name="t1-time-nopig" />
 		<widget name="text" position="150,140" size="730,250" font="Regular;22" transparent="1" foregroundColor="white" backgroundColor="skydarkblue" />
-		<widget source="languages" render="Listbox" position="150,400" size="730,220" selectionPixmap="myselectbars/bar-30.png" transparent="1" backgroundColor="skydarkblue" itemHeight="48" foregroundColorSelected="skydarkblue" backgroundColorSelected="skygold" scrollbarMode="showOnDemand">
+		<widget source="languages" render="Listbox" position="150,400" size="730,220" selectionPixmap="myselectbars/bar-30.png" transparent="1" backgroundColor="skydarkblue" itemHeight="48" foregroundColorSelected="skydarkblue" backgroundColorSelected="skygold" scrollbarMode="showNever">
 			<convert type="TemplatedMultiContent">{"template": [
 				MultiContentEntryText(pos = (100,0), size = (360,44), flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1), # index 1 is the language name,
 				MultiContentEntryPixmapAlphaBlend(pos = (20,1), size = (60,40), png = 2), # index 2 is the pixmap
@@ -96,10 +89,10 @@
 				"itemHeight": 48
 				}</convert>
 		</widget>
-		<widget name="config" position="150,400" size="730,220" selectionPixmap="myselectbars/bar-30.png" transparent="1" backgroundColor="skydarkblue" itemHeight="30" foregroundColorSelected="skydarkblue" backgroundColorSelected="skygold" scrollbarMode="showOnDemand" />
-		<panel name="RemoteControlTemplate" />
+		<widget name="config" textOffset="10,0" position="150,400" size="730,220" selectionPixmap="myselectbars/bar-30.png" transparent="1" backgroundColor="skydarkblue" itemHeight="30" foregroundColorSelected="skydarkblue" backgroundColorSelected="skygold" scrollbarMode="showNever" />
 		<panel name="t2-1R" />
-		<widget name="languagetext" position="138,669" size="210,31" font="Regular;25" halign="left" valign="center" transparent="1" noWrap="1" foregroundColor="skyblue" backgroundColor="backgroundbot" zPosition="2" />
+		<widget name="languagetext" position="138,669" size="210,31" font="Regular;25" halign="left" valign="center" transparent="1" noWrap="1" foregroundColor="skyblue" backgroundColor="backgroundbot" />
+		<panel name="RemoteControlTemplate" />
 	</screen>
 	
 	<!-- CleanupWizard Plugin -->
@@ -111,21 +104,6 @@
 	<!-- VideoWizard -->
 	<!-- https://github.com/openatv/enigma2/blob/master/lib/python/Screens/VideoWizard.py -->
 	<screen name="VideoWizard" position="fill" title="Welcome..." flags="wfNoBorder" backgroundColor="backgroundmid">
-		<panel name="main-bg" />
-		<panel name="my-logo" />
-		<panel name="v5-setup" />
-		<panel name="t1-time-nopig" />
-		<widget name="text" position="150,140" size="730,250" font="Regular;22" transparent="1" foregroundColor="white" backgroundColor="skydarkblue" />
-		<widget name="config" position="250,400" size="630,220" selectionPixmap="myselectbars/bar-30.png" transparent="1" backgroundColor="skydarkblue" itemHeight="30" foregroundColorSelected="skydarkblue" backgroundColorSelected="skygold" scrollbarMode="showOnDemand" />
-		<widget source="list" render="Listbox" position="250,400" size="630,220" scrollbarMode="showOnDemand" selectionPixmap="myselectbars/bar-30.png" backgroundColor="skydarkblue" foregroundColor="white" foregroundColorSelected="skydarkblue" backgroundColorSelected="skygold" transparent="1">
-			<convert type="TemplatedMultiContent">{"template": [
-                                MultiContentEntryText(pos = (10, 0), size = (610, 30), flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 0) ],
-				"fonts": [gFont("Regular", 26)],
-				"itemHeight": 30
-				}</convert>
-		</widget>
-		<panel name="RemoteControlTemplate" />
-		<panel name="t2-1R" />
-		<widget name="languagetext" position="138,669" size="210,31" font="Regular;25" halign="left" valign="center" transparent="1" noWrap="1" foregroundColor="skyblue" backgroundColor="backgroundbot" zPosition="2" />
+		<panel name="WizardTemplate" />
 	</screen>
 </skin>

@@ -1,0 +1,99 @@
+SlykClockToText.py
+
+
+SlykAsLength = 0 Mins / 10 Mins / 1 Hour / 2 Hours / 1h 10m (used on duration)
+
+** channelselection **
+<widget source="ServiceEvent" render="Label" ... >
+	<convert type="EventTime">Duration</convert>
+	<convert type="SlykClockToText">SlykAsLength</convert>
+</widget>
+
+** EPGs / Eventview **
+<widget source="Event" render="Label" ... >
+	<convert type="EventTime">Duration</convert>
+	<convert type="SlykClockToText">SlykAsLength</convert>
+</widget>
+
+** MoviePlanner **
+<widget source="Service" render="Label" ... >
+	<convert type="ServiceTime">Duration</convert>
+	<convert type="SlykClockToText">SlykAsLength</convert>
+</widget>
+
+
+
+SlykQDate = Wednesday, 7.00pm (used as skyq homepage date)
+
+
+SlykHDDate = 12.00am Wed 21/08 (as used on most pages of slyk)
+
+<widget source="global.CurrentTime" render="Label" ... >
+	<convert type="SlykClockToText">SlykHDDate</convert>
+</widget>
+
+
+
+SlykHDTime = 12.00am/pm (Can be used anywhere there is a single time component)
+
+<widget source="ServiceEvent" render="Label" ... >
+	<convert type="EventTime">StartTime</convert>
+	<convert type="SlykClockToText">SlykHDTime</convert>
+</widget>
+
+<widget source="session.Event_Next" render="Label" position="642,562" size="120,36" font="Regular;26" foregroundColor="skylightblue" backgroundColor="skydarkblue" transparent="1" noWrap="1" valign="center">
+	<convert type="EventTime">StartTime</convert>
+	<convert type="SlykClockToText">SlykHDTime</convert>
+</widget>
+
+
+
+
+
+SlykServicePosition.py
+
+Remaining = -10 mins (used to show mins remainging on timeshift pause icon. Preceded by a minus sign)
+Remaining2 = -5 secs (as above but used to show seconds as well if less than a minute on timeshft pause icon)
+
+<screen name="TimeshiftState" ... >
+	...
+	...
+	<widget source="session.CurrentService" render="Label" ... >
+	<convert type="SlykServicePosition">Remaining</convert>
+	</widget>
+</screen>
+
+
+Position = -10 mins (used on movies pause icon)
+
+<screen name="PVRState" ... >
+	...
+	...
+	<widget source="session.CurrentService" render="Label" ... >
+		<convert type="SlykServicePosition">Position</convert>
+	</widget>
+</screen>
+
+
+
+Movie Remaining = 19 mins (used on movie bar - view time remaining 19 mins)
+
+<eLabel text="View time remaining" ... />
+<widget source="session.CurrentService" render="Label" ... >
+	<convert type="SlykServicePosition">MovieRemaining</convert>
+</widget>
+
+
+
+SlykRemainingToText.py
+
+OnlyMinute = Started 1 min ago / Started 2 mins ago (only used on my slyk infobar)
+
+<widget source="session.Event_Now" render="Label" ... >
+	<convert type="EventTime">Elapsed</convert>
+	<convert type="SlykRemainingToText">OnlyMinute</convert>
+</widget>
+
+
+
+

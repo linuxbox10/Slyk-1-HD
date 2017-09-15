@@ -8,11 +8,11 @@
 	</screen>
 	
 	<screen name="my-logo1">
-		<ePixmap pixmap="myicons/slyklogo.png" position="center,29" size="96,52" alphatest="blend" backgroundColor="transparent" transparent="1" zPosition="2" />
+		<ePixmap pixmap="myicons/slyklogo.png" position="center,29" size="96,52" alphatest="blend" backgroundColor="transparent"  zPosition="2" />
 	</screen>
 	
 	<screen name="my-logo2">
-		<ePixmap pixmap="myicons/logo.png" position="center,29" size="88,52" alphatest="blend" backgroundColor="transparent" transparent="1" zPosition="2" />
+		<ePixmap pixmap="myicons/logo.png" position="center,29" size="88,52" alphatest="blend" backgroundColor="transparent"  zPosition="2" />
 	</screen>
 	
 	<screen name="tv-guide">
@@ -70,7 +70,7 @@
 	</screen>
 	
 	<screen name="t2-bottom-right-bg">
-		<ePixmap pixmap="mybackgrounds/text-bg.png" position="798,401" size="384,261" alphatest="blend" zPosition="0" />
+		<ePixmap pixmap="mybackgrounds/text-bg.png" position="798,401" size="384,261" alphatest="blend" zPosition="-1" />
 	</screen>
 	
 	<screen name="menu-bars">
@@ -194,21 +194,53 @@
 	        <eLabel text="System Details" position="60,82" size="800,28" valign="center" halign="left" font="Regular;25" noWrap="0" transparent="1" foregroundColor="skyblue" backgroundColor="backgroundtop" zPosition="3" />
         </screen>
         
+
+        <screen name="description">
+                <widget name="description" position="60,119" size="800,117" font="Regular;25" foregroundColor="white" backgroundColor="backgroundtop" valign="top" halign="left" transparent="1" zPosition="2" />
+        </screen>
         
+         <screen name="description1">
+                <widget name="description" position="107,572" size="648,80" font="Regular;18" foregroundColor="skyblue" backgroundColor="skydarkblue" transparent="1" zPosition="2"/>
+         </screen>
+
+        
+       <screen name="description2">
+              	<widget name="description" position="806,408" size="368,245" font="Regular;18" halign="left" valign="top" transparent="1" backgroundColor="skydarkblue" zPosition="2"/>
+         </screen>
+
+         <screen name="VKeyIcon">
+           	<widget source="VKeyIcon" render="Pixmap" pixmap="mybuttons/key-text.png" position="1129,672" zPosition="4" size="50,24"  alphatest="blend">
+			<convert type="ConditionalShowHide" />
+		</widget>
+         </screen>
+
+         <screen name="HelpWindow">
+        	<widget name="HelpWindow" pixmap="buttons/vkey_icon.png" position="0,0" zPosition="10" size="1280,40" transparent="1" alphatest="blend" />
+         </screen>
+
+         <screen name="introduction">
+                <widget source="introduction" render="Label" position="60,119" size="800,117" font="Regular;25" foregroundColor="white" backgroundColor="backgroundtop" valign="top" halign="left" transparent="1" zPosition="2" />
+        </screen>
+
+        <screen name="footnote">
+                <widget name="footnote" position="center,321" size="900,14" font="Regular;12" foregroundColor="skyblue" backgroundColor="skydarkblue" valign="center" halign="right" transparent="1" zPosition="4" />
+        </screen>
+
+
 	<!-- used mainly on network screens -->
 	<screen name="active-block">
-		<widget name="lab1" position="186,152" size="100,24" font="Regular;20" valign="center" transparent="1" forgroundColor="white" backgroundColor="skydarkblue" />
-		<widget name="labdisabled" position="286,152" size="100,24" font="Regular;20" valign="center" halign="center" transparent="0" forgroundColor="white" backgroundColor="red" zPosition="2" />
-		<widget name="labactive" position="286,152" size="100,24" font="Regular;20" valign="center" halign="center" transparent="0" forgroundColor="white" backgroundColor="green" zPosition="2" />
-		<widget name="lab2" position="426,152" size="150,24" font="Regular;20" valign="center" transparent="1" forgroundColor="white" backgroundColor="skydarkblue" />
+		<widget name="lab1" position="186,152" size="100,24" font="Regular;20" valign="center" transparent="1" foregroundColor="white" backgroundColor="skydarkblue" />
+		<widget name="labdisabled" position="286,152" size="100,24" font="Regular;20" valign="center" halign="center" transparent="0" foregroundColor="white" backgroundColor="red" zPosition="2" />
+		<widget name="labactive" position="286,152" size="100,24" font="Regular;20" valign="center" halign="center" transparent="0" foregroundColor="white" backgroundColor="green" zPosition="2" />
+		<widget name="lab2" position="426,152" size="150,24" font="Regular;20" valign="center" transparent="1" foregroundColor="white" backgroundColor="skydarkblue" />
 		<widget name="labstop" position="576,152" size="100,24" font="Regular;20" valign="center" halign="center" backgroundColor="red" zPosition="1" />
 		<widget name="labrun" position="576,152" size="100,24" font="Regular;20" valign="center" halign="center" backgroundColor="green" zPosition="2" />
 	</screen>
 
 	<screen name="active-block2">
-		<widget name="lab1" position="186,152" size="100,24" font="Regular;20" valign="center" transparent="1" forgroundColor="white" backgroundColor="skydarkblue" />
-		<widget name="labactive" position="286,152" size="100,24" font="Regular;20" valign="center" halign="center" transparent="0" forgroundColor="white" backgroundColor="green" zPosition="2" />
-		<widget name="lab2" position="426,152" size="150,24" font="Regular;20" valign="center" transparent="1" forgroundColor="white" backgroundColor="skydarkblue" />
+		<widget name="lab1" position="186,152" size="100,24" font="Regular;20" valign="center" transparent="1" foregroundColor="white" backgroundColor="skydarkblue" />
+		<widget name="labactive" position="286,152" size="100,24" font="Regular;20" valign="center" halign="center" transparent="0" foregroundColor="white" backgroundColor="green" zPosition="2" />
+		<widget name="lab2" position="426,152" size="150,24" font="Regular;20" valign="center" transparent="1" foregroundColor="white" backgroundColor="skydarkblue" />
 		<widget name="labstop" position="576,152" size="100,24" font="Regular;20" valign="center" halign="center" backgroundColor="red" zPosition="1" />
 		<widget name="labrun" position="576,152" size="100,24" font="Regular;20" valign="center" halign="center" backgroundColor="green" zPosition="2" />
 	</screen>

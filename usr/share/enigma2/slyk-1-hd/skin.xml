@@ -1,5 +1,5 @@
 <skin>
-	<!-- Skin: Slyk1HD(2015) Version 4 by kiddac : techkings.org -->
+	<!-- Skin: Slyk1HD(2015) Version 4 by kiddac -->
 	
 	<!-- Very losely based on Blue HD by rossi200 and simonsez which was based on ViX-Night-HD Vs 3.01 (Original) by AndyBlac @ www.world-of-satellite.com  -->
 	
@@ -7,7 +7,6 @@
 	<!-- If using any elements/graphics from this skin in your own work please reference me correctly -->
 
         <!-- Thanks to help of techkings.org forum members for testing the betas and the constructive suggestions -->
-	<!-- You can modify and redistribute it as long as you keep this license and the original author for the skin in all of your modifications -->
 	
         <!-- ****************************************************************************************************** -->
 	<!-- If you would like to buy me a beer for my efforts please use the paypal links on http://slyk1hd.yolasite.com/ -->
@@ -31,13 +30,12 @@
 	<include filename="/usr/share/enigma2/slyk-1-hd/infobar.xml" />
 	<include filename="/usr/share/enigma2/slyk-1-hd/infopanel.xml" />
 	<include filename="/usr/share/enigma2/slyk-1-hd/information.xml" />
-	<include filename="/usr/share/enigma2/slyk-1-hd/motorised-dish.xml" />
 	<include filename="/usr/share/enigma2/slyk-1-hd/movies.xml" />
 	<include filename="/usr/share/enigma2/slyk-1-hd/network.xml" />
 	<include filename="/usr/share/enigma2/slyk-1-hd/plugins.xml" />
 	<include filename="/usr/share/enigma2/slyk-1-hd/timers.xml" />
         <include filename="/usr/share/enigma2/slyk-1-hd/vix.xml" />
-        <!-- <include filename="/usr/share/enigma2/slyk-1-hd/toppicks.xml" /> -->	
+        <!-- <include filename="/usr/share/enigma2/slyk-1-hd/toppicks.xml" />  -->	
 	<include filename="/usr/share/enigma2/slyk-1-hd/extras.xml" />
 	
 	<!-- fonts -->
@@ -56,11 +54,11 @@
 		<font name="Console" filename="/usr/share/enigma2/slyk-1-hd/fonts/lucon.ttf"       scale="100" />
 	
 	        <!-- alias -->
-		<alias name="Body" font="Regular" size="20" height="25" />
-		<alias name="TextNormal" font="Regular" size="20" height="24" />
+		<alias name="Body" font="Regular" size="20" height="30" />
+		<alias name="TextNormal" font="Regular" size="20" height="30" />
 		
 		<!-- context menu -->
-		<alias name="ChoiceList" font="Regular" size="20" height="25" />
+		<alias name="ChoiceList" font="Regular" size="20" height="30" />
 		
 		<!-- plugins -->
 		<alias name="PluginBrowser0" font="Regular" size="21" height="30" />        <!-- plugin name -->
@@ -144,10 +142,26 @@
 		</borderset>
 	</windowstyle>
 	
-		<parameters>
+	<windowstyle type="skinned" id="1">
+		<color name="Background" color="messageboxbg" />
+		<color name="LabelForeground" color="white" />
+		<color name="ListboxBackground" color="#00102751" />
+		<color name="ListboxForeground" color="white" />
+		<color name="ListboxSelectedBackground" color="skygold" />
+		<color name="ListboxSelectedForeground" color="skydarkblue" />
+		<color name="ListboxMarkedBackground" color="black" />
+		<color name="ListboxMarkedForeground" color="red" />
+		<color name="ListboxMarkedAndSelectedBackground" color="skygold" />
+		<color name="ListboxMarkedAndSelectedForeground" color="skydarkblue" />
+		<color name="WindowTitleForeground" color="white" />
+		<color name="WindowTitleBackground" color="skytitlebackground" />
+	</windowstyle>
+	
+	
+	<parameters>
 		<!-- <parameter name="ChoicelistDash" value="0,2,650,42"/> -->
 	        <!-- <parameter name="ChoicelistName" value="45,7,520,36"/> -->
-		<!-- <parameter name="ChoicelistIcon" value="10,7,25,25"/> -->
+	        <parameter name="ChoicelistIcon" value="10,2,25,25"/>
 		<!--	<parameter name="ConfigListSeperator" value="350"/>  -->
 		<parameter name="AutotimerEnabledIcon" value="10,2,25,24" />        <!-- Autotimer tick box -->
 		<parameter name="AutotimerRecordIcon" value="40,5,20,20" />         <!-- Autotimer Record Icon -->
@@ -171,11 +185,11 @@
 		
                 <!-- example is software management - backup list -->
 		<parameter name="FileListName" value="40,2,750,30" />
-		<parameter name="FileListIcon" value="10,5,20,20" />
+		<parameter name="FileListIcon" value="10,3,25,24" />
 		<parameter name="FileListMultiName" value="75,2,715,30" />
-		<parameter name="FileListMultiIcon" value="45,5,20,20" />
-		<parameter name="FileListMultiLock" value="10,2,25,25" />
-	
+		<parameter name="FileListMultiIcon" value="45,5,25,24" />
+		<parameter name="FileListMultiLock" value="10,2,25,24" />
+		
 	</parameters>
 
 

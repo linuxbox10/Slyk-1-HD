@@ -38,12 +38,13 @@
 		<widget source="key_blue" render="Pixmap" pixmap="buttons/key_blue.png" position="10,240" size="24,24" alphatest="blend" zPosition="1">
 			<convert type="ConditionalShowHide" />
 		</widget>
-		<widget name="config" position="40,150" size="470,120" itemHeight="30" selectionPixmap="myselectbars/bar-30.png" foregroundColor="white" backgroundColor="messageboxbg" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" transparent="1" scrollbarMode="showOnDemand" zPosition="2" />
+		<widget name="config" textOffset="10,0" position="40,150" size="470,120" font="Regular;21" secondfont="Regular;21" itemHeight="30" selectionPixmap="myselectbars/bar-30.png" foregroundColor="white" backgroundColor="messageboxbg" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" transparent="1" scrollbarMode="showOnDemand" zPosition="2" />
 	</screen>
 	
 	<!-- subtitle long press - red button -->
 	<screen name="QuickSubtitlesConfigMenu" position="50,84" size="480,300" title="Subtitle settings">
-		<widget name="config" position="5,5" size="480,300" itemHeight="30" font="Regular;18" selectionPixmap="myselectbars/bar-30.png" foregroundColor="white" backgroundColor="skydarkblue" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" zPosition="1" transparent="1" valign="center" />
+		<widget name="config" textOffset="10,0" position="5,5" size="480,300" itemHeight="30" font="Regular;18" secondfont="Regular;18" selectionPixmap="myselectbars/bar-30.png" foregroundColor="white"
+                 backgroundColor="skydarkblue" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" zPosition="1" transparent="1" valign="center" />
 		<widget name="videofps" position="5,255" size="470,20" foregroudColor="skyblue" backgroundColor="skydarkblue" transparent="1" zPosition="1" font="Regular;16" valign="center" halign="left" />
 	</screen>
 	
@@ -62,30 +63,16 @@
 	</screen>
 	
 	<screen name="ButtonSetupSelect" position="0,0" size="1280,720" title="Setup" flags="wfNoBorder" backgroundColor="backgroundmid">
-		<panel name="template2" />
-		<panel name="v5-services" />
-		<widget name="list" position="107,152" size="648,330" itemHeight="30" font="Regular;20" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColor="skydarkblue" foregroundColor="white" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" selectionPixmap="myselectbars/bar-30.png" transparent="1" />
-		<ePixmap position="107,505" size="648,2" pixmap="div-h.png" alphatest="blend" transparent="1" />
-		<widget name="choosen" position="107,510" size="600,72" itemHeight="26" valign="center" font="Regular;16" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColor="skydarkblue" foregroundColor="skygold" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" selectionPixmap="myselectbars/bar-30.png" transparent="1" />
-		<ePixmap position="107,593" size="648,2" pixmap="div-h.png" alphatest="blend" transparent="1" />
-		<widget name="description" position="107,594" size="648,60" font="Regular;16" backgroundColor="skydarkblue" foregroundColor="skyblue" halign="left" valign="center" transparent="1" />
+		<panel name="ButtonSetup" />
 		<panel name="t2-2RG" />
 	</screen>
 	
 	<!-- ChoiceBox -->
 	<!-- https://github.com/openatv/enigma2/blob/master/lib/python/Screens/ChoiceBox.py -->
-	<screen name="ChoiceBox" position="center,center" size="520,130" zPosition="5">
+	<screen name="ChoiceBox" position="center,center" size="520,130" >
 		<widget name="text" position="0,0" size="520,0" font="Regular;22" />
 		<widget name="list" position="100,100" size="520,0" font="Regular;22" enableWrapAround="1" foregroundColor="white" backgroundColor="messageboxbg" transparent="1" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" selectionPixmap="myselectbars/bar-30.png" />
 		<applet type="onLayoutFinish">self.autoResize()</applet>
-	</screen>
-	
-	<!-- ClockDisplay -->
-	<!-- https://github.com/openatv/enigma2/blob/master/lib/python/Screens/ClockDisplay.py -->
-	<screen name="clockDisplay" position="center,center" size="300,300">
-		<widget name="okbutton" position="10,10" size="280,40" transparent="0" />
-		<widget name="title" position="10,120" size="280,50" transparent="0" />
-		<widget name="theClock" position="10,60" size="280,50" transparent="0" />
 	</screen>
 	
 	<screen name="Console" position="0,0" size="1280,720" title="Console" flags="wfNoBorder" backgroundColor="backgroundmid">
@@ -97,15 +84,6 @@
 	
 	<!-- HarddiskSetup -->
 	<!--  https://github.com/openatv/enigma2/blob/master/lib/python/Screens/HarddiskSetup.py  -->
-	<screen name="HarddiskSetup" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="backgroundmid">
-		<panel name="template2" />
-		<panel name="v5-services" />
-		<widget name="model" position="107,152" size="648,30" font="Regular;23" foregroundColor="white" backgroundColor="skydarkblue" valign="center" halign="left" transparent="1" />
-		<widget name="capacity" position="107,192" size="648,30" font="Regular;23" foregroundColor="white" backgroundColor="skydarkblue" valign="center" halign="left" transparent="1" />
-		<widget name="bus" position="107,232" size="648,30" font="Regular;23" foregroundColor="white" backgroundColor="skydarkblue" valign="center" halign="left" transparent="1" />
-		<ePixmap name="red" pixmap="buttons/key_red.png" position="102,672" size="24,24" alphatest="blend" transparent="1" zPosition="2" />
-		<widget name="initializetext" position="134,669" size="218,32" font="Regular;25" halign="left" valign="center" transparent="1" noWrap="1" foregroundColor="skyblue" backgroundColor="backgroundbot" zPosition="2" />
-	</screen>
 	
 	<screen name="HarddiskSelection" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="backgroundmid">
 		<panel name="template1" />
@@ -115,6 +93,18 @@
 		<widget name="hddlist" textOffset="10,4" position="center,335" size="900,288" selectionPixmap="myselectbars/bar-36.png" itemHeight="36" font="Regular;25" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" enableWrapAround="1" scrollbarMode="showOnDemand" zPosition="4" />
 		<panel name="t2-OKButton" />
 	</screen>
+	
+	<screen name="HarddiskSetup" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="backgroundmid">
+		<panel name="template2" />
+		<panel name="v5-services" />
+		<widget name="model" position="107,152" size="648,30" font="Regular;23" foregroundColor="white" backgroundColor="skydarkblue" valign="center" halign="left" transparent="1" />
+		<widget name="capacity" position="107,192" size="648,30" font="Regular;23" foregroundColor="white" backgroundColor="skydarkblue" valign="center" halign="left" transparent="1" />
+		<widget name="bus" position="107,232" size="648,30" font="Regular;23" foregroundColor="white" backgroundColor="skydarkblue" valign="center" halign="left" transparent="1" />
+		<ePixmap name="red" pixmap="buttons/key_red.png" position="102,672" size="24,24" alphatest="blend" zPosition="2" />
+		<widget name="initializetext" position="134,669" size="218,32" font="Regular;25" halign="left" valign="center" transparent="1" noWrap="1" foregroundColor="skyblue" backgroundColor="backgroundbot" zPosition="2" />
+	</screen>
+	
+
 	
 	<!-- infoBarGenerics -->
 	<!-- https://github.com/openatv/enigma2/blob/master/lib/python/Screens/InfoBarGenerics.py -->
@@ -126,7 +116,13 @@
 	<screen name="NumberZap" position="108,597" size="300,77" flags="wfNoBorder">
 		<ePixmap pixmap="mybackgrounds/numberzap.png" position="0,0" size="300,77" zPosition="-1" alphatest="blend"/>
 		<widget name="number" position="15,5" size="270,36" backgroundColor="skydarkblue" transparent="1" font="Bold;25" borderWidth="0" valign="center" halign="center" foregroundColor="white" zPosition="1" />
-		<widget name="servicename" position="15,41" size="270,36" backgroundColor="skydarkblue" transparent="1" font="Regular;25" borderWidth="0" valign="center" halign="center" foregroundColor="skylightblue" zPosition="1" />
+		<widget name="servicename" position="15,41" size="270,36" backgroundColor="skydarkblue" transparent="1" font="Regular;25" borderWidth="0" valign="center" halign="center" foregroundColor="skylightblue" noWrap="1" zPosition="1" />
+	</screen>
+	
+	<screen name="NumberZapPicon" position="108,597" size="300,77" flags="wfNoBorder">
+		<ePixmap pixmap="mybackgrounds/numberzap.png" position="0,0" size="300,77" zPosition="-1" alphatest="blend"/>
+		<widget name="number" position="15,5" size="270,36" backgroundColor="skydarkblue" transparent="1" font="Bold;25" borderWidth="0" valign="center" halign="center" foregroundColor="white" zPosition="1" />
+		<widget name="servicename" position="15,41" size="270,36" backgroundColor="skydarkblue" transparent="1" font="Regular;25" borderWidth="0" valign="center" halign="center" foregroundColor="skylightblue" noWrap="1" zPosition="1" />
 	</screen>
 	
 	<!-- InputBox -->
@@ -168,7 +164,8 @@
 	
 	<!-- parental control -->
 	<screen name="ParentalControlSetup" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="backgroundmid">
-	        <panel name="Setup" />
+	        <panel name="Setup-Default" />
+        	<panel name="t1-2RG-Source" />
 	</screen>
 	
 	<screen name="ParentalControlChangePin" position="center,center" size="500,80">
@@ -192,8 +189,10 @@
 	</screen>
 	
 	<screen name="InputDeviceSetup" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="backgroundmid">
-		<panel name="Setup" />
+		<panel name="Setup-Default" />
+		<panel name="t1-2RG-Source" />
 		<widget source="introduction" render="Label" position="60,116" size="800,117" font="Regular;25" foregroundColor="white" backgroundColor="backgroundtop" halign="left" valign="top" transparent="1" zPosition="4" />
+
 	</screen>
 	
 	<!-- Ipkg -->
@@ -268,32 +267,32 @@
 	        <panel name="v5-services" />
 		
 		<widget name="text" position="107,152" size="648,28" font="Regular;21" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" />
-		<ePixmap position="107,187" size="648,2" pixmap="div-h.png" alphatest="blend" transparent="1" />
+		<ePixmap position="107,187" size="648,2" pixmap="div-h.png" alphatest="blend"  />
 		<widget name="target" position="107,192" size="440,28" valign="center" font="Regular;21" foregroundColor="skyblue" backgroundColor="skydarkblue" transparent="1" />
 		<widget name="targetfreespace" position="560,192" size="170,28" font="Regular;21" halign="right" backgroundColor="skydarkblue" foregroundColor="skygold" transparent="1" />
 		<widget name="filelist" position="107,222" size="648,250" selectionPixmap="myselectbars/bar-36.png" scrollbarMode="showOnDemand" selectionDisabled="1" font="Regular;21" zPosition="1" enableWrapAround="1" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" />
-		<ePixmap position="107,467" size="648,2" pixmap="div-h.png" alphatest="blend" transparent="1" />
+		<ePixmap position="107,467" size="648,2" pixmap="div-h.png" alphatest="blend"  />
 		<widget name="textbook" position="107,472" size="648,28" font="Regular;21" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" />
 		<widget name="booklist" position="107,502" size="648,95" selectionPixmap="myselectbars/bar-36.png" scrollbarMode="showOnDemand" font="Regular;21" zPosition="2" foregroundColor="skyblue" backgroundColor="skydarkblue" transparent="1" />
 		<panel position="106,669" size="0,30">
-			<widget name="red" pixmap="buttons/key_red.png" position="0,3" size="24,24" alphatest="blend" transparent="1" zPosition="2" />
+			<widget name="red" pixmap="buttons/key_red.png" position="0,3" size="24,24" alphatest="blend"  zPosition="2" />
 			<widget name="key_red" position="32,0" size="210,31" font="Regular;25" halign="left" valign="center" transparent="1" noWrap="1" foregroundColor="skyblue" backgroundColor="backgroundbot" zPosition="2" />
 		</panel>
 		<panel position="348,669" size="0,30">
-			<widget name="green" pixmap="buttons/key_green.png" position="0,3" size="24,24" alphatest="blend" transparent="1" zPosition="2" />
+			<widget name="green" pixmap="buttons/key_green.png" position="0,3" size="24,24" alphatest="blend"  zPosition="2" />
 			<widget name="key_green" position="32,0" size="210,31" font="Regular;25" halign="left" valign="center" transparent="1" noWrap="1" foregroundColor="skyblue" backgroundColor="backgroundbot" zPosition="2" />
 		</panel>
 		<panel position="590,669" size="0,30">
-			<widget name="yellow" pixmap="buttons/key_yellow.png" position="0,3" size="24,24" alphatest="blend" transparent="1" zPosition="2" />
+			<widget name="yellow" pixmap="buttons/key_yellow.png" position="0,3" size="24,24" alphatest="blend"  zPosition="2" />
 			<widget name="key_yellow" position="32,0" size="210,31" font="Regular;25" halign="left" valign="center" transparent="1" noWrap="1" foregroundColor="skyblue" backgroundColor="backgroundbot" zPosition="2" />
 		</panel>
 		<panel position="832,669" size="0,30">
-			<widget name="blue" pixmap="buttons/key_blue.png" position="0,3" size="24,24" alphatest="blend" transparent="1" zPosition="2" />
+			<widget name="blue" pixmap="buttons/key_blue.png" position="0,3" size="24,24" alphatest="blend" zPosition="2" />
 			<widget name="key_blue" position="32,0" size="210,31" font="Regular;25" halign="left" valign="center" transparent="1" noWrap="1" foregroundColor="skyblue" backgroundColor="backgroundbot" zPosition="2" />
 		</panel>
-		<ePixmap pixmap="mybuttons/key-plus.png" position="1129,612" size="50,24" alphatest="blend" transparent="1" zPosition="2" />
-		<ePixmap pixmap="mybuttons/key-minus.png" position="1129,642" size="50,24" alphatest="blend" transparent="1" zPosition="2" />
-		<ePixmap pixmap="mybuttons/key-menu.png" position="1129,672" size="50,24" alphatest="blend" transparent="1" zPosition="2" />
+		<ePixmap pixmap="mybuttons/key-plus.png" position="1129,612" size="50,24" alphatest="blend" zPosition="2" />
+		<ePixmap pixmap="mybuttons/key-minus.png" position="1129,642" size="50,24" alphatest="blend" zPosition="2" />
+		<ePixmap pixmap="mybuttons/key-menu.png" position="1129,672" size="50,24" alphatest="blend" zPosition="2" />
 	</screen>
 	
 	<!-- LogManager -->
@@ -303,8 +302,8 @@
 		<panel name="template2" />
 		 <panel name="v5-services" />
 		<widget name="list" position="107,152" size="648,501" itemHeight="30" font="Regular;21" iconMargin="10" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColor="skydarkblue" foregroundColor="white" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" selectionPixmap="myselectbars/bar-30.png" transparent="1" />
-		<applet type="onLayoutFinish">self["list"].instance.setItemHeight(30)</applet>
 		<panel name="t2-4RGYB" />
+		<applet type="onLayoutFinish">self["list"].instance.setItemHeight(30)</applet>
 	</screen>
 	
 	<screen name="LogManagerViewLog" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="backgroundmid" title="Log Manager">
@@ -319,8 +318,8 @@
 		<panel name="template2" />
 	        <panel name="v5-services" />
 		<widget name="list" position="107,152" size="648,501" itemHeight="30" font="Regular;21" iconMargin="10" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColor="skydarkblue" foregroundColor="white" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" selectionPixmap="myselectbars/bar-30.png" transparent="1" />
-		<applet type="onLayoutFinish">self["list"].instance.setItemHeight(30)</applet>
 		<panel name="t2-4RGYB" />
+		<applet type="onLayoutFinish">self["list"].instance.setItemHeight(30)</applet>
 	</screen>
 	
 	<!-- MessageBox -->
@@ -337,12 +336,7 @@
 	</screen>
 	
 	<screen name="MessageBoxSimple" position="center,center" size="520,10" title="Message">
-		<widget name="text" position="65,8" size="455,0" font="Regular;22" />
-		<widget name="ErrorPixmap" pixmap="icons/input_error.png" position="5,5" size="53,53" alphatest="blend" />
-		<widget name="QuestionPixmap" pixmap="icons/input_question.png" position="5,5" size="53,53" alphatest="blend" />
-		<widget name="InfoPixmap" pixmap="icons/input_info.png" position="5,5" size="53,53" alphatest="blend" />
-		<widget name="list" textOffset="10,0" position="100,100" size="520,0" backgroundColor="messageboxbg" transparent="1" selectionPixmap="myselectbars/bar-36.png" />
-		<applet type="onLayoutFinish">self.autoResize()</applet>
+		<panel name="MessageBox" />
 	</screen>
 	
 	<!-- MinuteInput -->
@@ -354,24 +348,24 @@
 	
 	<!-- mute -->
 	<screen name="Mute" position="108,47" zPosition="10" size="75,75" backgroundColor="transparent" title="Mute" flags="wfNoBorder">
-		<ePixmap position="0,0" size="75,75" pixmap="myicons/mute.png" transparent="1" alphatest="blend" />
+		<ePixmap position="0,0" size="75,75" pixmap="myicons/mute.png" alphatest="blend" />
 	</screen>
 	
 	<!-- NumericalTextInputHelpDialog -->
 	<!-- input helper text -->
 	<screen name="NumericalTextInputHelpDialog" position="0,0" zPosition="10" size="1280,25" backgroundColor="transparent" flags="wfNoBorder">
-		<ePixmap pixmap="mybackgrounds/helper-text.png" position="0,0" size="1280,25" zPosition="9" alphatest="blend" transparent="1" />
-		<ePixmap pixmap="buttons/key_1.png" position="30,0" size="25,25" zPosition="10" alphatest="blend" transparent="1" />
-		<ePixmap pixmap="buttons/key_2.png" position="130,0" size="25,25" zPosition="10" alphatest="blend" transparent="1" />
-		<ePixmap pixmap="buttons/key_3.png" position="230,0" size="25,25" zPosition="10" alphatest="blend" transparent="1" />
-		<ePixmap pixmap="buttons/key_4.png" position="330,0" size="25,25" zPosition="10" alphatest="blend" transparent="1" />
-		<ePixmap pixmap="buttons/key_5.png" position="430,0" size="25,25" zPosition="10" alphatest="blend" transparent="1" />
-		<ePixmap pixmap="buttons/key_6.png" position="530,0" size="25,25" zPosition="10" alphatest="blend" transparent="1" />
-		<ePixmap pixmap="buttons/key_7.png" position="630,0" size="25,25" zPosition="10" alphatest="blend" transparent="1" />
-		<ePixmap pixmap="buttons/key_8.png" position="730,0" size="25,25" zPosition="10" alphatest="blend" transparent="1" />
-		<ePixmap pixmap="buttons/key_9.png" position="830,0" size="25,25" zPosition="10" alphatest="blend" transparent="1" />
-		<ePixmap pixmap="buttons/key_0.png" position="930,0" size="25,25" zPosition="10" alphatest="blend" transparent="1" />
-		<ePixmap pixmap="buttons/key_text.png" position="1123,0" size="25,25" zPosition="10" alphatest="blend" transparent="1" />
+		<ePixmap pixmap="mybackgrounds/helper-text.png" position="0,0" size="1280,25" zPosition="9" alphatest="blend" />
+		<ePixmap pixmap="buttons/key_1.png" position="30,0" size="25,25" zPosition="10" alphatest="blend"  />
+		<ePixmap pixmap="buttons/key_2.png" position="130,0" size="25,25" zPosition="10" alphatest="blend" />
+		<ePixmap pixmap="buttons/key_3.png" position="230,0" size="25,25" zPosition="10" alphatest="blend" />
+		<ePixmap pixmap="buttons/key_4.png" position="330,0" size="25,25" zPosition="10" alphatest="blend" />
+		<ePixmap pixmap="buttons/key_5.png" position="430,0" size="25,25" zPosition="10" alphatest="blend" />
+		<ePixmap pixmap="buttons/key_6.png" position="530,0" size="25,25" zPosition="10" alphatest="blend" />
+		<ePixmap pixmap="buttons/key_7.png" position="630,0" size="25,25" zPosition="10" alphatest="blend" />
+		<ePixmap pixmap="buttons/key_8.png" position="730,0" size="25,25" zPosition="10" alphatest="blend" />
+		<ePixmap pixmap="buttons/key_9.png" position="830,0" size="25,25" zPosition="10" alphatest="blend" />
+		<ePixmap pixmap="buttons/key_0.png" position="930,0" size="25,25" zPosition="10" alphatest="blend" />
+		<ePixmap pixmap="buttons/key_text.png" position="1123,0" size="25,25" zPosition="10" alphatest="blend" />
 		
 		<widget name="key1" position="55,0" size="70,25" font="Regular;12" backgroundColor="skydarkblue" foregroundColor="white" halign="left" valign="center" transparent="1" zPosition="12" />
 		<widget name="key2" position="155,0" size="70,25" font="Regular;12" backgroundColor="skydarkblue" foregroundColor="white" halign="left" valign="center" transparent="1" zPosition="12" />
@@ -387,18 +381,7 @@
 		<widget name="help2" position="0,720" size="0,0" font="Regular;12" backgroundColor="skydarkblue" foregroundColor="white" halign="left" valign="center" transparent="1" zPosition="12" />
 	</screen>
 	
-	<!-- my original pause icon code -->
-	<!--
-		<widget source="session.CurrentService" render="Label" position="108,632" size="138,16" font="Regular;16" valign="top" halign="center" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" zPosition="6">
-			<convert type="ServicePosition">Length</convert>
-		</widget>
-		<widget source="session.CurrentService" render="Label" position="108,646" size="138,22" font="Regular;24" valign="top" halign="center" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" zPosition="6">
-			<convert type="ServicePosition">Position</convert>
-		</widget>
-       -->
-	
 
-	
 	<!-- PiPSetup -->
 	<!-- https://github.com/openatv/enigma2/blob/master/lib/python/Screens/PiPSetup.py -->
 	<screen name="PiPSetup" position="center,center" size="600,150" flags="wfNoBorder">
@@ -411,49 +394,17 @@
 		<widget name="video" position="0,0" size="240,192" backgroundColor="transparent" />
 	</screen>
 	
-	<!-- RdsDisplay -->
-	<!-- https://github.com/openatv/enigma2/blob/master/lib/python/Screens/RdsDisplay.py -->
-	<!-- not used in UK -->
-	
-	
-	<screen name="RdsInfoDisplay" position="0,60" size="1280,200" zPosition="-3" backgroundColor="transparent" flags="wfNoBorder">
-		<widget name="RassLogo" pixmap="icons/rass_logo.png" position="100,585" size="50,21"/>
-		<widget name="RadioText" position="0,0" size="1280,90" font="LCD;30" noWrap="1" foregroundColor="yellow" backgroundColor="transpBlack" valign="center" halign="center" borderColor="black" borderWidth="4"/>
-		<widget name="RtpText" position="0,100" size="1280,90" font="LCD;30" noWrap="1" backgroundColor="yellow" valign="center" halign="center" borderColor="black" borderWidth="4"/>
+	  <!-- shutdown screen -->
+	<screen name="QuitMainloopScreen" flags="wfNoBorder" position="fill">
+		<ePixmap pixmap="mybackgrounds/reboot.png" position="0,0" size="1280,720" alphatest="blend" zPosition="10" />
+		<widget name="text" position="center,520" size="720,100" font="Regular;22" foregroundColor="skyblue" transparent="1" halign="center" zPosition="11" />
 	</screen>
 	
-
-	
-        <!-- not used in UK -->
-        <screen name="RassInteractive" position="100,120" size="100,275" backgroundColor="transpWhite" flags="wfNoBorder">
-		<ePixmap pixmap="icons/rass_logo.png" position="25,0" size="50,21" transparent="1" alphatest="blend"/>
-		<eLabel text="Index" position="36,25" size="60,25" font="Regular;21" foregroundColor="black" backgroundColor="transpWhite"/>
-		<eLabel text="0" position="5,25" size="16,25" font="Regular;21" foregroundColor="black" backgroundColor="transpWhite"/>
-		<widget name="Marker" position="21,25" size="16,25" font="Regular;21" foregroundColor="black" backgroundColor="transpWhite"/>
-		<eLabel text="1" position="5,50" size="16,25" font="Regular;21" foregroundColor="black" backgroundColor="transpWhite"/>
-		<widget name="subpages_1" position="35,50" size="36,20" alphatest="on"/>
-		<eLabel text="2" position="5,75" size="16,25" font="Regular;21" foregroundColor="black" backgroundColor="transpWhite"/>
-		<widget name="subpages_2" position="35,75" size="36,20" alphatest="on"/>
-		<eLabel text="3" position="5,100" size="16,25" font="Regular;21" foregroundColor="black" backgroundColor="transpWhite"/>
-		<widget name="subpages_3" position="35,100" size="36,20" alphatest="on"/>
-		<eLabel text="4" position="5,125" size="16,25" font="Regular;21" foregroundColor="black" backgroundColor="transpWhite"/>
-		<widget name="subpages_4" position="35,125" size="36,20" alphatest="on"/>
-		<eLabel text="5" position="5,150" size="16,25" font="Regular;21" foregroundColor="black" backgroundColor="transpWhite"/>
-		<widget name="subpages_5" position="35,150" size="36,20" alphatest="on"/>
-		<eLabel text="6" position="5,175" size="16,25" font="Regular;21" foregroundColor="black" backgroundColor="transpWhite"/>
-		<widget name="subpages_6" position="35,175" size="36,20" alphatest="on"/>
-		<eLabel text="7" position="5,200" size="16,25" font="Regular;21" foregroundColor="black" backgroundColor="transpWhite"/>
-		<widget name="subpages_7" position="35,200" size="36,20" alphatest="on"/>
-		<eLabel text="8" position="5,225" size="16,25" font="Regular;21" foregroundColor="black" backgroundColor="transpWhite"/>
-		<widget name="subpages_8" position="35,225" size="36,20" alphatest="on"/>
-		<eLabel text="9" position="5,250" size="16,25" font="Regular;21" foregroundColor="black" backgroundColor="transpWhite"/>
-		<widget name="subpages_9" position="35,250" size="36,20" alphatest="on"/>
-	</screen>
 	
         <!--  Satconfig -->
 	<!-- https://github.com/openatv/enigma2/blob/master/lib/python/Screens/Satconfig.py -->
 	<!-- tuner configuration -->
-	<screen name="NimSelection" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder" zPosition="-1">
+	<screen name="NimSelection" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder">
 		<panel name="template2" />
 		 <panel name="v5-services" />
 		<widget source="nimlist" render="Listbox" position="107,152" size="648,501" itemHeight="72" foregroundColor="white" backgroundColor="skydarkblue" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" selectionPixmap="myselectbars/bar-72.png" transparent="1" scrollbarMode="showOnDemand">
@@ -465,17 +416,17 @@
 				"itemHeight": 72
 				}</convert>
 		</widget>
-		<panel name="t2-2RG-Source" />
+		<panel name="t2-3RGY-Source" />
 	</screen>
 	
 	<!-- tuner config - ok menu -->
 	<screen name="NimSetup" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="backgroundmid">
 		<panel name="Setup-Center" />
-		<ePixmap name="red" pixmap="buttons/key_red.png" position="106,631" size="24,24" alphatest="blend" transparent="1" zPosition="2" />
+		<ePixmap name="red" pixmap="buttons/key_red.png" position="106,631" size="24,24" alphatest="blend" zPosition="2" />
 		<widget source="key_red" render="Label" position="138,628" size="210,31" font="Regular;25" halign="left" valign="center" transparent="1" noWrap="1" foregroundColor="skyblue" backgroundColor="backgroundbot" zPosition="2" />
-		<ePixmap name="green" pixmap="buttons/key_green.png" position="348,631" size="24,24" alphatest="blend" transparent="1" zPosition="2" />
+		<ePixmap name="green" pixmap="buttons/key_green.png" position="348,631" size="24,24" alphatest="blend" zPosition="2" />
 		<widget source="key_green" render="Label" position="380,628" size="210,31" font="Regular;25" halign="left" valign="center" transparent="1" noWrap="1" foregroundColor="skyblue" backgroundColor="backgroundbot" zPosition="2" />
-		<ePixmap name="yellow" pixmap="buttons/key_yellow.png" position="590,631" size="24,24" alphatest="blend" transparent="1" zPosition="2" />
+		<ePixmap name="yellow" pixmap="buttons/key_yellow.png" position="590,631" size="24,24" alphatest="blend" zPosition="2" />
 		<widget source="key_yellow" render="Label" position="622,628" size="250,31" font="Regular;25" halign="left" valign="center" transparent="1" noWrap="1" foregroundColor="skyblue" backgroundColor="backgroundbot" zPosition="2" />
 		<!-- change buttons -->
 	</screen>
@@ -487,29 +438,29 @@
 		<panel name="t2-4RGYB" />
 		<widget name="list" position="107,152" size="648,450" scrollbarMode="showOnDemand" backgroundColor="skydarkblue" transparent="1" zPosition="2" itemHeight="30" />
 		<widget name="hint" position="107,594" size="648,60" font="Regular;16" backgroundColor="skydarkblue" foregroundColor="skyblue" halign="left" valign="center" transparent="1" />
+		<applet type="onLayoutFinish">self["list"].instance.setItemHeight(30)</applet>
 	
 	</screen>
 	
 	<!-- ScanSetup -->
 	<!-- https://github.com/openatv/enigma2/blob/master/lib/python/Screens/ScanSetup.py -->
-	<screen name="ScanSetup" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder" zPosition="-1" title="Manual Scan">
+	<screen name="ScanSetup" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder"  title="Manual Scan">
 		<panel name="Setup-Small-Left" />
 		<panel name="t1-2RG-Source" />
 	</screen>
 	
 	<!-- automatic scan -->
-	<screen name="ScanSimple" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder" zPosition="-1">
-		<panel name="Setup" />
+	<screen name="ScanSimple" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder" >
+		<panel name="Setup-Default" />
+		<panel name="t1-2RG-Source" />
+                <widget name="footer" position="60,119" size="800,117" font="Regular;25" foregroundColor="white" backgroundColor="backgroundtop" valign="top" halign="left" transparent="1" zPosition="1" />
 	</screen>
 	
-	<!-- Scart -->
-	<!--   https://github.com/openatv/enigma2/blob/master/lib/python/Screens/Scart.py  -->
-	<screen name="Scart" position="0,0" size="1280,720" backgroundColor="transparent" />
 	
         <!-- Screensaver -->
 	<!-- https://github.com/openatv/enigma2/blob/master/lib/python/Screens/ScreenSaver.py -->
 	<screen name="Screensaver" position="fill" flags="wfNoBorder">
-		<eLabel position="fill" backgroundColor="#54111112" zPosition="0" />
+		<eLabel position="fill" backgroundColor="#54111112" zPosition="-1" />
 		<widget name="picture" pixmap="mybackgrounds/screensaver.png" position="0,0" size="300,165" alphatest="blend" zPosition="1" />
 	</screen>
 	
@@ -545,21 +496,13 @@
 	<!-- SleepTimerEdit via standby menu -->
 	<!-- https://github.com/openatv/enigma2/blob/master/lib/python/Screens/SleepTimerEdit.py -->
 	<screen name="SleepTimerEdit" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder" zPosition="4">
-		<panel name="Setup" />
-	</screen>
-	
-	<!--standby -->
-	<!-- https://github.com/openatv/enigma2/blob/master/lib/python/Screens/Standby.py -->
-	<screen name="Standby" flags="wfNoBorder" position="0,0" size="1280,720" title="Standby" backgroundColor="backgroundmid" />
-	
-        <!-- shutdown screen -->
-	<screen name="QuitMainloopScreen" flags="wfNoBorder" position="fill">
-		<ePixmap pixmap="mybackgrounds/reboot.png" position="0,0" size="1280,720" alphatest="blend" zPosition="10" />
-		<widget name="text" position="center,520" size="720,100" font="Regular;22" foregroundColor="skyblue" transparent="1" halign="center" zPosition="11" />
+		<panel name="Setup-Default" />
+		<panel name="t1-2RG-Source" />
 	</screen>
 
 	<screen name="TimeDateInput" position="center,center" size="520,140">
-		<widget name="config" position="10,0" size="500,90" transparent="1"  itemHeight="30" selectionPixmap="myselectbars/bar-30.png" foregroundColor="white" backgroundColor="skydarkblue" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" scrollbarMode="showOnDemand"/>
+		<widget name="config" textOffset="10,0" position="10,0" font="Regular;21" secondfont="Regular;21"  size="500,90" transparent="1" itemHeight="30" selectionPixmap="myselectbars/bar-30.png" foregroundColor="white"
+                backgroundColor="skydarkblue" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" scrollbarMode="showOnDemand"/>
 		<widget name="cancel" pixmap="buttons/key_red.png" position="10,103" size="24,24" alphatest="blend" />
 		<widget name="canceltext" position="40,100" zPosition="1" size="115,30" font="Regular;22" halign="left" valign="center" transparent="1" foregroundColor="white" backgroundColor="skydarkblue" />
 		<widget name="ok" pixmap="buttons/key_green.png" position="260,103" size="24,24" alphatest="blend" />
@@ -572,13 +515,20 @@
 		<widget name="speed" position="108,534" size="140,108" font="Regular;36" foregroundColor="skyblue" backgroundColor="skydarkblue" valign="center" halign="center" transparent="1" zPosition="6" />
 		
 		<widget source="session.CurrentService" render="Label" position="108,642" size="140,32" font="Regular;25" valign="center" halign="center" foregroundColor="white" backgroundColor="skydarkblue" transparent="1" zPosition="6">
-			<convert type="SlykServicePosition">Remaining</convert>
+			<convert type="SlykServicePosition">Remaining2</convert>
 		</widget>
 	</screen>
 	
         <!-- unhandled event / error -->
 	<screen name="UnhandledKey" flags="wfNoBorder" position="1097,47" size="75,75" zPosition="10" backgroundColor="transparent">
-		<widget name="UnhandledKeyPixmap" pixmap="myicons/unhandled-key.png" position="0,0" size="75,75" alphatest="blend" transparent="1" />
+		<widget name="UnhandledKeyPixmap" pixmap="myicons/unhandled-key.png" position="0,0" size="75,75" alphatest="blend" />
+	</screen>
+	
+	  <!-- volume slider -->
+	<screen name="Volume" position="center,47" zPosition="10" size="450,75" title="Volume" flags="wfNoBorder" backgroundColor="transparent">
+		<ePixmap pixmap="myicons/volume.png" position="0,0" size="450,75" alphatest="blend" zPosition="11" />
+		<widget name="Volume" pixmap="myicons/volume-bar.png" position="95,34" size="260,6" alphatest="blend" transparent="1" zPosition="12" />
+		<widget render="VolumeText" source="global.CurrentTime" position="375,0" size="75,75" font="Regular;24" foregroundColor="white" backgroundColor="skydarkblue" halign="center" valign="center" zPosition="13" transparent="1" />
 	</screen>
 	
         <!-- VirtualKeyBoard -->
@@ -590,17 +540,10 @@
 		<widget name="list" position="10,100" size="540,225" selectionDisabled="1" transparent="1" />
 	</screen>
 	
-        <!-- volume slider -->
-	<screen name="Volume" position="center,47" zPosition="10" size="450,75" title="Volume" flags="wfNoBorder" backgroundColor="transparent">
-		<ePixmap pixmap="myicons/volume.png" position="0,0" size="450,75" alphatest="blend" zPosition="11" />
-		<widget name="Volume" pixmap="myicons/volume-bar.png" position="95,34" size="260,6" alphatest="blend" transparent="1" zPosition="12" />
-		<widget render="VolumeText" source="global.CurrentTime" position="375,0" size="75,75" font="Regular;24" foregroundColor="white" backgroundColor="skydarkblue" halign="center" valign="center" zPosition="13" transparent="1" />
-	</screen>
-	
-      <screen name="SubtitleDisplay" position="fill" zPosition="-1" flags="wfNoBorder" backgroundColor="#54111112"/>
+        <screen name="SubtitleDisplay" position="0,0" size="1280,720" zPosition="-2" flags="wfNoBorder" backgroundColor="transparent"/>
 	
         <screen name="Subtitles" position="0,0" size="1280,720" backgroundColor="transparent" flags="wfNoBorder" zPosition="-1">
-		<panel name="Setup-Menu-Bar" />
+		<panel name="Setup-Default" />
 		<panel name="t1-4RGYB-Source" />
 	</screen>
 

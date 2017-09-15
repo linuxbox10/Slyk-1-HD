@@ -9,114 +9,138 @@
 		<panel name="menu-bars" />
 		<panel name="title1" />
 		<panel name="title2" />
-		<widget source="menu" render="Listbox" position="center,335" size="900,288" selectionPixmap="myselectbars/menu-bar-plain.png" backgroundPixmap="myselectbars/blank.png" itemHeight="36" font="Regular;24" transparent="1" enableWrapAround="1" scrollbarMode="showOnDemand">
+		<widget source="menu" render="Listbox" position="center,335" size="900,288" selectionPixmap="myselectbars/menu-bar-plain.png" backgroundPixmap="myselectbars/blank.png" itemHeight="36" font="Regular;24" transparent="1" enableWrapAround="1" scrollbarMode="showNever">
 			<convert type="TemplatedMultiContent">{"template": [	
                                 MultiContentEntryText(pos = (20,0), size = (860,36), flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 0	) ],
 				"fonts": [gFont("Regular",25)],
 				"itemHeight": 36
 				}</convert>
 		</widget>
-		<eLabel text="Press SELECT" position="101,662" size="900,32" font="Regular;26" foregroundColor="skyblue" backgroundColor="backgroundbot" valign="top" halign="left" transparent="1" zPosition="1" />
+		<eLabel text="Press SELECT" position="101,662" size="900,32" font="Regular;26" foregroundColor="skyblue" backgroundColor="backgroundbot" valign="top" halign="left" transparent="1"  />
 	</screen>
+	
 	<screen name="ChangeSettings">
 		<eLabel text="Use" position="101,662" size="50,32" font="Regular;26" foregroundColor="skyblue" backgroundColor="backgroundbot" valign="top" halign="left" transparent="1" zPosition="1" />
 		<ePixmap pixmap="myicons/prev-next.png" position="151,669" size="40,20" alphatest="blend" transparent="1" />
 		<eLabel text="to change settings and press GREEN to save changes" position="197,662" size="600,32" font="Regular;26" foregroundColor="skyblue" backgroundColor="backgroundbot" valign="center" halign="left" transparent="1" zPosition="1" />
 	</screen>
-	<screen name="Setup-Default">
-		<panel name="main-bg" />
-		<panel name="my-logo" />
+	
+	<screen name="setup-template">
+	        <panel name="template1" />
 		<panel name="v5-services" />
 		<panel name="v5-t1-settings" />
-		<panel name="t1-tv" />
-		<panel name="t1-time" />
 		<panel name="t1-split-bg" />
-		<panel name="title1" />
-		<panel name="title2" />
-		<widget name="description" position="60,119" size="800,117" font="Regular;25" foregroundColor="white" backgroundColor="backgroundtop" valign="top" halign="left" transparent="1" zPosition="1" />
-		<widget name="footnote" position="center,321" size="900,14" font="Regular;12" foregroundColor="skyblue" backgroundColor="skydarkblue" valign="center" halign="right" transparent="1" zPosition="4" />
-		<widget source="VKeyIcon" render="Pixmap" pixmap="mybuttons/key-text.png" position="1129,672" size="50,24" alphatest="blend" transparent="1" zPosition="4">
-			<convert type="ConditionalShowHide" />
-		</widget>
-		<widget name="HelpWindow" pixmap="buttons/vkey_icon.png" position="0,0" size="1280,40" alphatest="blend" transparent="1" zPosition="10" />
 		<panel name="ChangeSettings" />
-	</screen>
-	<screen name="Setup-Menu-Bar">
-		<panel name="Setup-Default" />
-		<panel name="menu-setup-bars" />
-		<widget name="config" position="center,335" size="900,288" font="Regular;25" backgroundColor="skylightrow" selectionPixmap="myselectbars/menu-bar.png" backgroundPixmap="myselectbars/blank.png" itemHeight="36" enableWrapAround="1" scrollbarMode="showNever" transparent="1" zPosition="4" />
-	</screen>
+        </screen>
+        
+
+	
+	<screen name="Setup-Default">
+	        <panel name="setup-template" />
+        	<panel name="menu-setup-bars" />
+       		<widget name="config" textOffset="10,0" position="center,335" size="900,288" font="Regular;25" secondfont="Regular;25" backgroundColor="skylightrow" selectionPixmap="myselectbars/menu-bar.png" backgroundPixmap="myselectbars/blank.png" itemHeight="36" enableWrapAround="1" scrollbarMode="showNever" transparent="1" zPosition="4" />
+	
+	
+ 	</screen>
 	<screen name="Setup-Small-Left">
-		<panel name="Setup-Default" />
+		<panel name="setup-template" />
 		<panel name="menu-setup-bars-small-left" />
-		<widget name="config" position="center,335" size="900,288" font="Regular;25" backgroundColor="skylightrow" selectionPixmap="myselectbars/menu-bar-small-left.png" backgroundPixmap="myselectbars/blank.png" itemHeight="36" enableWrapAround="1" scrollbarMode="showNever" transparent="1" zPosition="4" />
-	</screen>
+		<widget name="config" textOffset="10,0" position="center,335" size="900,288" font="Regular;25" secondfont="Regular;25" backgroundColor="skylightrow" selectionPixmap="myselectbars/menu-bar-small-left.png" backgroundPixmap="myselectbars/blank.png" itemHeight="36" enableWrapAround="1" scrollbarMode="showNever" transparent="1" zPosition="4" />
+        </screen>
+        
 	<screen name="Setup-Small-Right">
-		<panel name="Setup-Default" />
+		<panel name="setup-template" />
 		<panel name="menu-setup-bars-small-right" />
-		<widget name="config" position="center,335" size="900,288" font="Regular;25" backgroundColor="skylightrow" selectionPixmap="myselectbars/menu-bar-small-right.png" backgroundPixmap="myselectbars/blank.png" itemHeight="36" enableWrapAround="1" scrollbarMode="showNever" transparent="1" zPosition="4" />
-	</screen>
+		<widget name="config" textOffset="10,0" position="center,335" size="900,288" font="Regular;25" secondfont="Regular;25" backgroundColor="skylightrow" selectionPixmap="myselectbars/menu-bar-small-right.png" backgroundPixmap="myselectbars/blank.png" itemHeight="36" enableWrapAround="1" scrollbarMode="showNever" transparent="1" zPosition="4" />
+          </screen>
+          
 	<screen name="Setup-Center">
-		<panel name="Setup-Default" />
+		<panel name="setup-template" />
 		<panel name="menu-setup-bars-center" />
-		<widget name="config" position="center,335" size="900,288" font="Regular;25" backgroundColor="skylightrow" selectionPixmap="myselectbars/menu-bar-center.png" backgroundPixmap="myselectbars/blank.png" itemHeight="36" enableWrapAround="1" scrollbarMode="showNever" transparent="1" zPosition="4" />
-	</screen>
-	<screen name="Setup-Plain">
-		<panel name="Setup-Default" />
+		<widget name="config" textOffset="10,0" position="center,335" size="900,288" font="Regular;25" secondfont="Regular;25" backgroundColor="skylightrow" selectionPixmap="myselectbars/menu-bar-center.png" backgroundPixmap="myselectbars/blank.png" itemHeight="36" enableWrapAround="1" scrollbarMode="showNever" transparent="1" zPosition="4" />
+        </screen>
+        
+        <screen name="Setup-Plain">
+		<panel name="Setup-template" />
 		<panel name="menu-bars" />
-		<widget name="config" position="center,335" size="900,288" font="Regular;25" backgroundColor="skylightrow" selectionPixmap="myselectbars/menu-bar-plain.png" backgroundPixmap="myselectbars/blank.png" itemHeight="36" enableWrapAround="1" scrollbarMode="showNever" transparent="1" zPosition="4" />
+		<widget name="config" textOffset="10,0" position="center,335" size="900,288" font="Regular;25" secondfont="Regular;25" backgroundColor="skylightrow" selectionPixmap="myselectbars/menu-bar-plain.png" backgroundPixmap="myselectbars/blank.png" itemHeight="36" enableWrapAround="1" scrollbarMode="showNever" transparent="1" zPosition="4" />
 	</screen>
+	
 	<screen name="Setup" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder">
-		<panel name="Setup-Menu-Bar" />
+		<panel name="Setup-Default" />
 		<panel name="t1-2RG-Source" />
+                <panel name="description" />
+	        <panel name="footnote" />
+	        <panel name="HelpWindow" />
+		<panel name="VkeyIcon" />	
 	</screen>
+	
+
+	
 	<screen name="setup_specialfeatures" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder">
 		<panel name="Setup-Small-Right" />
-		<panel name="t1-2RG-Source" />
+			<panel name="t1-2RG-Source" />
+                <panel name="description" />
+	        <panel name="footnote" />
+	        <panel name="HelpWindow" />
+		<panel name="VkeyIcon" />	
 	</screen>
+	
 	<screen name="setup_keyboard" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder">
 		<panel name="Setup-Center" />
-		<panel name="t1-2RG-Source" />
+			<panel name="t1-2RG-Source" />  	
 	</screen>
+	
 	<screen name="setup_time" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder">
-		<panel name="Setup-Small-Left" />
-		<panel name="t1-2RG-Source" />
+		<panel name="setup-template" />
+		<panel name="menu-bars" />
+		<widget name="config" textOffset="10,0" position="center,335" size="900,288" font="Regular;25" secondfont="Regular;25" backgroundColor="skylightrow" selectionPixmap="myselectbars/menu-bar-plain.png" backgroundPixmap="myselectbars/blank.png" itemHeight="36" enableWrapAround="1" scrollbarMode="showNever" transparent="1" zPosition="4" />
+                <panel name="t1-2RG-Source" />
+                <panel name="description" />
+	        <panel name="HelpWindow" />
+		<panel name="VkeyIcon" />	
 	</screen>
+	
 	<screen name="setup_display" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder">
-		<panel name="Setup-Default" />
+		<panel name="setup-template" />
 		<panel name="menu-bars" />
-		<widget name="config" position="center,335" size="900,288" font="Regular;21" backgroundColor="skylightrow" selectionPixmap="myselectbars/menu-bar-plain.png" backgroundPixmap="myselectbars/blank.png" itemHeight="36" enableWrapAround="1" scrollbarMode="showNever" transparent="1" zPosition="4" />
-		<panel name="t1-2RG-Source" />
+		<widget name="config" textOffset="10,0" position="center,335" size="900,288" font="Regular;21" secondfont="Regular;21" backgroundColor="skylightrow" selectionPixmap="myselectbars/menu-bar-plain.png" backgroundPixmap="myselectbars/blank.png" itemHeight="36" enableWrapAround="1" scrollbarMode="showNever" transparent="1" zPosition="4" />
+			<panel name="t1-2RG-Source" />
+                <panel name="description" />
 	</screen>
+	
 	<screen name="setup_channelselection" title="Setup" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="backgroundmid">
-		<panel name="Setup-Default" />
+		<panel name="setup-template" />
 		<panel name="menu-bars" />
-		<widget name="config" position="center,335" size="900,288" backgroundColor="skylightrow" selectionPixmap="myselectbars/menu-bar-plain.png" backgroundPixmap="myselectbars/blank.png" itemHeight="36" font="Regular;23" transparent="1" enableWrapAround="1" scrollbarMode="showNever" zPosition="4" />
-		<panel name="t1-2RG-Source" />
+		<widget name="config" textOffset="10,0" position="center,335" size="900,288" backgroundColor="skylightrow" selectionPixmap="myselectbars/menu-bar-plain.png" backgroundPixmap="myselectbars/blank.png"
+                 itemHeight="36" font="Regular;23" secondfont="Regular;23" transparent="1" enableWrapAround="1" scrollbarMode="showNever" zPosition="4" />
+			<panel name="t1-2RG-Source" />
+                <panel name="description" />
+	        <panel name="footnote" />
 	</screen>
+	
 	<screen name="VFD_INISetup" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder" zPosition="4">
-		<panel name="Setup-Center" />
-		<widget name="config" position="center,335" size="900,288" font="Regular;25" backgroundColor="skylightrow" selectionPixmap="myselectbars/menu-bar-center.png" backgroundPixmap="myselectbars/blank.png" itemHeight="36" enableWrapAround="1" scrollbarMode="showNever" transparent="1" zPosition="4" />
-		<widget name="information" position="60,119" size="800,117" font="Regular;25" foregroundColor="white" backgroundColor="backgroundtop" valign="top" transparent="1" zPosition="1" />
+		<panel name="setup-template" />
+		<panel name="menu-setup-bars-center" />
+		<widget name="config" textOffset="10,0" position="center,335" size="900,288" font="Regular;25" secondfont="Regular;25" backgroundColor="skylightrow" selectionPixmap="myselectbars/menu-bar-center.png" backgroundPixmap="myselectbars/blank.png" itemHeight="36" enableWrapAround="1" scrollbarMode="showNever" transparent="1" zPosition="4" />
+                <widget name="information" position="60,119" size="800,117" font="Regular;25" foregroundColor="white" backgroundColor="backgroundtop" valign="top" transparent="1" zPosition="1" />
 		<panel name="t1-3RGY-Source" />
 	</screen>
+	
 	<screen name="OpenWebifConfig" title="OpenWebif Configuration" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="backgroundmid">
-		<panel name="Setup-Menu-Bar" />
+		<panel name="Setup-Default" />
 		<panel name="t1-2RG-Source" />
+                <panel name="description" />
 	</screen>
+	
 	<screen name="RemoteControlCode" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder" zPosition="4">
-		<panel name="Setup-Menu-Bar" />
-		<panel name="t1-4RGYB-Source" />
+		<panel name="Setup-Default" />
+		<panel name="t1-2RG-Source" />
+		<panel name="description" />
+	        <panel name="footnote" />
+                <panel name="HelpWindow" />
+	
 	</screen>
-	<screen name="RCSetupScreen" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder" zPosition="4">
-		<panel name="my-logo" />
-		<panel name="v5-services" />
-		<panel name="v5-t1-settings" />
-		<panel name="menu-setup-bars" />
-		<widget name="config" position="center,335" size="900,288" font="Regular;25" foregroundColor="white" backgroundColor="skylightrow" foregroundColorSelected="skydarkblue" backgroundColorSelected="skygold" selectionPixmap="myselectbars/menu-bar.png" backgroundPixmap="myselectbars/blank.png" itemHeight="36" enableWrapAround="1" scrollbarMode="showNever" transparent="1" zPosition="4" />
-		<ePixmap pixmap="buttons/key_red.png" position="102,630" size="24,24" alphatest="blend" transparent="1" zPosition="2" />
-		<widget name="cancel" position="135,627" size="218,32" font="Regular;25" foregroundColor="skyblue" backgroundColor="skydarkblue" halign="left" noWrap="1" transparent="1" zPosition="2" />
-		<ePixmap pixmap="buttons/key_green.png" position="352,630" size="24,24" alphatest="blend" transparent="1" zPosition="2" />
-		<widget name="ok" position="384,627" size="218,32" font="Regular;25" foregroundColor="skyblue" backgroundColor="skydarkblue" halign="left" noWrap="1" transparent="1" zPosition="2" />
-	</screen>
+	
+
 </skin>

@@ -9,14 +9,13 @@
 	<screen name="OscamInfoConfigScreen" position="0,0" size="1280,720" title="OscamInfo Menu" flags="wfNoBorder" backgroundColor="backgroundmid">
 		<panel name="template2" />
 		<panel name="v5-services" />
-		<widget name="config" position="107,152" size="648,300" enableWrapAround="1" itemHeight="30" font="Regular;21" scrollbarMode="showOnDemand" backgroundColor="skydarkblue" foregroundColor="white" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" selectionPixmap="myselectbars/bar-30.png" zPosition="1" transparent="1" />
-		<ePixmap position="107,e-305" size="648,2" pixmap="div-h.png" alphatest="blend" zPosition="2" transparent="1" />
+		<widget name="config" textOffSet="10,0" position="107,152" size="648,300" enableWrapAround="1" itemHeight="30" font="Regular;21" secondfont="Regular;21" scrollbarMode="showOnDemand" backgroundColor="skydarkblue"
+                foregroundColor="white" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" selectionPixmap="myselectbars/bar-30.png" zPosition="1" transparent="1" />
+		<panel name="t2-2RG-Source" />
+                <ePixmap position="107,e-305" size="648,2" pixmap="div-h.png" alphatest="blend" zPosition="2" transparent="1" />
 		<widget name="status" position="112,e-300" size="638,300" font="Regular;18" foregroundColor="white" backgroundColor="skydarkblue" halign="left" transparent="1" />
-		<widget source="VKeyIcon" render="Pixmap" pixmap="mybuttons/key-text.png" position="1129,672" zPosition="4" size="50,24" transparent="1" alphatest="blend">
-			<convert type="ConditionalShowHide" />
-		</widget>
-		<widget name="HelpWindow" pixmap="buttons/vkey_icon.png" position="0,0" zPosition="10" size="1280,40" transparent="1" alphatest="blend" />
-	<panel name="t2-2RG-Source" />
+	        <panel name="HelpWindow" />
+		<panel name="VkeyIcon" />
 	</screen>
 	
 	<screen name="oscECMInfo" position="0,0" size="1280,720" title="OscamECM Info" flags="wfNoBorder" backgroundColor="backgroundmid">

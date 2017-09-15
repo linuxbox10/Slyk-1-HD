@@ -1,32 +1,32 @@
 <skin>
 	<screen name="red-button-icon">
-		<ePixmap name="red" pixmap="buttons/key_red.png" position="0,3" size="24,24" alphatest="blend" transparent="1" zPosition="2" />
+		<ePixmap name="red" pixmap="buttons/key_red.png" position="0,3" size="24,24" alphatest="blend"  />
 	</screen>
 	<screen name="green-button-icon">
-		<ePixmap name="green" pixmap="buttons/key_green.png" position="0,3" size="24,24" alphatest="blend" transparent="1" zPosition="2" />
+		<ePixmap name="green" pixmap="buttons/key_green.png" position="0,3" size="24,24" alphatest="blend" />
 	</screen>
 	<screen name="yellow-button-icon">
-		<ePixmap name="yellow" pixmap="buttons/key_yellow.png" position="0,3" size="24,24" alphatest="blend" transparent="1" zPosition="2" />
+		<ePixmap name="yellow" pixmap="buttons/key_yellow.png" position="0,3" size="24,24" alphatest="blend"  />
 	</screen>
 	<screen name="blue-button-icon">
-		<ePixmap name="blue" pixmap="buttons/key_blue.png" position="0,3" size="24,24" alphatest="blend" transparent="1" zPosition="2" />
+		<ePixmap name="blue" pixmap="buttons/key_blue.png" position="0,3" size="24,24" alphatest="blend"  />
 	</screen>
 	<!-- ********************************************** -->
 	<screen name="R-Button">
 		<panel name="red-button-icon" />
-		<widget name="key_red" position="32,0" size="218,32" font="Regular;25" valign="center" halign="left" foregroundColor="skyblue" backgroundColor="backgroundbot" noWrap="1" transparent="1" zPosition="2" />
+		<widget name="key_red" position="32,0" size="218,32" font="Regular;25" valign="center" halign="left" foregroundColor="skyblue" backgroundColor="backgroundbot" noWrap="1" transparent="1"  />
 	</screen>
 	<screen name="G-Button">
 		<panel name="green-button-icon" />
-		<widget name="key_green" position="32,0" size="218,32" font="Regular;25" valign="center" halign="left" foregroundColor="skyblue" backgroundColor="backgroundbot" noWrap="1" transparent="1" zPosition="2" />
+		<widget name="key_green" position="32,0" size="218,32" font="Regular;25" valign="center" halign="left" foregroundColor="skyblue" backgroundColor="backgroundbot" noWrap="1" transparent="1"  />
 	</screen>
 	<screen name="Y-Button">
 		<panel name="yellow-button-icon" />
-		<widget name="key_yellow" position="32,0" size="218,32" font="Regular;25" valign="center" halign="left" foregroundColor="skyblue" backgroundColor="backgroundbot" noWrap="1" transparent="1" zPosition="2" />
+		<widget name="key_yellow" position="32,0" size="218,32" font="Regular;25" valign="center" halign="left" foregroundColor="skyblue" backgroundColor="backgroundbot" noWrap="1" transparent="1"  />
 	</screen>
 	<screen name="B-Button">
 		<panel name="blue-button-icon" />
-		<widget name="key_blue" position="32,0" size="218,32" font="Regular;25" valign="center" halign="left" foregroundColor="skyblue" backgroundColor="backgroundbot" noWrap="1" transparent="1" zPosition="2" />
+		<widget name="key_blue" position="32,0" size="218,32" font="Regular;25" valign="center" halign="left" foregroundColor="skyblue" backgroundColor="backgroundbot" noWrap="1" transparent="1"  />
 	</screen>
 	<!-- ********************************************** -->
 	<screen name="EPG4RGYB">
@@ -152,19 +152,19 @@
 	<!-- source buttons -->
 	<screen name="R-Source">
 		<panel name="red-button-icon" />
-		<widget source="key_red" render="Label" position="32,0" size="218,32" font="Regular;25" valign="center" halign="left" foregroundColor="skyblue" backgroundColor="backgroundbot" noWrap="1" transparent="1" zPosition="2" />
+		<widget source="key_red" render="Label" position="32,0" size="218,32" font="Regular;25" valign="center" halign="left" foregroundColor="skyblue" backgroundColor="backgroundbot" noWrap="1" transparent="1" />
 	</screen>
 	<screen name="G-Source">
 		<panel name="green-button-icon" />
-		<widget source="key_green" render="Label" position="32,0" size="218,32" font="Regular;25" valign="center" halign="left" foregroundColor="skyblue" backgroundColor="backgroundbot" noWrap="1" transparent="1" zPosition="2" />
+		<widget source="key_green" render="Label" position="32,0" size="218,32" font="Regular;25" valign="center" halign="left" foregroundColor="skyblue" backgroundColor="backgroundbot" noWrap="1" transparent="1"  />
 	</screen>
 	<screen name="Y-Source">
 		<panel name="yellow-button-icon" />
-		<widget source="key_yellow" render="Label" position="32,0" size="218,32" font="Regular;25" valign="center" halign="left" foregroundColor="skyblue" backgroundColor="backgroundbot" noWrap="1" transparent="1" zPosition="2" />
+		<widget source="key_yellow" render="Label" position="32,0" size="218,32" font="Regular;25" valign="center" halign="left" foregroundColor="skyblue" backgroundColor="backgroundbot" noWrap="1" transparent="1" />
 	</screen>
 	<screen name="B-Source">
 		<panel name="blue-button-icon" />
-		<widget source="key_blue" render="Label" position="32,0" size="218,32" font="Regular;25" valign="center" halign="left" foregroundColor="skyblue" backgroundColor="backgroundbot" noWrap="1" transparent="1" zPosition="2" />
+		<widget source="key_blue" render="Label" position="32,0" size="218,32" font="Regular;25" valign="center" halign="left" foregroundColor="skyblue" backgroundColor="backgroundbot" noWrap="1" transparent="1"  />
 	</screen>
 	<!-- ********************************************** -->
 	<screen name="t1-4RGYB-Source">
@@ -275,20 +275,20 @@
 	</screen>
 	<!-- small text buttons -->
 	<screen name="t2-RedButton-sm">
-		<ePixmap name="red" pixmap="buttons/key_red.png" position="102,672" size="24,24" alphatest="blend" transparent="1" zPosition="2" />
-		<widget name="key_red" position="138,669" size="218,30" font="Regular;21" valign="center" halign="left" foregroundColor="skyblue" backgroundColor="backgroundbot" noWrap="1" transparent="1" zPosition="2" />
+		<ePixmap name="red" pixmap="buttons/key_red.png" position="102,672" size="24,24" alphatest="blend"  />
+		<widget name="key_red" position="134,669" size="218,30" font="Regular;21" valign="center" halign="left" foregroundColor="skyblue" backgroundColor="backgroundbot" noWrap="1" transparent="1"  />
 	</screen>
 	<screen name="t2-GreenButton-sm">
-		<ePixmap name="green" pixmap="buttons/key_green.png" position="352,672" size="24,24" alphatest="blend" transparent="1" zPosition="2" />
-		<widget name="key_green" position="380,669" size="218,30" font="Regular;21" valign="center" halign="left" foregroundColor="skyblue" backgroundColor="backgroundbot" noWrap="1" transparent="1" zPosition="2" />
+		<ePixmap name="green" pixmap="buttons/key_green.png" position="352,672" size="24,24" alphatest="blend" />
+		<widget name="key_green" position="384,669" size="218,30" font="Regular;21" valign="center" halign="left" foregroundColor="skyblue" backgroundColor="backgroundbot" noWrap="1" transparent="1"  />
 	</screen>
 	<screen name="t2-YellowButton-sm">
-		<ePixmap name="yellow" pixmap="buttons/key_yellow.png" position="602,672" size="24,24" alphatest="blend" transparent="1" zPosition="2" />
-		<widget name="key_yellow" position="622,669" size="218,30" font="Regular;21" valign="center" halign="left" foregroundColor="skyblue" backgroundColor="backgroundbot" noWrap="1" transparent="1" zPosition="2" />
+		<ePixmap name="yellow" pixmap="buttons/key_yellow.png" position="602,672" size="24,24" alphatest="blend"  />
+		<widget name="key_yellow" position="634,669" size="218,30" font="Regular;21" valign="center" halign="left" foregroundColor="skyblue" backgroundColor="backgroundbot" noWrap="1" transparent="1"  />
 	</screen>
 	<screen name="t2-BlueButton-sm">
-		<ePixmap name="blue" pixmap="buttons/key_blue.png" position="852,672" size="24,24" alphatest="blend" transparent="1" zPosition="2" />
-		<widget name="key_blue" position="864,669" size="269,30" font="Regular;21" valign="center" halign="left" foregroundColor="skyblue" backgroundColor="backgroundbot" noWrap="1" transparent="1" zPosition="2" />
+		<ePixmap name="blue" pixmap="buttons/key_blue.png" position="852,672" size="24,24" alphatest="blend"  />
+		<widget name="key_blue" position="884,669" size="269,30" font="Regular;21" valign="center" halign="left" foregroundColor="skyblue" backgroundColor="backgroundbot" noWrap="1" transparent="1"  />
 	</screen>
 	<screen name="t2-Buttons-sm">
 		<panel name="t2-RedButton-sm" />
@@ -299,53 +299,71 @@
 	<!-- other buttons -->
 	<!-- info button -->
 	<screen name="t2-InfoButton-pos1">
-		<ePixmap pixmap="mybuttons/key-info.png" position="1129,672" size="50,24" alphatest="blend" transparent="1" zPosition="2" />
+		<ePixmap pixmap="mybuttons/key-info.png" position="1129,672" size="50,24" alphatest="blend" />
 	</screen>
 	<screen name="t2-InfoButton-pos2">
-		<ePixmap pixmap="mybuttons/key-info.png" position="1069,672" size="50,24" alphatest="blend" transparent="1" zPosition="2" />
+		<ePixmap pixmap="mybuttons/key-info.png" position="1069,672" size="50,24" alphatest="blend"  />
 	</screen>
 	<screen name="t2-InfoButton">
-		<ePixmap pixmap="myicons/info.png" position="1105,672" size="24,24" alphatest="blend" transparent="1" zPosition="2" />
-		<eLabel text="Info" position="1134,669" size="46,24" font="Regular;25" foregroundColor="skylightblue" backgroundColor="backgroundbot" valign="center" halign="left" noWrap="1" transparent="1" zPosition="2" />
+		<ePixmap pixmap="myicons/info.png" position="1105,672" size="24,24" alphatest="blend" />
+		<eLabel text="Info" position="1134,669" size="46,24" font="Regular;25" foregroundColor="skylightblue" backgroundColor="backgroundbot" valign="center" halign="left" noWrap="1" transparent="1"  />
 	</screen>
 	<screen name="t1-InfoButton">
-		<ePixmap pixmap="myicons/info.png" position="1105,630" size="24,24" alphatest="blend" transparent="1" zPosition="2" />
-		<eLabel text="Info" position="1134,628" size="46,24" font="Regular;25" foregroundColor="skylightblue" backgroundColor="backgroundbot" valign="center" halign="left" noWrap="1" transparent="1" zPosition="2" />
+		<ePixmap pixmap="myicons/info.png" position="1105,630" size="24,24" alphatest="blend"  />
+		<eLabel text="Info" position="1134,628" size="46,24" font="Regular;25" foregroundColor="skylightblue" backgroundColor="backgroundbot" valign="center" halign="left" noWrap="1" transparent="1"  />
 	</screen>
+
 	<!-- Menu button -->
+	<screen name="t1-MenuButton">
+		<ePixmap pixmap="mybuttons/key-menu.png" position="1105,630" size="50,24" alphatest="blend" />
+	</screen>
 	<screen name="t2-MenuButton">
-		<ePixmap pixmap="mybuttons/key-menu.png" position="1129,672" size="50,24" alphatest="blend" transparent="1" zPosition="2" />
+		<ePixmap pixmap="mybuttons/key-menu.png" position="1129,672" size="50,24" alphatest="blend" />
 	</screen>
 	<screen name="t2-MenuButton-pos2">
-		<ePixmap pixmap="mybuttons/key-menu.png" position="1069,672" size="50,24" alphatest="blend" transparent="1" zPosition="2" />
+		<ePixmap pixmap="mybuttons/key-menu.png" position="1069,672" size="50,24" alphatest="blend"  />
 	</screen>
 	<!-- OK button -->
+	
+	<screen name="t1-OKButton">
+		<ePixmap pixmap="mybuttons/key-ok.png" position="1105,630" size="50,24" alphatest="blend"  />
+	</screen>
+	
 	<screen name="t2-OKButton">
-		<ePixmap pixmap="mybuttons/key-ok.png" position="1129,672" size="50,24" alphatest="blend" transparent="1" zPosition="2" />
+		<ePixmap pixmap="mybuttons/key-ok.png" position="1129,672" size="50,24" alphatest="blend"  />
+	</screen>
+	
+	<screen name="t2-OKButton-pos2">
+		<ePixmap pixmap="mybuttons/key-ok.png" position="1069,672" size="50,24" alphatest="blend"  />
 	</screen>
 	<!-- Text button -->
 	<screen name="t2-TextButton">
-		<ePixmap pixmap="mybuttons/key-text.png" position="1129,672" size="50,24" alphatest="blend" transparent="1" zPosition="2" />
+		<ePixmap pixmap="mybuttons/key-text.png" position="1129,672" size="50,24" alphatest="blend"  />
 	</screen>
 	<screen name="t2-ExitButton">
-		<ePixmap pixmap="mybuttons/key-exit.png" position="1129,672" size="50,24" alphatest="blend" transparent="1" zPosition="2" />
+		<ePixmap pixmap="mybuttons/key-exit.png" position="1129,672" size="50,24" alphatest="blend"  />
 	</screen>
+	
+	 <screen name="t2-HelpButton">
+		<ePixmap pixmap="mybuttons/key-help.png" position="1129,672" size="50,24" alphatest="blend"  />
+	</screen>
+	
 	<!-- Infobar Multi Epg < > -->
 	<screen name="InfoEPGRedButton">
-		<ePixmap name="red" pixmap="buttons/key_red.png" position="102,145" size="24,24" alphatest="blend" transparent="1" zPosition="2" />
-		<widget name="key_red" position="134,142" size="218,32" font="Regular;25" foregroundColor="skyblue" backgroundColor="backgroundbot" valign="center" halign="left" noWrap="1" transparent="1" zPosition="2" />
+		<ePixmap name="red" pixmap="buttons/key_red.png" position="102,145" size="24,24" alphatest="blend"  />
+		<widget name="key_red" position="134,142" size="218,32" font="Regular;25" foregroundColor="skyblue" backgroundColor="backgroundbot" valign="center" halign="left" noWrap="1" transparent="1"  />
 	</screen>
 	<screen name="InfoEPGGreenButton">
-		<ePixmap name="green" pixmap="buttons/key_green.png" position="352,145" size="24,24" alphatest="blend" transparent="1" zPosition="2" />
-		<widget name="key_green" position="384,142" size="218,32" font="Regular;25" foregroundColor="skyblue" backgroundColor="backgroundbot" valign="center" halign="left" noWrap="1" transparent="1" zPosition="2" />
+		<ePixmap name="green" pixmap="buttons/key_green.png" position="352,145" size="24,24" alphatest="blend"  />
+		<widget name="key_green" position="384,142" size="218,32" font="Regular;25" foregroundColor="skyblue" backgroundColor="backgroundbot" valign="center" halign="left" noWrap="1" transparent="1"  />
 	</screen>
 	<screen name="InfoEPGYellowButton">
-		<ePixmap name="yellow" pixmap="buttons/key_yellow.png" position="602,145" size="24,24" alphatest="blend" transparent="1" zPosition="2" />
-		<widget name="key_yellow" position="634,142" size="218,32" font="Regular;25" foregroundColor="skyblue" backgroundColor="backgroundbot" valign="center" halign="left" noWrap="1" transparent="1" zPosition="2" />
+		<ePixmap name="yellow" pixmap="buttons/key_yellow.png" position="602,145" size="24,24" alphatest="blend"  />
+		<widget name="key_yellow" position="634,142" size="218,32" font="Regular;25" foregroundColor="skyblue" backgroundColor="backgroundbot" valign="center" halign="left" noWrap="1" transparent="1"/>
 	</screen>
 	<screen name="InfoEPGBlueButton">
-		<ePixmap name="blue" pixmap="buttons/key_blue.png" position="852,145" size="24,24" alphatest="blend" transparent="1" zPosition="2" />
-		<widget name="key_blue" position="884,142" size="269,32" font="Regular;25" foregroundColor="skyblue" backgroundColor="backgroundbot" valign="center" halign="left" noWrap="1" transparent="1" zPosition="2" />
+		<ePixmap name="blue" pixmap="buttons/key_blue.png" position="852,145" size="24,24" alphatest="blend"  />
+		<widget name="key_blue" position="884,142" size="269,32" font="Regular;25" foregroundColor="skyblue" backgroundColor="backgroundbot" valign="center" halign="left" noWrap="1" transparent="1"  />
 	</screen>
 	<screen name="InfoEPGButtons">
 		<panel name="InfoEPGRedButton" />

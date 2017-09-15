@@ -1,6 +1,15 @@
 
 <skin>
-
+        <screen name="MovieContextMenu" position="0,0" size="1280,720" backgroundColor="backgroundmid" flags="wfNoBorder">
+                <panel name="setup-template" />
+        	<panel name="menu-setup-bars" />
+       		<widget name="config" textOffset="10,4" position="center,335" size="900,288" font="Regular;25" secondfont="Regular;25" backgroundColor="skylightrow" selectionPixmap="myselectbars/menu-bar.png" backgroundPixmap="myselectbars/blank.png" itemHeight="36" enableWrapAround="1" scrollbarMode="showNever" transparent="1" zPosition="4" />
+        	<panel name="t1-2RG-Source" />
+                <panel name="description" />
+	        <panel name="footnote" />
+	        <panel name="HelpWindow" />
+		<panel name="VkeyIcon" />	
+	</screen>
 
 	<screen name="MovieSelection1">
                 <panel name="main-bg" />
@@ -12,8 +21,8 @@
                 <panel name="t1-split-bg" />
 		<panel name="menu-bars" />
 	        <eLabel text="All" position="90,267" size="500,36" font="Bold;25" foregroundColor="white" backgroundColor="titleshadow" valign="center" noWrap="1" transparent="1" zPosition="1" />
-                <widget name="waitingtext" position="center,335" size="900,288" font="Regular;21" halign="center" valign="center" transparent="0" foregroundColor="white" backgroundColor="skydarkblue" zPosition="4" />
-	        <widget source="Service" render="Label" position="60,88" size="425,30" valign="top" halign="left" font="Regular;25"  zPosition="1" transparent="1" foregroundColor="skyblue" backgroundColor="backgroundtop">
+                <widget name="waitingtext" position="center,335" size="900,252" font="Regular;21" halign="center" valign="center" transparent="1" foregroundColor="white" backgroundColor="skydarkblue"  />
+	        <widget source="Service" render="Label" position="60,88" size="425,30" valign="top" halign="left" font="Regular;25"   transparent="1" foregroundColor="skyblue" backgroundColor="backgroundtop">
 			<convert type="EventName">ShortDescription</convert>
 		</widget>
 		<widget source="Service" render="Label" position="465,88" size="280,28" valign="top" halign="right" font="Regular;25" noWrap="1" zPosition="1" transparent="1" foregroundColor="skyblue" backgroundColor="backgroundtop">
@@ -57,7 +66,7 @@
 
                 <ePixmap position="101,335" size="1076,288" pixmap="mybackgrounds/planner-bg.png" alphatest="blend" transparent="1" zPosition="-1"  />
 	
-                <widget name="waitingtext" position="101,335" size="1076,288" font="Regular;21" foregroundColor="white" backgroundColor="skydarkblue" valign="center" halign="center" transparent="0" zPosition="4" />
+                <widget name="waitingtext" position="101,335" size="1076,252" font="Regular;21" foregroundColor="white" backgroundColor="skydarkblue" valign="center" halign="center" transparent="0" zPosition="4" />
 	
                 <widget source="Service" render="Label" position="60,88" size="425,30" font="Regular;25" foregroundColor="skyblue" backgroundColor="backgroundtop" valign="top" halign="left" transparent="1" zPosition="1" >
 			<convert type="EventName">ShortDescription</convert>
@@ -95,7 +104,7 @@
 
                 <ePixmap position="101,335" size="1076,288" pixmap="mybackgrounds/planner-bg.png" alphatest="blend" transparent="1" zPosition="-1"  />
 	
-                <widget name="waitingtext" position="101,335" size="1076,288" font="Regular;21" foregroundColor="white" backgroundColor="skydarkblue" valign="center" halign="center" transparent="0" zPosition="4" />
+                <widget name="waitingtext" position="101,335" size="1076,252" font="Regular;21" foregroundColor="white" backgroundColor="skydarkblue" valign="center" halign="center" transparent="0" zPosition="4" />
 	
                 <widget source="Service" render="Label" position="60,88" size="425,30" font="Regular;25" foregroundColor="skyblue" backgroundColor="backgroundtop" valign="top" halign="left" transparent="1" zPosition="1" >
 			<convert type="EventName">ShortDescription</convert>
